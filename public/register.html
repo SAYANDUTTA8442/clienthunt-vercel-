@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
+  <script>document.documentElement.classList.add('js');</script>
+
+  <title>Register Your Team | ClientHunt</title>
+  <meta name="description" content="Register your team for ClientHunt, the IIT Patna business problem and product development competition by Freelanthropy. Teams of 1–4." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://freelanthropy.netlify.app/clienthunt/register" />
+  <link rel="icon" href="/assets/images/logo.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Freelanthropy" />
+  <meta property="og:title" content="Register Your Team | ClientHunt" />
+  <meta property="og:description" content="Register your team (1–4 members) for ClientHunt, organized by Freelanthropy at IIT Patna." />
+  <meta property="og:url" content="https://freelanthropy.netlify.app/clienthunt/register" />
+  <meta property="og:image" content="https://freelanthropy.netlify.app/assets/images/logo.png" />
+  <meta property="og:image:alt" content="Freelanthropy logo" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Register Your Team | ClientHunt" />
+  <meta name="twitter:description" content="Register your team (1–4 members) for ClientHunt, organized by Freelanthropy at IIT Patna." />
+  <meta name="twitter:image" content="https://freelanthropy.netlify.app/assets/images/logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>window.CLIENTHUNT_CONFIG = { API_URL: "/api" };
+  if (window.CLIENTHUNT_CONFIG.API_URL) document.documentElement.classList.add('cfg-wait');</script>
+
+  <style>
+    :root {
+      --blue:#1a73e8; --blue-dark:#1557b0; --blue-surface:#e8f0fe;
+      --red:#ea4335; --red-dark:#c5221f; --red-surface:#fce8e6;
+      --yellow:#fbbc04; --yellow-surface:#fef7e0;
+      --green:#34a853; --green-dark:#137333; --green-surface:#e6f4ea;
+      --text:#202124; --text-2:#5f6368; --border:#dadce0; --surface:#f8f9fa; --white:#fff;
+      --radius:16px;
+      --font:'Google Sans','Product Sans','Inter','Roboto',system-ui,sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-padding-top:5rem}
+    @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+    body{font-family:var(--font);color:var(--text);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    ul,ol{list-style:none}
+    ::selection{background:var(--blue-surface);color:var(--blue-dark)}
+    :focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:8px}
+    .container{max-width:1120px;margin:0 auto;padding:0 24px}
+    .skip{position:absolute;left:-999px;top:8px;background:var(--blue);color:#fff;padding:10px 18px;border-radius:8px;z-index:100}
+    .skip:focus{left:8px}
+    .vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+    header{position:fixed;inset:0 0 auto 0;z-index:50;height:64px;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);transition:box-shadow .2s}
+    header.scrolled{box-shadow:0 1px 3px rgba(60,64,67,.15)}
+    .nav{height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .brand-logo{flex:none;width:36px;height:36px;border-radius:8px;overflow:hidden;border:1px solid var(--border);background:#fff;display:flex;align-items:center;justify-content:center}
+    .brand-logo img{width:100%;height:100%;object-fit:contain}
+    .brand-fallback{width:100%;height:100%;background:var(--blue);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+    .brand-name{font-weight:500;font-size:1.05rem;line-height:1.2}
+    .brand-sub{font-size:.68rem;color:var(--text-2)}
+    .nav-links{display:none;align-items:center;gap:2px}
+    .nav-links a{padding:8px 12px;border-radius:999px;font-size:.86rem;font-weight:500;color:var(--text-2);transition:background .2s,color .2s}
+    .nav-links a:hover{background:var(--surface);color:var(--text)}
+    .nav-links a.btn-nav{background:var(--blue);color:#fff;margin-left:8px;padding:9px 20px}
+    .nav-links a.btn-nav:hover{background:var(--blue-dark)}
+    .menu-btn{background:none;border:0;width:44px;height:44px;border-radius:50%;cursor:pointer;color:var(--text-2);display:inline-flex;align-items:center;justify-content:center}
+    .menu-btn:hover{background:var(--surface)}
+    .menu-btn svg{width:24px;height:24px}
+    .mobile-menu{display:none;position:absolute;top:64px;left:0;width:100%;max-height:calc(100vh - 64px);overflow-y:auto;background:#fff;border-bottom:1px solid var(--border);box-shadow:0 4px 12px rgba(60,64,67,.15);padding:8px 0 16px}
+    .mobile-menu.open{display:block}
+    .mobile-menu a{display:block;padding:14px 24px;font-weight:500}
+    .mobile-menu a:hover{background:var(--surface)}
+    .mobile-menu .btn{margin:8px 24px 0;display:flex}
+    @media(min-width:1100px){.nav-links{display:flex}.menu-btn,.mobile-menu{display:none!important}}
+
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:12px 28px;border-radius:999px;font-family:inherit;font-weight:500;font-size:.95rem;border:1px solid transparent;cursor:pointer;transition:background .2s,box-shadow .2s,border-color .2s}
+    .btn-primary{background:var(--blue);color:#fff}
+    .btn-primary:hover{background:var(--blue-dark);box-shadow:0 1px 3px rgba(60,64,67,.35)}
+    .btn-outline{background:#fff;color:var(--blue);border-color:var(--border)}
+    .btn-outline:hover{background:var(--blue-surface)}
+    .btn-soft{background:var(--blue-surface);color:var(--blue-dark)}
+    .btn-soft:hover{background:#d2e3fc}
+    .btn[disabled],.btn[aria-disabled="true"]{opacity:.55;cursor:not-allowed;box-shadow:none}
+    .btn-link{background:none;border:0;color:var(--blue);font:inherit;font-weight:500;cursor:pointer;text-decoration:underline;text-underline-offset:3px;min-height:44px;padding:0 6px}
+    .textlink{color:var(--blue);font-weight:500;text-decoration:underline;text-underline-offset:3px}
+
+    .hero{padding:120px 0 48px;background:linear-gradient(180deg,#f8fbff 0%,#fff 100%);border-bottom:1px solid var(--border)}
+    .eyebrow{display:inline-block;padding:6px 14px;border-radius:999px;background:var(--blue-surface);color:var(--blue-dark);font-size:.78rem;font-weight:500;letter-spacing:.02em;margin-bottom:20px}
+    .hero h1{font-size:clamp(2.4rem,7vw,4rem);font-weight:500;letter-spacing:-.03em;line-height:1.08;margin-bottom:14px}
+    .hero h1 .dot{color:var(--red)}
+    .hero p.lead{max-width:640px;color:var(--text-2);font-size:1.05rem;margin-bottom:22px}
+    .chips{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{padding:6px 14px;border:1px solid var(--border);border-radius:8px;font-size:.84rem;font-weight:500;color:var(--text-2);background:#fff}
+    .gbar{display:flex;gap:6px;margin-top:32px}
+    .gbar span{width:40px;height:4px;border-radius:4px}
+    .gbar span:nth-child(1){background:var(--blue)}.gbar span:nth-child(2){background:var(--red)}.gbar span:nth-child(3){background:var(--yellow)}.gbar span:nth-child(4){background:var(--green)}
+
+    section{padding:56px 0}
+    .alt{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .label{color:var(--blue);font-size:.82rem;font-weight:500;margin-bottom:10px}
+    h2{font-size:clamp(1.5rem,3.4vw,2rem);font-weight:500;letter-spacing:-.02em;line-height:1.25;margin-bottom:10px}
+    h3{font-weight:500}
+
+    footer{border-top:1px solid var(--border);padding:56px 0 28px}
+    .foot-grid{display:grid;gap:40px;grid-template-columns:1fr;margin-bottom:40px}
+    @media(min-width:768px){.foot-grid{grid-template-columns:1.2fr 2fr}}
+    .foot-brand .title{display:flex;align-items:center;gap:12px;font-size:1.4rem;font-weight:500;margin-bottom:12px}
+    .foot-brand p{color:var(--text-2);font-size:.9rem;max-width:340px}
+    .foot-links{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
+    @media(min-width:640px){.foot-links{grid-template-columns:repeat(3,1fr)}}
+    .foot-links h4{font-size:.9rem;font-weight:500;margin-bottom:14px}
+    .foot-links ul{display:grid;gap:10px;font-size:.9rem;color:var(--text-2)}
+    .foot-links a{display:inline-block;padding:2px 0}
+    .foot-links a:hover{color:var(--blue)}
+    .foot-links a.accent{color:var(--blue);font-weight:500}
+    .foot-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:.8rem;color:var(--text-2)}
+    #toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:48px;height:48px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(60,64,67,.35);opacity:0;pointer-events:none;transform:translateY(12px);transition:opacity .25s,transform .25s}
+    #toTop.show{opacity:1;pointer-events:auto;transform:none}
+    #toTop svg{width:20px;height:20px}
+
+    /* ===== Registration-specific ===== */
+    .reg-wrap{max-width:760px;margin:0 auto}
+    .reg-card{background:#fff;border:1px solid var(--border);border-radius:24px;padding:32px;box-shadow:0 1px 2px rgba(60,64,67,.15),0 2px 6px 2px rgba(60,64,67,.08);position:relative;overflow:hidden}
+    .reg-card::before{content:"";position:absolute;inset:0 0 auto 0;height:5px;background:var(--blue)}
+    .reg-card.ok::before{background:var(--green)}
+    .reg-card h2{margin-bottom:6px}
+    .reg-sub{color:var(--text-2);font-size:.95rem;margin-bottom:22px}
+
+    /* Stepper */
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);margin:6px 0 30px}
+    .steps li{position:relative;text-align:center;padding-top:46px;font-size:.82rem;font-weight:500;color:var(--text-2);transition:color .2s}
+    .steps .sn{position:absolute;top:0;left:50%;transform:translateX(-50%);width:38px;height:38px;border-radius:50%;border:2px solid var(--border);background:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:.9rem;color:var(--text-2);z-index:1;transition:background .25s,border-color .25s,color .25s}
+    .steps li:not(:last-child)::after{content:"";position:absolute;top:18px;left:calc(50% + 26px);right:calc(-50% + 26px);height:2px;background:var(--border);transition:background .25s}
+    .steps li.is-current{color:var(--text)}
+    .steps li.is-current .sn{border-color:var(--blue);background:var(--blue);color:#fff}
+    .steps li.is-done{color:var(--green-dark)}
+    .steps li.is-done .sn{border-color:var(--green);background:var(--green);color:#fff}
+    .steps li.is-done:not(:last-child)::after{background:var(--green)}
+    @media(max-width:480px){.steps li{font-size:.74rem}.steps li:not(:last-child)::after{left:calc(50% + 22px);right:calc(-50% + 22px)}}
+
+    /* Panels */
+    .panel[hidden]{display:none}
+    .panel{animation:panelIn .28s ease}
+    @keyframes panelIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+    .panel h2:focus{outline:none}
+    .panel-head{margin-bottom:6px}
+
+    /* Fields */
+    .field{margin-bottom:18px}
+    .field label,.field legend{display:block;font-weight:500;font-size:.92rem;margin-bottom:6px}
+    .req{color:var(--red-dark)}
+    .field input[type=text],.field input[type=email],.field input[type=tel],.field select{width:100%;min-height:48px;padding:11px 14px;font:inherit;font-size:1rem;color:var(--text);background:#fff;border:1px solid #9aa0a6;border-radius:12px;transition:border-color .2s,box-shadow .2s}
+    .field select{appearance:none;padding-right:38px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='none' stroke='%235f6368' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+    .field input:hover,.field select:hover{border-color:var(--text-2)}
+    .field input:focus,.field select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(26,115,232,.25)}
+    .field input[aria-invalid="true"],.field select[aria-invalid="true"]{border-color:var(--red-dark);box-shadow:0 0 0 1px var(--red-dark)}
+    .hint{color:var(--text-2);font-size:.82rem;margin-top:5px}
+    .err{color:var(--red-dark);font-size:.84rem;font-weight:500;margin-top:5px}
+    .err[hidden]{display:none}
+    .row2{display:grid;gap:0 18px;grid-template-columns:1fr}
+    @media(min-width:640px){.row2{grid-template-columns:1fr 1fr}}
+    .row3{display:grid;gap:0 18px;grid-template-columns:1fr}
+    @media(min-width:640px){.row3{grid-template-columns:1fr 1.3fr .9fr}}
+    fieldset{border:0;min-width:0}
+    .group-title{font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--text-2);margin:26px 0 14px;padding-top:22px;border-top:1px solid var(--border)}
+    .group-title:first-of-type{margin-top:6px;padding-top:0;border-top:0}
+    .phone-wrap{display:flex}
+    .phone-wrap .pre{display:flex;align-items:center;padding:0 14px;border:1px solid #9aa0a6;border-right:0;border-radius:12px 0 0 12px;background:var(--surface);color:var(--text-2);font-weight:500}
+    .phone-wrap input{border-radius:0 12px 12px 0!important}
+    .fixed-inst{display:flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;background:var(--blue-surface);color:var(--blue-dark);font-size:.9rem;font-weight:500;margin-bottom:18px}
+
+    /* Team size picker */
+    .seg{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    .seg label{position:relative;margin:0;cursor:pointer}
+    .seg input{position:absolute;opacity:0;inset:0;width:100%;height:100%;cursor:pointer;margin:0}
+    .seg span{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:64px;border:1px solid #9aa0a6;border-radius:14px;font-size:1.3rem;font-weight:500;background:#fff;transition:background .2s,border-color .2s,color .2s}
+    .seg small{font-size:.7rem;font-weight:500;color:var(--text-2);letter-spacing:.02em}
+    .seg input:hover+span{border-color:var(--blue)}
+    .seg input:checked+span{background:var(--blue-surface);border-color:var(--blue);color:var(--blue-dark);box-shadow:0 0 0 1px var(--blue)}
+    .seg input:checked+span small{color:var(--blue-dark)}
+    .seg input:focus-visible+span{outline:3px solid var(--blue);outline-offset:3px}
+    .field[data-field="team_size"] .seg.invalid span{border-color:var(--red-dark)}
+
+    /* Member blocks */
+    .member{border:1px solid var(--border);border-radius:16px;padding:18px 18px 2px;margin-bottom:16px;background:var(--surface)}
+    .member legend{float:left;width:100%;font-weight:600;font-size:.95rem;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+    .member legend+*{clear:both}
+    .member .badge{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;font-size:.8rem}
+    .leader-note{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border-radius:14px;background:var(--green-surface);color:#0d4a22;font-size:.92rem;margin-bottom:16px}
+    .solo-note{padding:18px;border:1px dashed var(--border);border-radius:14px;color:var(--text-2);background:var(--surface);margin-bottom:16px}
+    .note{padding:14px 16px;border-radius:12px;background:var(--yellow-surface);border:1px solid #f9e2a0;color:#5b4200;font-size:.9rem;margin:6px 0 4px}
+
+    /* Error summary */
+    .errsum{border:1px solid #f4b8b2;background:var(--red-surface);color:#5a1a14;border-radius:14px;padding:14px 18px;margin-bottom:20px;font-size:.92rem}
+    .errsum[hidden]{display:none}
+    .errsum:focus{outline:3px solid var(--red-dark);outline-offset:2px}
+    .errsum strong{display:block;margin-bottom:4px}
+    .errsum ul{list-style:disc;padding-left:20px}
+    .errsum a{text-decoration:underline;color:inherit}
+
+    /* Review */
+    .rv{border:1px solid var(--border);border-radius:16px;margin-bottom:16px;overflow:hidden}
+    .rv-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:6px 8px 6px 18px;background:var(--surface);border-bottom:1px solid var(--border)}
+    .rv-head h3{font-size:1rem}
+    .rv dl{display:grid;grid-template-columns:1fr;gap:0}
+    .rv .kv{display:grid;grid-template-columns:1fr;gap:2px;padding:12px 18px;border-top:1px solid var(--border)}
+    .rv .kv:first-child{border-top:0}
+    @media(min-width:560px){.rv .kv{grid-template-columns:190px 1fr;gap:12px}}
+    .rv dt{color:var(--text-2);font-size:.86rem}
+    .rv dd{font-weight:500;overflow-wrap:anywhere}
+    .rv ol li{padding:12px 18px;border-top:1px solid var(--border);overflow-wrap:anywhere}
+    .rv ol li:first-child{border-top:0}
+    .rv ol small{display:block;color:var(--text-2)}
+    .decls{border:1px solid var(--border);border-radius:16px;padding:16px 18px;margin:20px 0 14px}
+    .decls legend{font-weight:600;font-size:.95rem;padding:0 6px}
+    .check{display:flex;gap:12px;align-items:flex-start;padding:10px 0;cursor:pointer;font-size:.95rem}
+    .check input{flex:none;width:22px;height:22px;margin-top:2px;accent-color:var(--blue);cursor:pointer}
+    .check a{color:var(--blue);text-decoration:underline}
+    .privacy{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:14px 18px;font-size:.88rem;color:var(--text-2);margin-bottom:14px}
+    .privacy summary{cursor:pointer;color:var(--blue);font-weight:500;margin-top:6px;min-height:32px;display:flex;align-items:center}
+    .privacy ul{list-style:disc;padding-left:20px;margin-top:8px;display:grid;gap:4px}
+    .lock{display:flex;gap:12px;padding:14px 16px;border-radius:14px;background:var(--red-surface);border:1px solid #f4b8b2;color:#5a1a14;font-size:.9rem;margin-bottom:14px}
+    .lock svg{flex:none;width:22px;height:22px;color:var(--red-dark);margin-top:2px}
+
+    /* Buttons row */
+    .nav-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;margin-top:26px;padding-top:22px;border-top:1px solid var(--border)}
+    .nav-row .end{display:flex;gap:12px;flex-wrap:wrap}
+    .spinner{width:18px;height:18px;border-radius:50%;border:3px solid rgba(255,255,255,.45);border-top-color:#fff;animation:spin .8s linear infinite;display:none}
+    .is-loading .spinner{display:inline-block}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .banner{padding:14px 18px;border-radius:14px;font-size:.92rem;margin-bottom:16px}
+    .banner[hidden]{display:none}
+    .banner.warn{background:var(--yellow-surface);border:1px solid #f9e2a0;color:#5b4200}
+    .banner.bad{background:var(--red-surface);border:1px solid #f4b8b2;color:#5a1a14}
+    .banner.good{background:var(--green-surface);border:1px solid #b7dfc2;color:#0d4a22}
+    .banner .row-actions{margin-top:8px;display:flex;gap:8px;flex-wrap:wrap}
+
+    /* Success */
+    .success-badge{width:56px;height:56px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+    .success-badge svg{width:30px;height:30px}
+    .code-box{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;background:var(--blue-surface);border-radius:16px;padding:18px 20px;margin:20px 0}
+    .code-box small{display:block;color:var(--blue-dark);font-weight:600;letter-spacing:.06em;font-size:.75rem}
+    .code-box output{display:block;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:clamp(1.5rem,6vw,2rem);font-weight:700;letter-spacing:.08em;overflow-wrap:anywhere}
+    .facts{display:grid;gap:0;border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-bottom:18px}
+    .facts div{display:grid;grid-template-columns:1fr;gap:2px;padding:12px 18px;border-top:1px solid var(--border)}
+    .facts div:first-child{border-top:0}
+    @media(min-width:560px){.facts div{grid-template-columns:200px 1fr;gap:12px}}
+    .facts dt{color:var(--text-2);font-size:.86rem}
+    .facts dd{font-weight:500;overflow-wrap:anywhere}
+    .pill{display:inline-block;padding:3px 12px;border-radius:999px;font-size:.78rem;font-weight:600;letter-spacing:.04em}
+    .pill.green{background:var(--green-surface);color:var(--green-dark)}
+    .pill.amber{background:var(--yellow-surface);color:#8a5a00}
+    .pill.red{background:var(--red-surface);color:var(--red-dark)}
+
+    /* Registration state skeleton */
+    #skelCard{display:none}
+    .cfg-wait #skelCard{display:block}
+    .cfg-wait #formCard{display:none}
+    .skel{display:block;border-radius:10px;background:linear-gradient(90deg,#eceff1 25%,#f6f8f9 40%,#eceff1 60%);background-size:300% 100%;animation:shimmer 1.4s ease-in-out infinite}
+    @keyframes shimmer{from{background-position:100% 50%}to{background-position:0 50%}}
+    .skel-title{height:28px;width:56%;margin-bottom:12px}
+    .skel-line{height:14px;margin-bottom:10px}
+    .skel-steps{display:grid;grid-template-columns:repeat(3,1fr);justify-items:center;margin:26px 0 30px}
+    .skel-circle{width:38px;height:38px;border-radius:50%}
+    .skel-label{height:12px;width:90px;margin:0 0 14px}
+    .skel-input{height:48px;border-radius:12px;margin-bottom:20px}
+    .skel-seg{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:22px}
+    .skel-seg .skel{height:64px;border-radius:14px}
+    .skel-btn{height:46px;width:200px;border-radius:999px;margin-left:auto}
+    .code-box[hidden]{display:none}
+    .soon-when{display:block;font-family:inherit;font-size:clamp(1.05rem,4.4vw,1.35rem);font-weight:600;letter-spacing:0}
+    .soon-in{display:block;color:var(--blue-dark);font-size:.9rem;font-weight:500;margin-top:2px}
+
+    /* Closed / status */
+    .inline-form{display:grid;gap:0 18px;grid-template-columns:1fr}
+    @media(min-width:640px){.inline-form.two{grid-template-columns:1fr 1fr}}
+    .hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
+    dialog{border:0;border-radius:20px;padding:26px;max-width:min(460px,92vw);box-shadow:0 8px 28px rgba(60,64,67,.35)}
+    dialog::backdrop{background:rgba(32,33,36,.5)}
+    dialog h3{font-size:1.15rem;margin-bottom:8px}
+    dialog p{color:var(--text-2);margin-bottom:18px;font-size:.95rem}
+    dialog .btns{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap}
+
+    @media(max-width:600px){
+      section{padding:40px 0}
+      .hero{padding:104px 0 36px}
+      .reg-card{padding:24px 18px;border-radius:20px}
+      .seg{gap:8px}
+      .nav-row .end,.nav-row .btn{width:100%}
+      .nav-row .end .btn{flex:1}
+    }
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+    noscript .banner{margin:20px 0}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header id="navbar">
+    <div class="container nav">
+      <a href="/" class="brand" aria-label="Freelanthropy home">
+        <div class="brand-logo"><img src="/assets/images/logo.png" width="36" height="36" alt="" onerror="this.outerHTML='<div class=\'brand-fallback\'>F</div>'" /></div>
+        <div>
+          <div class="brand-name">Freelanthropy</div>
+          <div class="brand-sub">Wings of Arthniti · IIT Patna</div>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/clienthunt">Back to ClientHunt</a>
+        <a href="/clienthunt#format">Format</a>
+        <a href="/clienthunt#rules">Rules</a>
+        <a href="/clienthunt#faq">FAQ</a>
+        <a href="/clienthunt/rulebook">Rulebook</a>
+        <a href="#status">Check Status</a>
+        <a href="#registration" class="btn-nav" aria-current="page">Register Team</a>
+      </nav>
+
+      <button id="menuToggle" class="menu-btn" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+    </div>
+
+    <nav id="mobileMenu" class="mobile-menu" aria-label="Mobile">
+      <a href="/clienthunt">Back to ClientHunt</a>
+      <a href="/clienthunt#format">Format</a>
+      <a href="/clienthunt#rules">Rules</a>
+      <a href="/clienthunt#faq">FAQ</a>
+      <a href="/clienthunt/rulebook">Rulebook</a>
+      <a href="#status">Check Status</a>
+      <a href="#registration" class="btn btn-primary" aria-current="page">Register Team</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <p class="eyebrow">FREELANTHROPY PRESENTS · IIT PATNA</p>
+        <h1 id="hero-title">Register Your Team<span class="dot">.</span></h1>
+        <p class="lead">Bring your team together. Get ready to analyse a real-world business problem, develop a practical solution, and execute your ideas.</p>
+        <ul class="chips" aria-label="At a glance">
+          <li class="chip">IIT Patna Internal Event</li>
+          <li class="chip">Team Size: 1–4</li>
+          <li class="chip">Two-Round Competition</li>
+        </ul>
+        <div class="gbar" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+      </div>
+    </section>
+
+    <!-- REGISTRATION -->
+    <section id="registration" aria-labelledby="reg-title">
+      <div class="container reg-wrap">
+
+        <noscript><div class="banner warn">Registration needs JavaScript. Please enable it in your browser and reload this page.</div></noscript>
+
+        <div id="skelCard" class="reg-card" aria-busy="true">
+          <p class="vh" role="status">Checking whether registration is open…</p>
+          <div aria-hidden="true">
+            <span class="skel skel-title"></span>
+            <span class="skel skel-line" style="width:82%"></span>
+            <div class="skel-steps"><span class="skel skel-circle"></span><span class="skel skel-circle"></span><span class="skel skel-circle"></span></div>
+            <span class="skel skel-label"></span>
+            <span class="skel skel-input"></span>
+            <span class="skel skel-label" style="width:150px"></span>
+            <div class="skel-seg"><span class="skel"></span><span class="skel"></span><span class="skel"></span><span class="skel"></span></div>
+            <span class="skel skel-label"></span>
+            <span class="skel skel-input"></span>
+            <span class="skel skel-btn"></span>
+          </div>
+        </div>
+
+        <div id="notStartedCard" class="reg-card" hidden>
+          <h2 id="nsTitle" tabindex="-1">Registration hasn’t started yet</h2>
+          <p class="reg-sub" id="nsText">The Organising Team has not opened registration yet. Please check back soon.</p>
+          <div class="code-box" id="nsWhenBox" hidden>
+            <div><small>REGISTRATION OPENS</small><output class="soon-when" id="nsWhen"></output><span class="soon-in" id="nsIn"></span></div>
+          </div>
+          <p class="hint">Already registered? You can check your status below. Questions? Write to <a class="textlink" href="mailto:freelanthropy.iitpatna@gmail.com">freelanthropy.iitpatna@gmail.com</a>.</p>
+          <div class="nav-row">
+            <a class="btn btn-outline" href="/clienthunt">Back to ClientHunt</a>
+            <div class="end"><a class="btn btn-soft" href="#status">Check Registration Status</a></div>
+          </div>
+        </div>
+
+        <div id="closedCard" class="reg-card" hidden>
+          <h2>Registration is closed</h2>
+          <p class="reg-sub">The Organising Team is not accepting new registrations right now. If you have already registered, you can check your status below. Questions? Write to <a class="textlink" href="mailto:freelanthropy.iitpatna@gmail.com">freelanthropy.iitpatna@gmail.com</a>.</p>
+        </div>
+
+        <div id="formCard" class="reg-card">
+          <h2 id="reg-title">Team registration</h2>
+          <p class="reg-sub">Three short steps. Your details stay on this page until you submit.</p>
+
+          <div id="cfgBanner" class="banner warn" hidden>We could not check whether registration is open. You can fill in the form; the server will confirm when you submit.</div>
+          <div id="apiBanner" class="banner warn" hidden>Registration is not open yet. You can fill in the form to see how it works, but it cannot be submitted until the Organising Team switches it on.</div>
+
+          <ol class="steps" id="steps" aria-label="Registration progress">
+            <li class="is-current" aria-current="step"><span class="sn" aria-hidden="true">1</span>Team Details<span class="vh"> (current step)</span></li>
+            <li><span class="sn" aria-hidden="true">2</span>Team Members</li>
+            <li><span class="sn" aria-hidden="true">3</span>Review &amp; Submit</li>
+          </ol>
+
+          <form id="regForm" novalidate autocomplete="on">
+            <input class="hp" type="text" id="hp" name="q7_zx_note" tabindex="-1" autocomplete="off" data-lpignore="true" data-1p-ignore="true" data-form-type="other" readonly aria-hidden="true" />
+
+            <!-- STEP 1 -->
+            <div class="panel" id="panel-1" role="group" aria-labelledby="h-1">
+              <div class="errsum" id="errsum-1" tabindex="-1" role="alert" hidden></div>
+              <h2 id="h-1" class="panel-head" tabindex="-1" style="font-size:1.25rem">Team details</h2>
+
+              <p class="group-title">Team information</p>
+              <div class="field" data-field="team_name">
+                <label for="teamName">Team name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="teamName" maxlength="60" autocomplete="off" aria-required="true" aria-describedby="teamName-hint teamName-err" />
+                <p class="hint" id="teamName-hint">Up to 60 characters. This is how your team will be listed.</p>
+                <p class="err" id="teamName-err" hidden></p>
+              </div>
+
+              <fieldset class="field" data-field="team_size">
+                <legend>Number of team members <span class="req" aria-hidden="true">*</span></legend>
+                <div class="seg" id="sizeSeg" role="radiogroup" aria-describedby="size-hint size-err">
+                  <label><input type="radio" name="size" value="1" /><span>1<small>Solo</small></span></label>
+                  <label><input type="radio" name="size" value="2" /><span>2<small>members</small></span></label>
+                  <label><input type="radio" name="size" value="3" /><span>3<small>members</small></span></label>
+                  <label><input type="radio" name="size" value="4" /><span>4<small>members</small></span></label>
+                </div>
+                <p class="hint" id="size-hint">Include yourself. You are Member 1, the team leader.</p>
+                <p class="err" id="size-err" hidden></p>
+              </fieldset>
+
+              <p class="group-title">Team leader (Member 1)</p>
+              <div class="field" data-field="leader.full_name">
+                <label for="leaderName">Full name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="leaderName" maxlength="80" autocomplete="name" aria-required="true" aria-describedby="leaderName-err" />
+                <p class="err" id="leaderName-err" hidden></p>
+              </div>
+              <div class="row2">
+                <div class="field" data-field="leader.email">
+                  <label for="leaderEmail">IIT Patna institutional email <span class="req" aria-hidden="true">*</span></label>
+                  <input type="email" id="leaderEmail" maxlength="254" autocomplete="email" inputmode="email" aria-required="true" aria-describedby="leaderEmail-hint leaderEmail-err" />
+                  <p class="hint" id="leaderEmail-hint">Used to identify your team. If you forget your Team Code, you can find it with this address.</p>
+                  <p class="err" id="leaderEmail-err" hidden></p>
+                </div>
+                <div class="field" data-field="leader.phone">
+                  <label for="leaderPhone">Mobile number <span class="req" aria-hidden="true">*</span></label>
+                  <div class="phone-wrap"><span class="pre" aria-hidden="true">+91</span><input type="tel" id="leaderPhone" maxlength="16" autocomplete="tel-national" inputmode="tel" aria-required="true" aria-describedby="leaderPhone-hint leaderPhone-err" /></div>
+                  <p class="hint" id="leaderPhone-hint">10-digit Indian mobile number.</p>
+                  <p class="err" id="leaderPhone-err" hidden></p>
+                </div>
+              </div>
+
+              <div class="row3">
+                <div class="field" data-field="leader.courses">
+                  <label for="leaderCourses">Courses <span class="req" aria-hidden="true">*</span></label>
+                  <select id="leaderCourses" aria-required="true" aria-describedby="leaderCourses-err">
+                    <option value="">Select course</option>
+                    <option value="B.Tech">B.Tech</option>
+                    <option value="BS">BS</option>
+                    <option value="BS-MS Dual Degree">BS-MS Dual Degree</option>
+                    <option value="B.Sc.">B.Sc.</option>
+                    <option value="BBA">BBA</option>
+                    <option value="M.Tech">M.Tech</option>
+                    <option value="M.Sc.">M.Sc.</option>
+                    <option value="MBA">MBA</option>
+                    <option value="PhD">PhD</option>
+                    <option value="Other">Other</option>
+                  </select>
+                  <p class="err" id="leaderCourses-err" hidden></p>
+                </div>
+                <div class="field" data-field="leader.department">
+                  <label for="leaderDept">Department <span class="req" aria-hidden="true">*</span></label>
+                  <input type="text" id="leaderDept" maxlength="100" autocomplete="organization-title" placeholder="e.g. Computer Science & Data Analytics" aria-required="true" aria-describedby="leaderDept-err" />
+                  <p class="err" id="leaderDept-err" hidden></p>
+                </div>
+                <div class="field" data-field="leader.semester">
+                  <label for="leaderSem">Semester <span class="req" aria-hidden="true">*</span></label>
+                  <select id="leaderSem" aria-required="true" aria-describedby="leaderSem-err">
+                    <option value="">Select</option>
+                    <option value="1st Semester">1st Semester</option>
+                    <option value="2nd Semester">2nd Semester</option>
+                    <option value="3rd Semester">3rd Semester</option>
+                    <option value="4th Semester">4th Semester</option>
+                    <option value="5th Semester">5th Semester</option>
+                    <option value="6th Semester">6th Semester</option>
+                    <option value="7th Semester">7th Semester</option>
+                    <option value="8th Semester">8th Semester</option>
+                    <option value="9th Semester">9th Semester</option>
+                    <option value="10th Semester">10th Semester</option>
+                  </select>
+                  <p class="err" id="leaderSem-err" hidden></p>
+                </div>
+              </div>
+
+              <div class="fixed-inst"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10l9-6 9 6M5 10v8m4-8v8m6-8v8m4-8v8M3 20h18"/></svg><span>Institution: Indian Institute of Technology Patna</span></div>
+
+              <div class="nav-row">
+                <a class="btn btn-outline" href="/clienthunt">Back to ClientHunt</a>
+                <div class="end"><button type="button" class="btn btn-primary" data-next="2">Continue to team members</button></div>
+              </div>
+            </div>
+
+            <!-- STEP 2 -->
+            <div class="panel" id="panel-2" role="group" aria-labelledby="h-2" hidden>
+              <div class="errsum" id="errsum-2" tabindex="-1" role="alert" hidden></div>
+              <h2 id="h-2" class="panel-head" tabindex="-1" style="font-size:1.25rem">Team members</h2>
+              <p class="reg-sub" style="margin-top:6px">Add the other members of your team, including their academic and contact details. You are already listed as Member 1.</p>
+              <div class="leader-note"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" style="flex:none;margin-top:2px"><path d="M5 13l4 4L19 7"/></svg><span id="leaderEcho">Member 1: team leader</span></div>
+              <div id="memberFields"></div>
+              <p class="note">All team members must be currently eligible IIT Patna students. The Organising Team may verify eligibility separately.</p>
+              <div class="nav-row">
+                <button type="button" class="btn btn-outline" data-prev="1">Back</button>
+                <div class="end"><button type="button" class="btn btn-primary" data-next="3">Review your team</button></div>
+              </div>
+            </div>
+
+            <!-- STEP 3 -->
+            <div class="panel" id="panel-3" role="group" aria-labelledby="h-3" hidden>
+              <div class="errsum" id="errsum-3" tabindex="-1" role="alert" hidden></div>
+              <h2 id="h-3" class="panel-head" tabindex="-1" style="font-size:1.25rem">Review &amp; submit</h2>
+              <p class="reg-sub" style="margin-top:6px">Check everything carefully. You cannot edit these details yourself after submitting.</p>
+
+              <div class="rv">
+                <div class="rv-head"><h3>Team information</h3><button type="button" class="btn-link" data-goto="1" aria-label="Edit team information">Edit</button></div>
+                <dl id="rvTeam"></dl>
+              </div>
+              <div class="rv">
+                <div class="rv-head"><h3>Team members</h3><button type="button" class="btn-link" data-goto="2" aria-label="Edit team members">Edit</button></div>
+                <ol id="rvMembers"></ol>
+              </div>
+
+              <div class="lock" role="note"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg><div><strong>Team details are locked after submission.</strong> Any correction must be requested through the Organising Team and is subject to review and approval.</div></div>
+
+              <fieldset class="decls" data-field="declarations">
+                <legend>Declarations</legend>
+                <label class="check"><input type="checkbox" id="d-eligibility" /><span>I confirm that all listed members are eligible IIT Patna students.</span></label>
+                <label class="check"><input type="checkbox" id="d-consent" /><span>I confirm that all team members have agreed to participate.</span></label>
+                <label class="check"><input type="checkbox" id="d-accuracy" /><span>I confirm that the information provided is accurate.</span></label>
+                <label class="check"><input type="checkbox" id="d-rules" /><span>I agree to follow the official ClientHunt <a href="/clienthunt/rulebook" target="_blank" rel="noopener">competition rules<span class="vh"> (opens in a new tab)</span></a>.</span></label>
+                <p class="err" id="decl-err" hidden></p>
+              </fieldset>
+
+              <div class="privacy">
+                Your information will be used for competition administration and official communication. Evaluators will use Team Codes rather than participant identities wherever practicable.
+                <details>
+                  <summary>More about how your data is handled</summary>
+                  <ul>
+                    <li>Collected: team name, team size, and each member’s name, institutional email, mobile number, courses, department, and semester.</li>
+                    <li>Purpose: running ClientHunt and contacting teams about it.</li>
+                    <li>Access: authorised members of the Freelanthropy Organising Team only. The registration records are not public.</li>
+                    <li>Retention: the Organising Team will confirm how long records are kept.</li>
+                  </ul>
+                </details>
+              </div>
+
+              <p class="hint" style="margin-bottom:6px">Registration does not imply shortlisting. The problem statement, deliverables and schedule are released separately.</p>
+
+              <div id="submitBanner" class="banner bad" role="alert" tabindex="-1" hidden></div>
+
+              <div class="nav-row">
+                <button type="button" class="btn btn-outline" data-prev="2" id="backFrom3">Back</button>
+                <div class="end"><button type="submit" class="btn btn-primary" id="submitBtn"><span class="spinner" aria-hidden="true"></span><span id="submitLabel">Submit Team Registration</span></button></div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- SUCCESS -->
+        <div id="successCard" class="reg-card ok" hidden>
+          <div class="success-badge" aria-hidden="true"><svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
+          <h2 id="successTitle" tabindex="-1">Your Team Is Registered!</h2>
+          <p class="reg-sub">Your registration has been successfully submitted. Keep your Team Code safe. You will need it for ClientHunt submissions and competition-related communication.</p>
+
+          <div class="code-box">
+            <div><small>YOUR TEAM CODE</small><output id="okCode" aria-label="Team code"></output></div>
+            <button type="button" class="btn btn-primary" id="copyBtn">Copy Team Code</button>
+          </div>
+          <p class="vh" id="copyLive" role="status" aria-live="polite"></p>
+
+          <dl class="facts">
+            <div><dt>Team name</dt><dd id="okName"></dd></div>
+            <div><dt>Registration status</dt><dd><span class="pill green" id="okStatus"></span></dd></div>
+          </dl>
+          <div class="banner warn" id="okEmailNote">No confirmation email is sent. Please copy or screenshot your Team Code now. If you forget it, use the <a class="textlink" href="/clienthunt/search-team">team lookup page</a> and enter your Team Code or any team member’s institutional email.</div>
+
+          <div class="nav-row" style="margin-top:8px">
+            <a class="btn btn-primary" href="/clienthunt">Return to ClientHunt</a>
+            <div class="end"><a class="btn btn-outline" href="#status" id="okStatusLink">Check Registration Status</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATUS / RECOVERY -->
+    <section id="status" class="alt" aria-labelledby="status-title">
+      <div class="container reg-wrap">
+        <div class="reg-card">
+          <p class="label">Already registered?</p>
+          <h2 id="status-title">Check Registration Status</h2>
+          <p class="reg-sub">Not sure your submission went through? Enter your Team Code and the email address of any team member. Forgot your Team Code? Use the <a class="textlink" href="/clienthunt/search-team">team lookup page</a>. You do not need to register again.</p>
+
+          <div id="statusBanner" class="banner" role="status" hidden></div>
+
+          <form id="statusForm" novalidate>
+            <div class="inline-form two">
+              <div class="field" data-field="status.team_code">
+                <label for="stCode">Team Code</label>
+                <input type="text" id="stCode" maxlength="14" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-describedby="stCode-hint stCode-err" />
+                <p class="hint" id="stCode-hint">Looks like CH-26-AB23.</p>
+                <p class="err" id="stCode-err" hidden></p>
+              </div>
+              <div class="field" data-field="status.email">
+                <label for="stEmail">Email address</label>
+                <input type="email" id="stEmail" maxlength="254" autocomplete="off" aria-describedby="stEmail-err" />
+                <p class="err" id="stEmail-err" hidden></p>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary" id="stBtn"><span class="spinner" aria-hidden="true"></span><span>Check status</span></button>
+          </form>
+
+          <div id="statusResult" hidden style="margin-top:20px">
+            <dl class="facts">
+              <div><dt>Team Code</dt><dd id="srCode"></dd></div>
+              <div><dt>Team name</dt><dd id="srName"></dd></div>
+              <div><dt>Registration status</dt><dd id="srStatus"></dd></div>
+              <div><dt>Registered on</dt><dd id="srDate"></dd></div>
+            </dl>
+            <p class="banner warn" id="srNote"></p>
+          </div>
+
+          <form id="adminEdit" novalidate hidden style="margin-top:24px">
+            <p class="label">Edit team details</p>
+            <div id="aeFields"></div>
+            <button type="submit" class="btn btn-primary" id="aeBtn"><span class="spinner" aria-hidden="true"></span><span>Save changes</span></button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="confirmDlg" aria-labelledby="dlgTitle">
+    <h3 id="dlgTitle">Remove member details?</h3>
+    <p id="dlgText"></p>
+    <div class="btns">
+      <button type="button" class="btn btn-outline" id="dlgKeep">Keep my details</button>
+      <button type="button" class="btn btn-primary" id="dlgRemove">Remove them</button>
+    </div>
+  </dialog>
+
+  <footer>
+    <div class="container">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <div class="title">
+            <div class="brand-logo"><img src="/assets/images/logo.png" width="36" height="36" alt="" loading="lazy" onerror="this.outerHTML='<div class=\'brand-fallback\'>F</div>'" /></div>
+            ClientHunt
+          </div>
+          <p>Organized by Freelanthropy — Wings of Arthniti, under STC, IIT Patna (Hybrid).</p>
+        </div>
+        <div class="foot-links">
+          <div>
+            <h4>Competition</h4>
+            <ul>
+              <li><a href="/clienthunt">ClientHunt Home</a></li>
+              <li><a href="/clienthunt#format">Competition Format</a></li>
+              <li><a href="/clienthunt#rules">Rules</a></li>
+              <li><a href="/clienthunt#faq">FAQ</a></li>
+              <li><a href="/clienthunt/rulebook">Official Rulebook</a></li>
+              <li><a href="#registration" class="accent">Registration</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Freelanthropy</h4>
+            <ul>
+              <li><a href="/">Freelanthropy Homepage</a></li>
+              <li><a href="/join">Join the Club</a></li>
+              <li><a href="/collaborate">Collaborate</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Organization</h4>
+            <ul>
+              <li><a href="https://stciitphybrid.in/" target="_blank" rel="noopener">STC IIT Patna</a></li>
+              <li><a href="mailto:freelanthropy.iitpatna@gmail.com" class="accent">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <div>&copy; <span id="year">2026</span> Freelanthropy. All rights reserved.</div>
+        <div><a href="#main" id="footTop">Back to top</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#main" id="toTop" aria-label="Back to top">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"></path></svg>
+  </a>
+
+  <script>
+  (function () {
+    'use strict';
+    var API_URL = (window.CLIENTHUNT_CONFIG && window.CLIENTHUNT_CONFIG.API_URL) || '';
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var $ = function (id) { return document.getElementById(id); };
+
+    var COURSES = ['B.Tech', 'BS', 'BS-MS Dual Degree', 'B.Sc.', 'BBA', 'M.Tech', 'M.Sc.', 'MBA', 'PhD', 'Other'];
+    var SEMESTERS = ['1st Semester', '2nd Semester', '3rd Semester', '4th Semester', '5th Semester', '6th Semester', '7th Semester', '8th Semester', '9th Semester', '10th Semester'];
+
+    /* ---------- header, menu, back to top ---------- */
+    var y = $('year'); if (y) y.textContent = new Date().getFullYear();
+    var toggle = $('menuToggle'), menu = $('mobileMenu'), icon = $('menuIcon');
+    function setMenu(open) {
+      menu.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+      icon.setAttribute('d', open ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16');
+    }
+    toggle.addEventListener('click', function () { setMenu(!menu.classList.contains('open')); });
+    menu.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && menu.classList.contains('open')) { setMenu(false); toggle.focus(); }
+    });
+    window.addEventListener('resize', function () { if (window.innerWidth >= 1100) setMenu(false); });
+    var navbar = $('navbar'), toTop = $('toTop');
+    function onScroll() {
+      navbar.classList.toggle('scrolled', window.scrollY > 10);
+      toTop.classList.toggle('show', window.scrollY > 600);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+    function goTop(e) { e.preventDefault(); window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); }
+    toTop.addEventListener('click', goTop);
+    $('footTop').addEventListener('click', goTop);
+
+    /* ---------- state ---------- */
+    function emptyPerson() {
+      return { full_name: '', email: '', phone: '', courses: '', department: '', semester: '' };
+    }
+    var state = {
+      step: 1, size: 0, submitting: false, done: false,
+      team_name: '',
+      leader: emptyPerson(),
+      members: [emptyPerson(), emptyPerson(), emptyPerson()],
+      requestId: '', lastKey: ''
+    };
+    var server = { domains: [], min: 1, max: 4, open: true };
+
+    /* ---------- validation ---------- */
+    var NAME_RE = /^\p{L}[\p{L}\p{M}.'’\- ]{1,79}$/u;
+    var TEAM_RE = /^[\p{L}\p{N}][\p{L}\p{N}\p{M} .,&'’()\-_!:#]{1,59}$/u;
+    var DEPT_RE = /^[\p{L}\p{N}][\p{L}\p{N}\p{M} .,&'’()\-/]{1,99}$/u;
+    var EMAIL_RE = /^[a-z0-9][a-z0-9._%+\-]*@[a-z0-9](?:[a-z0-9\-]*[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9\-]*[a-z0-9])?)+$/;
+    var CODE_RE = /^[A-Z]{2,4}-[0-9]{2}-[A-Z0-9]{4}$/;
+
+    function sp(s) { return String(s == null ? '' : s).normalize('NFC').replace(/[\u0000-\u001f\u007f]/g, ' ').replace(/\s+/g, ' ').trim(); }
+    function emailKey(e) { e = sp(e).toLowerCase(); var at = e.lastIndexOf('@'); return at < 1 ? e : e.slice(0, at).split('+')[0] + e.slice(at); }
+    function phone10(v) {
+      var s = sp(v).replace(/[\s\-().]/g, '');
+      if (/^\+91/.test(s)) s = s.slice(3); else if (/^91\d{10}$/.test(s)) s = s.slice(2); else if (/^0\d{10}$/.test(s)) s = s.slice(1);
+      return /^[6-9]\d{9}$/.test(s) ? s : '';
+    }
+    function nameErr(v) {
+      v = sp(v);
+      if (!v) return 'Enter the full name.';
+      if (!NAME_RE.test(v)) return 'Use letters, spaces, hyphens, apostrophes or full stops only (2–80 characters).';
+      return '';
+    }
+    function emailErr(v) {
+      v = sp(v).toLowerCase();
+      if (!v) return 'Enter the IIT Patna institutional email address.';
+      if (v.length > 254 || !EMAIL_RE.test(v)) return 'Enter a valid email address.';
+      if (server.domains.length) {
+        var d = v.slice(v.lastIndexOf('@') + 1);
+        if (server.domains.indexOf(d) === -1) return 'Use your IIT Patna institutional email address (@' + server.domains.join(' or @') + ').';
+      }
+      return '';
+    }
+    function coursesErr(v) {
+      return sp(v) ? '' : 'Select a course.';
+    }
+    function deptErr(v) {
+      v = sp(v);
+      if (!v) return 'Enter the department.';
+      if (!DEPT_RE.test(v)) return 'Enter a valid department name (2–100 characters).';
+      return '';
+    }
+    function semErr(v) {
+      return sp(v) ? '' : 'Select a semester.';
+    }
+
+    function step1Errors() {
+      var e = {};
+      var tn = sp(state.team_name);
+      if (!tn) e.team_name = 'Enter your team name.';
+      else if (!TEAM_RE.test(tn)) e.team_name = 'Use 2–60 characters, starting with a letter or number. Letters, numbers, spaces and . , & \' ( ) - _ ! : # are allowed.';
+      if (!state.size) e.team_size = 'Choose how many people are in your team.';
+      var a = nameErr(state.leader.full_name); if (a) e['leader.full_name'] = a;
+      var b = emailErr(state.leader.email); if (b) e['leader.email'] = b;
+      if (!phone10(state.leader.phone)) e['leader.phone'] = 'Enter a valid 10-digit Indian mobile number.';
+      var c = coursesErr(state.leader.courses); if (c) e['leader.courses'] = c;
+      var d = deptErr(state.leader.department); if (d) e['leader.department'] = d;
+      var s = semErr(state.leader.semester); if (s) e['leader.semester'] = s;
+      return e;
+    }
+    function step2Errors() {
+      var e = {}, seen = {};
+      if (!emailErr(state.leader.email)) seen[emailKey(state.leader.email)] = 'leader';
+      for (var i = 0; i < state.size - 1; i++) {
+        var m = state.members[i];
+        var n = nameErr(m.full_name); if (n) e['members.' + i + '.full_name'] = n;
+        if (!phone10(m.phone)) e['members.' + i + '.phone'] = 'Enter a valid 10-digit Indian mobile number.';
+        var c = coursesErr(m.courses); if (c) e['members.' + i + '.courses'] = c;
+        var d = deptErr(m.department); if (d) e['members.' + i + '.department'] = d;
+        var s = semErr(m.semester); if (s) e['members.' + i + '.semester'] = s;
+        var em = emailErr(m.email);
+        if (em) { e['members.' + i + '.email'] = em; continue; }
+        var k = emailKey(m.email);
+        if (seen[k] === 'leader') e['members.' + i + '.email'] = 'This is the team leader’s email address. Each member needs their own.';
+        else if (seen[k]) e['members.' + i + '.email'] = 'This email address is used more than once in your team.';
+        else seen[k] = 'm' + i;
+      }
+      return e;
+    }
+    function declErrors() {
+      var ok = $('d-eligibility').checked && $('d-consent').checked && $('d-accuracy').checked && $('d-rules').checked;
+      return ok ? {} : { declarations: 'Please accept all four declarations to submit.' };
+    }
+    function stepOf(key) {
+      if (key === 'declarations') return 3;
+      if (key.indexOf('members') === 0) return 2;
+      return 1;
+    }
+
+    /* ---------- error display ---------- */
+    function fieldWrap(key) { return document.querySelector('[data-field="' + key + '"]'); }
+    function clearErrors(scope) {
+      (scope || document).querySelectorAll('[data-field]').forEach(function (w) {
+        var err = w.querySelector('.err'); if (err) { err.hidden = true; err.textContent = ''; }
+        w.querySelectorAll('input,select').forEach(function (i) { i.removeAttribute('aria-invalid'); });
+        var seg = w.querySelector('.seg'); if (seg) seg.classList.remove('invalid');
+      });
+    }
+    function showFieldError(key, msg) {
+      var w = fieldWrap(key); if (!w) return null;
+      var err = w.querySelector('.err'); if (err) { err.textContent = msg; err.hidden = false; }
+      var inputs = w.querySelectorAll('input,select');
+      inputs.forEach(function (i) { i.setAttribute('aria-invalid', 'true'); });
+      var seg = w.querySelector('.seg'); if (seg) seg.classList.add('invalid');
+      return inputs[0] || null;
+    }
+    function showErrors(errors, step) {
+      var keys = Object.keys(errors).filter(function (k) { return stepOf(k) === step; });
+      var sum = $('errsum-' + step);
+      var firstEl = null, items = [];
+      keys.forEach(function (k) {
+        var el = showFieldError(k, errors[k]);
+        if (!firstEl) firstEl = el;
+        items.push({ msg: errors[k], el: el });
+      });
+      if (!keys.length) { sum.hidden = true; return; }
+      sum.innerHTML = '';
+      var strong = document.createElement('strong');
+      strong.textContent = keys.length === 1 ? 'Please fix 1 thing to continue:' : 'Please fix ' + keys.length + ' things to continue:';
+      sum.appendChild(strong);
+      var ul = document.createElement('ul');
+      items.forEach(function (it) {
+        var li = document.createElement('li');
+        var a = document.createElement('a'); a.href = '#'; a.textContent = it.msg;
+        a.addEventListener('click', function (ev) { ev.preventDefault(); if (it.el) it.el.focus(); });
+        li.appendChild(a); ul.appendChild(li);
+      });
+      sum.appendChild(ul);
+      sum.hidden = false;
+      sum.focus();
+    }
+    function hideSummaries() { [1, 2, 3].forEach(function (n) { $('errsum-' + n).hidden = true; }); }
+
+    /* ---------- stepper & panels ---------- */
+    function renderSteps() {
+      var lis = $('steps').querySelectorAll('li');
+      lis.forEach(function (li, i) {
+        var n = i + 1, sn = li.querySelector('.sn');
+        li.classList.toggle('is-current', n === state.step);
+        li.classList.toggle('is-done', n < state.step);
+        if (n === state.step) li.setAttribute('aria-current', 'step'); else li.removeAttribute('aria-current');
+        sn.textContent = n < state.step ? '✓' : String(n);
+        var vh = li.querySelector('.vh'); if (vh) vh.remove();
+        if (n < state.step || n === state.step) {
+          var s = document.createElement('span'); s.className = 'vh';
+          s.textContent = n < state.step ? ' (completed)' : ' (current step)';
+          li.appendChild(s);
+        }
+      });
+    }
+    function goTo(n, focus) {
+      state.step = n;
+      [1, 2, 3].forEach(function (i) { $('panel-' + i).hidden = i !== n; });
+      if (n === 2) renderMembers();
+      if (n === 3) renderReview();
+      renderSteps();
+      $('formCard').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      if (focus !== false) setTimeout(function () { $('h-' + n).focus({ preventScroll: true }); }, 30);
+    }
+
+    /* ---------- step 1 wiring ---------- */
+    $('teamName').addEventListener('input', function (e) { state.team_name = e.target.value; });
+    $('leaderName').addEventListener('input', function (e) { state.leader.full_name = e.target.value; });
+    $('leaderEmail').addEventListener('input', function (e) { state.leader.email = e.target.value; });
+    $('leaderPhone').addEventListener('input', function (e) { state.leader.phone = e.target.value; });
+    $('leaderCourses').addEventListener('change', function (e) { state.leader.courses = e.target.value; });
+    $('leaderDept').addEventListener('input', function (e) { state.leader.department = e.target.value; });
+    $('leaderSem').addEventListener('change', function (e) { state.leader.semester = e.target.value; });
+
+    var dlg = $('confirmDlg'), dlgResolve = null;
+    function askRemove(names) {
+      return new Promise(function (resolve) {
+        $('dlgText').textContent = 'Reducing your team size will remove the details you entered for ' + names.join(' and ') + '. This cannot be undone.';
+        if (typeof dlg.showModal === 'function') { dlgResolve = resolve; dlg.showModal(); $('dlgKeep').focus(); }
+        else resolve(window.confirm($('dlgText').textContent + ' Remove them?'));
+      });
+    }
+    function closeDlg(result) { if (dlg.open) dlg.close(); if (dlgResolve) { var r = dlgResolve; dlgResolve = null; r(result); } }
+    $('dlgKeep').addEventListener('click', function () { closeDlg(false); });
+    $('dlgRemove').addEventListener('click', function () { closeDlg(true); });
+    dlg.addEventListener('cancel', function (e) { e.preventDefault(); closeDlg(false); });
+
+    function hasMemberData(m) {
+      return !!(sp(m.full_name) || sp(m.email) || sp(m.phone) || sp(m.courses) || sp(m.department) || sp(m.semester));
+    }
+
+    document.querySelectorAll('input[name="size"]').forEach(function (r) {
+      r.addEventListener('change', function () {
+        var next = Number(r.value), prev = state.size;
+        var w = fieldWrap('team_size'); var er = w.querySelector('.err'); er.hidden = true; w.querySelector('.seg').classList.remove('invalid');
+        if (prev && next < prev) {
+          var doomed = [];
+          for (var i = next - 1; i < prev - 1; i++) {
+            if (hasMemberData(state.members[i])) doomed.push('Member ' + (i + 2));
+          }
+          if (doomed.length) {
+            askRemove(doomed).then(function (yes) {
+              if (yes) {
+                for (var j = next - 1; j < 3; j++) state.members[j] = emptyPerson();
+                state.size = next;
+              } else {
+                var back = document.querySelector('input[name="size"][value="' + prev + '"]'); if (back) back.checked = true;
+              }
+            });
+            return;
+          }
+        }
+        state.size = next;
+      });
+    });
+
+    /* ---------- step 2 ---------- */
+    function el(tag, attrs, text) {
+      var n = document.createElement(tag);
+      Object.keys(attrs || {}).forEach(function (k) { n.setAttribute(k, attrs[k]); });
+      if (text != null) n.textContent = text;
+      return n;
+    }
+    function memberField(i, kind) {
+      var labels = {
+        full_name: 'Full name ',
+        email: 'IIT Patna institutional email ',
+        phone: 'Mobile number ',
+        courses: 'Courses ',
+        department: 'Department ',
+        semester: 'Semester '
+      };
+      var ids = {
+        full_name: 'm' + i + 'Name',
+        email: 'm' + i + 'Email',
+        phone: 'm' + i + 'Phone',
+        courses: 'm' + i + 'Courses',
+        department: 'm' + i + 'Dept',
+        semester: 'm' + i + 'Sem'
+      };
+      var key = 'members.' + i + '.' + kind;
+      var id = ids[kind];
+      var wrap = el('div', { 'class': 'field', 'data-field': key });
+      var lab = el('label', { 'for': id }, labels[kind]);
+      lab.appendChild(el('span', { 'class': 'req', 'aria-hidden': 'true' }, '*'));
+      wrap.appendChild(lab);
+
+      if (kind === 'courses' || kind === 'semester') {
+        var sel = el('select', { id: id, 'aria-required': 'true', 'aria-describedby': id + '-err' });
+        sel.appendChild(el('option', { value: '' }, kind === 'courses' ? 'Select course' : 'Select'));
+        (kind === 'courses' ? COURSES : SEMESTERS).forEach(function (opt) {
+          var o = el('option', { value: opt }, opt);
+          if (state.members[i][kind] === opt) o.selected = true;
+          sel.appendChild(o);
+        });
+        sel.addEventListener('change', function (e) { state.members[i][kind] = e.target.value; });
+        wrap.appendChild(sel);
+      } else {
+        var isName = kind === 'full_name', isPhone = kind === 'phone', isDept = kind === 'department';
+        var attrs = {
+          type: isPhone ? 'tel' : (isName || isDept) ? 'text' : 'email',
+          id: id,
+          maxlength: isDept ? '100' : isName ? '80' : isPhone ? '16' : '254',
+          autocomplete: 'off',
+          'aria-required': 'true',
+          'aria-describedby': id + '-err'
+        };
+        if (isDept) attrs.placeholder = 'e.g. Computer Science & Data Analytics';
+        var input = el('input', attrs);
+        if (!isName && !isDept) input.setAttribute('inputmode', isPhone ? 'tel' : 'email');
+        input.value = state.members[i][kind];
+        input.addEventListener('input', function (e) { state.members[i][kind] = e.target.value; });
+
+        if (isPhone) {
+          var pw = el('div', { 'class': 'phone-wrap' });
+          pw.appendChild(el('span', { 'class': 'pre', 'aria-hidden': 'true' }, '+91'));
+          pw.appendChild(input);
+          wrap.appendChild(pw);
+        } else {
+          wrap.appendChild(input);
+        }
+      }
+
+      wrap.appendChild(Object.assign(el('p', { 'class': 'err', id: id + '-err' }), { hidden: true }));
+      return wrap;
+    }
+    function renderMembers() {
+      var box = $('memberFields'); box.innerHTML = '';
+      var lMeta = [sp(state.leader.courses), sp(state.leader.department), sp(state.leader.semester)].filter(Boolean).join(' · ');
+      $('leaderEcho').textContent = 'Member 1: ' + (sp(state.leader.full_name) || 'team leader') + (lMeta ? ' (' + lMeta + ')' : ' (team leader)');
+      if (state.size <= 1) {
+        box.appendChild(el('p', { 'class': 'solo-note' }, 'Your team has one member: you. There is nobody else to add. Continue to review.'));
+        return;
+      }
+      for (var i = 0; i < state.size - 1; i++) {
+        var fs = el('fieldset', { 'class': 'member' });
+        var lg = el('legend'); lg.appendChild(el('span', { 'class': 'badge', 'aria-hidden': 'true' }, String(i + 2))); lg.appendChild(document.createTextNode('Member ' + (i + 2)));
+        fs.appendChild(lg);
+
+        var row1 = el('div', { 'class': 'row2' });
+        row1.appendChild(memberField(i, 'full_name'));
+        row1.appendChild(memberField(i, 'email'));
+        fs.appendChild(row1);
+
+        var row2 = el('div', { 'class': 'row2' });
+        row2.appendChild(memberField(i, 'phone'));
+        fs.appendChild(row2);
+
+        var row3 = el('div', { 'class': 'row3' });
+        row3.appendChild(memberField(i, 'courses'));
+        row3.appendChild(memberField(i, 'department'));
+        row3.appendChild(memberField(i, 'semester'));
+        fs.appendChild(row3);
+
+        box.appendChild(fs);
+      }
+    }
+
+    /* ---------- step 3 ---------- */
+    function kv(dl, k, v) {
+      var d = el('div', { 'class': 'kv' }); d.appendChild(el('dt', {}, k)); d.appendChild(el('dd', {}, v)); dl.appendChild(d);
+    }
+    function renderReview() {
+      var t = $('rvTeam'); t.innerHTML = '';
+      kv(t, 'Team name', sp(state.team_name));
+      kv(t, 'Team size', String(state.size) + (state.size === 1 ? ' member' : ' members'));
+      kv(t, 'Team leader', sp(state.leader.full_name));
+      kv(t, 'Leader’s email', sp(state.leader.email).toLowerCase());
+      kv(t, 'Leader’s mobile', '+91 ' + phone10(state.leader.phone));
+      kv(t, 'Leader’s academics', [sp(state.leader.courses), sp(state.leader.department), sp(state.leader.semester)].join(' · '));
+      kv(t, 'Institution', 'Indian Institute of Technology Patna');
+
+      var ol = $('rvMembers'); ol.innerHTML = '';
+      function person(n, p, role) {
+        var li = el('li');
+        li.appendChild(el('strong', {}, 'Member ' + n + (role ? ' · ' + role : '') + ': ' + sp(p.full_name)));
+        li.appendChild(el('small', {}, sp(p.email).toLowerCase() + ' · +91 ' + phone10(p.phone)));
+        li.appendChild(el('small', {}, [sp(p.courses), sp(p.department), sp(p.semester)].join(' · ')));
+        ol.appendChild(li);
+      }
+      person(1, state.leader, 'Team leader');
+      for (var i = 0; i < state.size - 1; i++) person(i + 2, state.members[i], '');
+      var configured = !!API_URL;
+      $('apiBanner').hidden = configured;
+    }
+    document.querySelectorAll('[data-goto]').forEach(function (b) { b.addEventListener('click', function () { goTo(Number(b.getAttribute('data-goto'))); }); });
+    document.querySelectorAll('[data-prev]').forEach(function (b) { b.addEventListener('click', function () { hideSummaries(); goTo(Number(b.getAttribute('data-prev'))); }); });
+    document.querySelectorAll('[data-next]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var to = Number(b.getAttribute('data-next'));
+        clearErrors($('panel-' + (to - 1)));
+        var errs = to === 2 ? step1Errors() : step2Errors();
+        if (Object.keys(errs).length) { showErrors(errs, to - 1); return; }
+        $('errsum-' + (to - 1)).hidden = true;
+        goTo(to);
+      });
+    });
+
+    /* ---------- API ---------- */
+    function uuid() {
+      if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+      var a = new Uint8Array(16); (window.crypto || window.msCrypto).getRandomValues(a);
+      return Array.prototype.map.call(a, function (b) { return ('0' + b.toString(16)).slice(-2); }).join('');
+    }
+    function api(payload, ms) {
+      if (!API_URL) return Promise.reject({ code: 'NOT_CONFIGURED' });
+      var ctl = new AbortController();
+      var timer = setTimeout(function () { ctl.abort(); }, ms || 45000);
+      return fetch(API_URL, {
+        method: 'POST', redirect: 'follow', signal: ctl.signal,
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload)
+      }).then(function (res) { return res.text(); }).then(function (txt) {
+        clearTimeout(timer);
+        try { return JSON.parse(txt); } catch (e) { throw { code: 'BAD_RESPONSE' }; }
+      }).catch(function (err) { clearTimeout(timer); throw (err && err.code ? err : { code: 'NETWORK' }); });
+    }
+
+    /* ---------- registration state ---------- */
+    var cfgTimer = null, tickTimer = null, clockOffset = 0, firstLoad = true;
+    function nowServer() { return Date.now() + clockOffset; }
+    function showOnly(which) {
+      document.documentElement.classList.remove('cfg-wait');
+      $('formCard').hidden = which !== 'form';
+      $('closedCard').hidden = which !== 'closed';
+      $('notStartedCard').hidden = which !== 'soon';
+    }
+    function fmtWhen(ms) {
+      try {
+        return new Intl.DateTimeFormat('en-IN', { weekday: 'short', day: 'numeric', month: 'long', year: 'numeric', hour: 'numeric', minute: '2-digit', timeZone: 'Asia/Kolkata' }).format(new Date(ms)) + ' IST';
+      } catch (e) { return new Date(ms).toISOString(); }
+    }
+    function fmtIn(ms) {
+      var m = Math.floor(ms / 60000);
+      if (m < 1) return 'in less than a minute';
+      var d = Math.floor(m / 1440), h = Math.floor((m % 1440) / 60), mi = m % 60;
+      function u(n, w) { return n + ' ' + w + (n === 1 ? '' : 's'); }
+      if (d) return 'in ' + u(d, 'day') + (h ? ' ' + u(h, 'hour') : '');
+      if (h) return 'in ' + u(h, 'hour') + (mi ? ' ' + u(mi, 'minute') : '');
+      return 'in ' + u(mi, 'minute');
+    }
+    function renderSoon(opensAt) {
+      var box = $('nsWhenBox');
+      if (typeof opensAt === 'number') {
+        $('nsText').textContent = 'Registration opens at the date and time below. This page will open the form automatically; you do not need to refresh.';
+        $('nsWhen').textContent = fmtWhen(opensAt);
+        $('nsIn').textContent = opensAt > nowServer() ? fmtIn(opensAt - nowServer()) : 'any moment now';
+        box.hidden = false;
+      } else {
+        $('nsText').textContent = 'The Organising Team has not opened registration yet. Please check back soon. This page will update by itself when it opens.';
+        box.hidden = true;
+      }
+    }
+    function applyConfig(c) {
+      if (state.done) return;
+      server.domains = (c.allowed_email_domains || []).map(String);
+      server.min = c.min_team_size; server.max = c.max_team_size;
+      if (typeof c.server_time === 'number') clockOffset = c.server_time - Date.now();
+      var rs = c.registration_state || (c.registration_open === false ? 'CLOSED' : 'OPEN');
+      clearTimeout(cfgTimer); clearInterval(tickTimer);
+      var wasForm = !$('formCard').hidden;
+      if (rs === 'OPEN') {
+        server.open = true; showOnly('form');
+        $('cfgBanner').hidden = true;
+      } else if (rs === 'NOT_STARTED') {
+        server.open = false; showOnly('soon'); renderSoon(c.opens_at);
+        tickTimer = setInterval(function () { renderSoon(c.opens_at); }, 30000);
+        var wait = typeof c.opens_at === 'number' ? Math.max(1000, c.opens_at - nowServer()) + Math.floor(Math.random() * 3000) : 120000;
+        cfgTimer = setTimeout(function () { loadConfig(); }, Math.min(wait, 6 * 3600 * 1000));
+      } else {
+        server.open = false; showOnly('closed');
+      }
+      if (wasForm && rs !== 'OPEN') window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+    }
+    function loadConfig() {
+      if (!API_URL) return;
+      var ctl0 = new AbortController(); var t0 = setTimeout(function () { ctl0.abort(); }, 8000);
+      fetch(API_URL + (API_URL.indexOf('?') > -1 ? '&' : '?') + 'action=config', { cache: 'no-store', signal: ctl0.signal })
+        .then(function (r) { return r.json(); })
+        .then(function (c) {
+          clearTimeout(t0); firstLoad = false;
+          if (c && c.success) applyConfig(c);
+          else if (!state.done) { showOnly('form'); $('cfgBanner').hidden = false; }
+        })
+        .catch(function () {
+          clearTimeout(t0);
+          if (firstLoad) { firstLoad = false; showOnly('form'); $('cfgBanner').hidden = false; }
+          else { clearTimeout(cfgTimer); cfgTimer = setTimeout(loadConfig, 30000); }
+        });
+    }
+    loadConfig();
+    document.addEventListener('visibilitychange', function () { if (!document.hidden && !$('notStartedCard').hidden) loadConfig(); });
+
+    /* ---------- submit ---------- */
+    function serializePerson(p) {
+      return {
+        full_name: sp(p.full_name),
+        email: sp(p.email).toLowerCase(),
+        phone: phone10(p.phone),
+        courses: sp(p.courses),
+        department: sp(p.department),
+        semester: sp(p.semester)
+      };
+    }
+    function buildPayload() {
+      var members = [];
+      for (var i = 0; i < state.size - 1; i++) members.push(serializePerson(state.members[i]));
+      return {
+        action: 'register',
+        team_name: sp(state.team_name),
+        team_size: state.size,
+        leader: serializePerson(state.leader),
+        members: members,
+        declarations: {
+          eligibility: $('d-eligibility').checked,
+          participation_consent: $('d-consent').checked,
+          information_accuracy: $('d-accuracy').checked,
+          rules_acceptance: $('d-rules').checked
+        },
+        hp: $('hp').value
+      };
+    }
+    function setSubmitting(on) {
+      state.submitting = on;
+      var b = $('submitBtn');
+      b.disabled = on; b.classList.toggle('is-loading', on); b.setAttribute('aria-busy', String(on));
+      $('submitLabel').textContent = on ? 'Submitting…' : 'Submit Team Registration';
+      $('backFrom3').disabled = on;
+      document.querySelectorAll('[data-goto]').forEach(function (x) { x.disabled = on; });
+    }
+    function banner(msg, actions) {
+      var b = $('submitBanner'); b.innerHTML = '';
+      b.appendChild(document.createTextNode(msg));
+      if (actions && actions.length) {
+        var row = el('div', { 'class': 'row-actions' });
+        actions.forEach(function (a) { row.appendChild(a); });
+        b.appendChild(row);
+      }
+      b.hidden = false; b.focus();
+    }
+    function actionBtn(label, fn, primary) {
+      var b = el('button', { type: 'button', 'class': 'btn ' + (primary ? 'btn-primary' : 'btn-outline') }, label);
+      b.addEventListener('click', fn); return b;
+    }
+
+    $('regForm').addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      if (state.submitting || state.done) return;
+      $('submitBanner').hidden = true;
+      clearErrors($('regForm'));
+      var all = {}, e1 = step1Errors(), e2 = step2Errors(), e3 = declErrors();
+      Object.keys(e1).forEach(function (k) { all[k] = e1[k]; });
+      Object.keys(e2).forEach(function (k) { all[k] = e2[k]; });
+      Object.keys(e3).forEach(function (k) { all[k] = e3[k]; });
+      var keys = Object.keys(all);
+      if (keys.length) {
+        var earliest = Math.min.apply(null, keys.map(stepOf));
+        if (earliest !== state.step) goTo(earliest, false);
+        showErrors(all, earliest);
+        return;
+      }
+      if (!API_URL) {
+        banner('Registration is not open yet, so nothing was submitted. Please check back soon.');
+        return;
+      }
+      var payload = buildPayload();
+      var key = JSON.stringify(payload);
+      if (key !== state.lastKey) { state.lastKey = key; state.requestId = uuid(); }
+      payload.client_request_id = state.requestId;
+
+      setSubmitting(true);
+      api(payload).then(function (res) {
+        setSubmitting(false);
+        if (res && res.success === true && typeof res.team_code === 'string' && CODE_RE.test(res.team_code)) return showSuccess(res, payload);
+        handleFailure(res);
+      }).catch(function (err) {
+        setSubmitting(false);
+        var retry = actionBtn('Try again', function () { submitForm(); }, true);
+        var status = actionBtn('Check registration status', function () { $('status').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' }); $('stCode').focus({ preventScroll: true }); }, false);
+        if (err && err.code === 'NOT_CONFIGURED') { banner('Registration is not open yet, so nothing was submitted.'); return; }
+        banner('We could not confirm whether your registration was received. It may have been saved. Press “Try again” (this is safe and will not create a second registration) or check your registration status. No email is sent, so use the team lookup page to check whether your team is registered.', [retry, status]);
+      });
+    });
+
+    function submitForm() {
+      var f = $('regForm');
+      if (f.requestSubmit) f.requestSubmit(); else f.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
+    }
+
+    function handleFailure(res) {
+      res = res || {};
+      var code = res.error_code, msg = res.message || 'Something went wrong. Please try again.';
+      if ((code === 'VALIDATION_ERROR' || code === 'DUPLICATE_MEMBER') && res.errors) {
+        var errs = res.errors, keys = Object.keys(errs).filter(function (k) { return k !== '_form'; });
+        if (keys.length) {
+          var earliest = Math.min.apply(null, keys.map(stepOf));
+          goTo(earliest, false);
+          showErrors(errs, earliest);
+          if (code === 'DUPLICATE_MEMBER') {
+            $('errsum-' + earliest).querySelector('strong').textContent = 'One or more email addresses are already registered with another team:';
+          }
+          return;
+        }
+      }
+      if (code === 'REGISTRATION_CLOSED') { showOnly('closed'); $('closedCard').scrollIntoView(); loadConfig(); return; }
+      if (code === 'REGISTRATION_NOT_STARTED') { showOnly('soon'); renderSoon(null); window.scrollTo({ top: 0 }); loadConfig(); return; }
+      if (code === 'ALREADY_REGISTERED') {
+        banner(msg, [actionBtn('Check registration status', function () { $('status').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' }); $('stCode').focus({ preventScroll: true }); }, true)]);
+        return;
+      }
+      banner(msg, (code === 'RATE_LIMITED' || code === 'SERVER_BUSY' || code === 'INTERNAL_ERROR' || code === 'BAD_RESPONSE')
+        ? [actionBtn('Try again', function () { submitForm(); }, true)] : []);
+    }
+
+    function showSuccess(res, payload) {
+      state.done = true;
+      window.removeEventListener('beforeunload', warnLeave);
+      showOnly('none'); clearTimeout(cfgTimer); clearInterval(tickTimer);
+      $('okCode').textContent = res.team_code;
+      $('okName').textContent = payload.team_name;
+      $('okStatus').textContent = res.registration_status || 'REGISTERED';
+      state.leader = emptyPerson();
+      state.members = [emptyPerson(), emptyPerson(), emptyPerson()];
+      $('successCard').hidden = false;
+      $('successCard').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      $('successTitle').focus({ preventScroll: true });
+      $('stCode').value = res.team_code;
+    }
+
+    $('copyBtn').addEventListener('click', function () {
+      var code = $('okCode').textContent, live = $('copyLive'), btn = $('copyBtn');
+      function done(ok) {
+        live.textContent = ok ? 'Team Code copied.' : 'Could not copy. Please select and copy the code manually.';
+        btn.textContent = ok ? 'Copied ✓' : 'Copy Team Code';
+        setTimeout(function () { btn.textContent = 'Copy Team Code'; }, 2200);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(code).then(function () { done(true); }, function () { done(false); });
+      else {
+        try { var r = document.createRange(); r.selectNodeContents($('okCode')); var s = getSelection(); s.removeAllRanges(); s.addRange(r); done(document.execCommand('copy')); } catch (e) { done(false); }
+      }
+    });
+
+    function warnLeave(e) {
+      if (!state.done && (sp(state.team_name) || hasMemberData(state.leader) || state.members.some(hasMemberData))) {
+        e.preventDefault(); e.returnValue = '';
+      }
+    }
+    window.addEventListener('beforeunload', warnLeave);
+
+    /* ---------- status / recovery ---------- */
+    var st = { code: '', email: '' };
+    function stBanner(msg, kind) { var b = $('statusBanner'); b.className = 'banner ' + (kind || 'good'); b.textContent = msg; b.hidden = false; }
+    function busy(btn, on) { btn.disabled = on; btn.classList.toggle('is-loading', on); }
+
+    function aeField(wrap, key, label, value, type, max) {
+      var f = document.createElement('div'); f.className = 'field';
+      var l = document.createElement('label'); l.setAttribute('for', 'ae-' + key); l.textContent = label;
+      var i = document.createElement('input'); i.type = type || 'text'; i.id = 'ae-' + key; i.value = value || ''; i.maxLength = max || 80; i.autocomplete = 'off'; i.setAttribute('data-key', key);
+      var e = document.createElement('p'); e.className = 'err'; e.id = 'ae-' + key + '-err'; e.hidden = true;
+      i.setAttribute('aria-describedby', e.id);
+      f.appendChild(l); f.appendChild(i); f.appendChild(e); wrap.appendChild(f);
+    }
+    function buildAdminEdit(team) {
+      var w = $('aeFields'); w.textContent = '';
+      aeField(w, 'team_name', 'Team name', team.team_name, 'text', 60);
+      team.members.forEach(function (m, i) {
+        var h = document.createElement('p'); h.className = 'hint'; h.textContent = m.member_number === 1 ? 'Team leader' : 'Member ' + m.member_number; w.appendChild(h);
+        var row = document.createElement('div'); row.className = 'inline-form two'; w.appendChild(row);
+        aeField(row, 'members.' + i + '.full_name', 'Full name', m.full_name, 'text', 80);
+        aeField(row, 'members.' + i + '.email', 'Email', m.email, 'email', 254);
+        aeField(row, 'members.' + i + '.phone', 'Mobile', m.phone, 'tel', 20);
+        aeField(row, 'members.' + i + '.courses', 'Courses', m.courses || m.course, 'text', 60);
+        aeField(row, 'members.' + i + '.department', 'Department', m.department, 'text', 100);
+        aeField(row, 'members.' + i + '.semester', 'Semester', m.semester, 'text', 30);
+        $('ae-members.' + i + '.full_name').setAttribute('data-num', m.member_number);
+      });
+      $('adminEdit').hidden = false;
+    }
+    function aeErrors(map) {
+      Array.prototype.forEach.call($('aeFields').querySelectorAll('.err'), function (e) { e.hidden = true; e.textContent = ''; });
+      Object.keys(map || {}).forEach(function (k) { var e = document.getElementById('ae-' + k + '-err'); if (e) { e.textContent = map[k]; e.hidden = false; } });
+    }
+    function showStatus(r) {
+      $('srCode').textContent = r.team_code; $('srName').textContent = r.team_name;
+      $('srStatus').textContent = r.registration_status; $('srDate').textContent = r.registered_on;
+      $('srNote').textContent = r.note || 'Please save these details.';
+      $('statusResult').hidden = false;
+    }
+
+    $('statusForm').addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      clearErrors($('statusForm')); $('statusBanner').hidden = true; $('statusResult').hidden = true; $('adminEdit').hidden = true;
+      var code = sp($('stCode').value).toUpperCase(), email = sp($('stEmail').value).toLowerCase(), bad = false;
+      if (!CODE_RE.test(code)) { showFieldError('status.team_code', 'Enter your Team Code, for example CH-26-AB23.'); bad = true; }
+      if (!EMAIL_RE.test(email)) { showFieldError('status.email', 'Enter an email address.'); bad = true; }
+      if (bad) return;
+      if (!API_URL) { stBanner('Registration is not open yet, so status checks are not available.', 'warn'); return; }
+      var b = $('stBtn'); busy(b, true);
+      api({ action: 'status_check', team_code: code, email: email }, 30000).then(function (r) {
+        busy(b, false);
+        if (r && r.success && typeof r.team_code === 'string' && CODE_RE.test(r.team_code)) {
+          st.code = code; st.email = email;
+          showStatus(r);
+          if (r.admin && r.editing_enabled && r.team) buildAdminEdit(r.team);
+        } else stBanner((r && r.message) || 'Something went wrong. Please try again.', r && r.error_code === 'RATE_LIMITED' ? 'warn' : 'bad');
+      }).catch(function () { busy(b, false); stBanner('We could not reach the server. Please check your connection and try again.', 'bad'); });
+    });
+
+    $('adminEdit').addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      aeErrors({}); $('statusBanner').hidden = true;
+      var members = [];
+      $('aeFields').querySelectorAll('input[data-num]').forEach(function (nameEl) {
+        var base = nameEl.getAttribute('data-key').replace(/\.full_name$/, '');
+        members.push({
+          member_number: Number(nameEl.getAttribute('data-num')),
+          full_name: nameEl.value,
+          email: $('ae-' + base + '.email').value,
+          phone: $('ae-' + base + '.phone').value,
+          courses: $('ae-' + base + '.courses').value,
+          department: $('ae-' + base + '.department').value,
+          semester: $('ae-' + base + '.semester').value
+        });
+      });
+      var b = $('aeBtn'); busy(b, true);
+      api({ action: 'admin_update', team_code: st.code, email: st.email, changes: { team_name: $('ae-team_name').value, members: members } }, 30000).then(function (r) {
+        busy(b, false);
+        if (r && r.success) {
+          if (r.team) buildAdminEdit(r.team);
+          if (r.team_name) $('srName').textContent = r.team_name;
+          stBanner(r.message || 'Saved.', 'good');
+        } else {
+          if (r && r.errors) aeErrors(r.errors);
+          stBanner((r && r.message) || 'Something went wrong. Please try again.', r && (r.error_code === 'EDITING_DISABLED' || r.error_code === 'RATE_LIMITED') ? 'warn' : 'bad');
+          if (r && r.error_code === 'EDITING_DISABLED') $('adminEdit').hidden = true;
+        }
+      }).catch(function () { busy(b, false); stBanner('We could not reach the server. Please check your connection and try again.', 'bad'); });
+    });
+
+    /* ---------- init ---------- */
+    renderSteps();
+    $('apiBanner').hidden = !!API_URL;
+  })();
+  </script>
+</body>
+</html>

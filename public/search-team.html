@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>Find Your Team | ClientHunt</title>
+  <meta name="description" content="Enter your email address to view your ClientHunt Team Code, team name, and registered team member details." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="/assets/images/logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>window.CLIENTHUNT_CONFIG = { API_URL: "/api" };</script>
+
+  <style>
+    :root {
+      --blue:#1a73e8; --blue-dark:#1557b0; --blue-surface:#e8f0fe;
+      --red:#ea4335; --red-dark:#c5221f; --red-surface:#fce8e6;
+      --yellow:#fbbc04; --yellow-surface:#fef7e0;
+      --green:#34a853; --green-dark:#137333; --green-surface:#e6f4ea;
+      --text:#202124; --text-2:#5f6368; --border:#dadce0; --surface:#f8f9fa; --white:#fff;
+      --radius:16px;
+      --font:'Google Sans','Product Sans','Inter','Roboto',system-ui,sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-padding-top:5rem}
+    @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+    body{font-family:var(--font);color:var(--text);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    ul,ol{list-style:none}
+    ::selection{background:var(--blue-surface);color:var(--blue-dark)}
+    :focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:8px}
+    .container{max-width:1120px;margin:0 auto;padding:0 24px}
+    .skip{position:absolute;left:-999px;top:8px;background:var(--blue);color:#fff;padding:10px 18px;border-radius:8px;z-index:100}
+    .skip:focus{left:8px}
+    .vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+    header{position:fixed;inset:0 0 auto 0;z-index:50;height:64px;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);transition:box-shadow .2s}
+    header.scrolled{box-shadow:0 1px 3px rgba(60,64,67,.15)}
+    .nav{height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .brand-logo{flex:none;width:36px;height:36px;border-radius:8px;overflow:hidden;border:1px solid var(--border);background:#fff;display:flex;align-items:center;justify-content:center}
+    .brand-logo img{width:100%;height:100%;object-fit:contain}
+    .brand-fallback{width:100%;height:100%;background:var(--blue);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+    .brand-name{font-weight:500;font-size:1.05rem;line-height:1.2}
+    .brand-sub{font-size:.68rem;color:var(--text-2)}
+    .nav-links{display:none;align-items:center;gap:2px}
+    .nav-links a{padding:8px 12px;border-radius:999px;font-size:.86rem;font-weight:500;color:var(--text-2);transition:background .2s,color .2s}
+    .nav-links a:hover{background:var(--surface);color:var(--text)}
+    .nav-links a.btn-nav{background:var(--blue);color:#fff;margin-left:8px;padding:9px 20px}
+    .nav-links a.btn-nav:hover{background:var(--blue-dark)}
+    .menu-btn{background:none;border:0;width:44px;height:44px;border-radius:50%;cursor:pointer;color:var(--text-2);display:inline-flex;align-items:center;justify-content:center}
+    .menu-btn:hover{background:var(--surface)}
+    .menu-btn svg{width:24px;height:24px}
+    .mobile-menu{display:none;position:absolute;top:64px;left:0;width:100%;max-height:calc(100vh - 64px);overflow-y:auto;background:#fff;border-bottom:1px solid var(--border);box-shadow:0 4px 12px rgba(60,64,67,.15);padding:8px 0 16px}
+    .mobile-menu.open{display:block}
+    .mobile-menu a{display:block;padding:14px 24px;font-weight:500}
+    .mobile-menu a:hover{background:var(--surface)}
+    .mobile-menu .btn{margin:8px 24px 0;display:flex}
+    @media(min-width:1100px){.nav-links{display:flex}.menu-btn,.mobile-menu{display:none!important}}
+
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:12px 28px;border-radius:999px;font-family:inherit;font-weight:500;font-size:.95rem;border:1px solid transparent;cursor:pointer;transition:background .2s,box-shadow .2s,border-color .2s}
+    .btn-primary{background:var(--blue);color:#fff}
+    .btn-primary:hover{background:var(--blue-dark);box-shadow:0 1px 3px rgba(60,64,67,.35)}
+    .btn-outline{background:#fff;color:var(--blue);border-color:var(--border)}
+    .btn-outline:hover{background:var(--blue-surface)}
+    .btn-soft{background:var(--blue-surface);color:var(--blue-dark)}
+    .btn-soft:hover{background:#d2e3fc}
+    .btn[disabled]{opacity:.55;cursor:not-allowed;box-shadow:none}
+    .textlink{color:var(--blue);font-weight:500;text-decoration:underline;text-underline-offset:3px}
+
+    .hero{padding:120px 0 48px;background:linear-gradient(180deg,#f8fbff 0%,#fff 100%);border-bottom:1px solid var(--border)}
+    .eyebrow{display:inline-block;padding:6px 14px;border-radius:999px;background:var(--blue-surface);color:var(--blue-dark);font-size:.78rem;font-weight:500;letter-spacing:.02em;margin-bottom:20px}
+    .hero h1{font-size:clamp(2.4rem,7vw,4rem);font-weight:500;letter-spacing:-.03em;line-height:1.08;margin-bottom:14px}
+    .hero h1 .dot{color:var(--red)}
+    .hero p.lead{max-width:640px;color:var(--text-2);font-size:1.05rem;margin-bottom:22px}
+    .chips{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{padding:6px 14px;border:1px solid var(--border);border-radius:8px;font-size:.84rem;font-weight:500;color:var(--text-2);background:#fff}
+    .gbar{display:flex;gap:6px;margin-top:32px}
+    .gbar span{width:40px;height:4px;border-radius:4px}
+    .gbar span:nth-child(1){background:var(--blue)}.gbar span:nth-child(2){background:var(--red)}.gbar span:nth-child(3){background:var(--yellow)}.gbar span:nth-child(4){background:var(--green)}
+
+    section{padding:56px 0}
+    .label{color:var(--blue);font-size:.82rem;font-weight:500;margin-bottom:8px}
+    h2{font-size:clamp(1.5rem,3.4vw,2rem);font-weight:500;letter-spacing:-.02em;line-height:1.25;margin-bottom:8px}
+    h3{font-weight:500}
+
+    .reg-wrap{max-width:760px;margin:0 auto}
+    .reg-card{background:#fff;border:1px solid var(--border);border-radius:24px;padding:32px;box-shadow:0 1px 2px rgba(60,64,67,.15),0 2px 6px 2px rgba(60,64,67,.08);position:relative;overflow:hidden}
+    .reg-card::before{content:"";position:absolute;inset:0 0 auto 0;height:5px;background:var(--blue)}
+    .reg-card.ok::before{background:var(--green)}
+    .reg-card + .reg-card{margin-top:24px}
+    .reg-sub{color:var(--text-2);font-size:.95rem;margin-bottom:22px}
+
+    .field{margin-bottom:18px}
+    .field label{display:block;font-weight:500;font-size:.92rem;margin-bottom:6px}
+    .req{color:var(--red-dark)}
+    .field input[type=text],.field input[type=email]{width:100%;min-height:48px;padding:11px 14px;font:inherit;font-size:1rem;color:var(--text);background:#fff;border:1px solid #9aa0a6;border-radius:12px;transition:border-color .2s,box-shadow .2s}
+    .field input:hover{border-color:var(--text-2)}
+    .field input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(26,115,232,.25)}
+    .field input[aria-invalid="true"]{border-color:var(--red-dark);box-shadow:0 0 0 1px var(--red-dark)}
+    .field textarea{width:100%;min-height:110px;padding:11px 14px;font:inherit;font-size:1rem;color:var(--text);background:#fff;border:1px solid #9aa0a6;border-radius:12px;resize:vertical;transition:border-color .2s,box-shadow .2s}
+    .field textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(26,115,232,.25)}
+    .field textarea[aria-invalid="true"]{border-color:var(--red-dark);box-shadow:0 0 0 1px var(--red-dark)}
+    .row2{display:grid;gap:0 18px;grid-template-columns:1fr}
+    @media(min-width:640px){.row2{grid-template-columns:1fr 1fr}}
+    .hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
+    .hint{color:var(--text-2);font-size:.82rem;margin-top:5px}
+    .err{color:var(--red-dark);font-size:.84rem;font-weight:500;margin-top:5px}
+    .err[hidden]{display:none}
+
+    .nav-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;margin-top:24px;padding-top:20px;border-top:1px solid var(--border)}
+    .nav-row .end{display:flex;gap:12px;flex-wrap:wrap}
+
+    .spinner{width:18px;height:18px;border-radius:50%;border:3px solid rgba(255,255,255,.45);border-top-color:#fff;animation:spin .8s linear infinite;display:none}
+    .is-loading .spinner{display:inline-block}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .banner{padding:14px 18px;border-radius:14px;font-size:.92rem;margin-bottom:18px}
+    .banner[hidden]{display:none}
+    .banner.warn{background:var(--yellow-surface);border:1px solid #f9e2a0;color:#5b4200}
+    .banner.bad{background:var(--red-surface);border:1px solid #f4b8b2;color:#5a1a14}
+    .banner.good{background:var(--green-surface);border:1px solid #b7dfc2;color:#0d4a22}
+
+    .result-anim{animation:panelIn .28s ease}
+    @keyframes panelIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+    .code-box{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;background:var(--blue-surface);border-radius:16px;padding:18px 20px;margin-bottom:20px}
+    .code-box small{display:block;color:var(--blue-dark);font-weight:600;letter-spacing:.06em;font-size:.75rem}
+    .code-box output{display:block;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:clamp(1.5rem,6vw,2rem);font-weight:700;letter-spacing:.08em;overflow-wrap:anywhere}
+
+    .rv{border:1px solid var(--border);border-radius:16px;margin-bottom:18px;overflow:hidden}
+    .rv-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 18px;background:var(--surface);border-bottom:1px solid var(--border)}
+    .rv-head h3{font-size:1rem;font-weight:500}
+    .rv dl{display:grid;grid-template-columns:1fr}
+    .rv .kv{display:grid;grid-template-columns:1fr;gap:2px;padding:12px 18px;border-top:1px solid var(--border)}
+    .rv .kv:first-child{border-top:0}
+    @media(min-width:560px){.rv .kv{grid-template-columns:200px 1fr;gap:12px}}
+    .rv dt{color:var(--text-2);font-size:.86rem}
+    .rv dd{font-weight:500;overflow-wrap:anywhere}
+
+    .pill{display:inline-block;padding:3px 12px;border-radius:999px;font-size:.78rem;font-weight:600;letter-spacing:.04em;background:var(--surface);color:var(--text-2)}
+    .pill.green{background:var(--green-surface);color:var(--green-dark)}
+    .pill.amber{background:var(--yellow-surface);color:#8a5a00}
+    .pill.red{background:var(--red-surface);color:var(--red-dark)}
+
+    .member-list{display:grid;gap:0}
+    .member-item{display:flex;align-items:flex-start;gap:14px;padding:16px 18px;border-top:1px solid var(--border)}
+    .member-item:first-child{border-top:0}
+    .member-badge{flex:none;width:30px;height:30px;border-radius:50%;background:var(--blue);color:#fff;font-size:.82rem;font-weight:600;display:flex;align-items:center;justify-content:center;margin-top:2px}
+    .member-badge.is-matched{background:var(--green)}
+    .member-info{min-width:0;flex:1}
+    .member-top{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:4px}
+    .member-name{font-weight:600;font-size:.98rem}
+    .member-role{font-size:.74rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--blue-dark);background:var(--blue-surface);padding:2px 8px;border-radius:999px}
+    .member-role.you{background:var(--green-surface);color:var(--green-dark)}
+    .member-meta{color:var(--text-2);font-size:.88rem;overflow-wrap:anywhere}
+    .member-acad{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+    .acad-tag{display:inline-block;padding:3px 10px;border-radius:8px;background:var(--surface);border:1px solid var(--border);color:var(--text);font-size:.8rem;font-weight:500}
+
+    footer{border-top:1px solid var(--border);padding:56px 0 28px}
+    .foot-grid{display:grid;gap:40px;grid-template-columns:1fr;margin-bottom:40px}
+    @media(min-width:768px){.foot-grid{grid-template-columns:1.2fr 2fr}}
+    .foot-brand .title{display:flex;align-items:center;gap:12px;font-size:1.4rem;font-weight:500;margin-bottom:12px}
+    .foot-brand p{color:var(--text-2);font-size:.9rem;max-width:340px}
+    .foot-links{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
+    @media(min-width:640px){.foot-links{grid-template-columns:repeat(3,1fr)}}
+    .foot-links h4{font-size:.9rem;font-weight:500;margin-bottom:14px}
+    .foot-links ul{display:grid;gap:10px;font-size:.9rem;color:var(--text-2)}
+    .foot-links a{display:inline-block;padding:2px 0}
+    .foot-links a:hover{color:var(--blue)}
+    .foot-links a.accent{color:var(--blue);font-weight:500}
+    .foot-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:.8rem;color:var(--text-2)}
+    #toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:48px;height:48px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(60,64,67,.35);opacity:0;pointer-events:none;transform:translateY(12px);transition:opacity .25s,transform .25s}
+    #toTop.show{opacity:1;pointer-events:auto;transform:none}
+    #toTop svg{width:20px;height:20px}
+
+    @media(max-width:600px){
+      section{padding:40px 0}
+      .hero{padding:104px 0 36px}
+      .reg-card{padding:24px 18px;border-radius:20px}
+      .nav-row .end,.nav-row .btn{width:100%}
+      .nav-row .end .btn{flex:1}
+    }
+    @media print{
+      header,.hero,footer,#toTop,#lookupCard,#reportCard,.nav-row,#copyBtn{display:none!important}
+      section{padding:0}
+      .reg-card{border:0;box-shadow:none;padding:0}
+      .reg-card::before{display:none}
+    }
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header id="navbar">
+    <div class="container nav">
+      <a href="/" class="brand" aria-label="Freelanthropy home">
+        <div class="brand-logo"><img src="/assets/images/logo.png" width="36" height="36" alt="" onerror="this.outerHTML='<div class=\'brand-fallback\'>F</div>'" /></div>
+        <div>
+          <div class="brand-name">Freelanthropy</div>
+          <div class="brand-sub">Wings of Arthniti · IIT Patna</div>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/clienthunt">Back to ClientHunt</a>
+        <a href="/clienthunt#format">Format</a>
+        <a href="/clienthunt#rules">Rules</a>
+        <a href="/clienthunt#faq">FAQ</a>
+        <a href="/clienthunt/rulebook">Rulebook</a>
+        <a href="#lookup" aria-current="page">Find Team</a>
+        <a href="/clienthunt/register" class="btn-nav">Register Team</a>
+      </nav>
+
+      <button id="menuToggle" class="menu-btn" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+    </div>
+
+    <nav id="mobileMenu" class="mobile-menu" aria-label="Mobile">
+      <a href="/clienthunt">Back to ClientHunt</a>
+      <a href="/clienthunt#format">Format</a>
+      <a href="/clienthunt#rules">Rules</a>
+      <a href="/clienthunt#faq">FAQ</a>
+      <a href="/clienthunt/rulebook">Rulebook</a>
+      <a href="#lookup" aria-current="page">Find Team</a>
+      <a href="/clienthunt/register" class="btn btn-primary">Register Team</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <p class="eyebrow">FREELANTHROPY PRESENTS · IIT PATNA</p>
+        <h1 id="hero-title">Find Your Team<span class="dot">.</span></h1>
+        <p class="lead">Enter your registered email address or Team Code to view your team’s details. Email addresses are never displayed on this page.</p>
+        <ul class="chips" aria-label="At a glance">
+          <li class="chip">IIT Patna Internal Event</li>
+          <li class="chip">Email or Team Code Lookup</li>
+          <li class="chip">Emails Never Shown</li>
+        </ul>
+        <div class="gbar" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+      </div>
+    </section>
+
+    <section id="lookup" aria-labelledby="lookup-title">
+      <div class="container reg-wrap">
+        <noscript><div class="banner warn">Team lookup needs JavaScript. Please enable it in your browser and reload this page.</div></noscript>
+
+        <div class="reg-card" id="lookupCard">
+          <p class="label">Team directory lookup</p>
+          <h2 id="lookup-title">Look up your team details</h2>
+          <p class="reg-sub">Enter the <strong>email address</strong> you registered with (or your <strong>Team Code</strong>). Your associated team record will appear below.</p>
+
+          <div id="banner" class="banner" role="status" hidden></div>
+
+          <form id="form" novalidate>
+            <div class="field">
+              <label for="q">Registered email address <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="q" maxlength="254" autocomplete="email" autocapitalize="off" spellcheck="false" inputmode="email" placeholder="e.g. name@iitp.ac.in or CH-26-AB23" aria-required="true" aria-describedby="q-hint q-err" />
+              <p class="hint" id="q-hint">Works with any team member’s registered email address or your Team Code.</p>
+              <p class="err" id="q-err" hidden></p>
+            </div>
+
+            <div class="nav-row">
+              <a class="btn btn-outline" href="/clienthunt/register">Not registered yet?</a>
+              <div class="end">
+                <button type="submit" class="btn btn-primary" id="go">
+                  <span class="spinner" aria-hidden="true"></span>
+                  <span id="goLabel">Find My Team</span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="reg-card" id="reportCard">
+          <p class="label">Can’t find your team?</p>
+          <h2 id="report-title">Tell the organisers</h2>
+          <p class="reg-sub">No email is sent from this system. If you used a different email, made a typo, or lost your Team Code, leave your details and the Organising Team will contact you.</p>
+          <button type="button" class="btn btn-outline" id="reportToggle" aria-expanded="false" aria-controls="reportForm">Report a problem</button>
+
+          <div id="reportBanner" class="banner" role="status" hidden style="margin-top:18px"></div>
+
+          <form id="reportForm" novalidate hidden style="margin-top:18px">
+            <div class="row2">
+              <div class="field" data-field="full_name">
+                <label for="rpName">Your name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="rpName" maxlength="80" autocomplete="name" aria-required="true" aria-describedby="rpName-err" />
+                <p class="err" id="rpName-err" hidden></p>
+              </div>
+              <div class="field" data-field="contact">
+                <label for="rpContact">Mobile number or email to reach you <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="rpContact" maxlength="254" autocomplete="off" aria-required="true" aria-describedby="rpContact-err" />
+                <p class="err" id="rpContact-err" hidden></p>
+              </div>
+            </div>
+            <div class="field" data-field="team_code">
+              <label for="rpCode">Team Code (if you remember it)</label>
+              <input type="text" id="rpCode" maxlength="14" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-describedby="rpCode-err" />
+              <p class="err" id="rpCode-err" hidden></p>
+            </div>
+            <div class="field" data-field="message">
+              <label for="rpMsg">What happened? <span class="req" aria-hidden="true">*</span></label>
+              <textarea id="rpMsg" maxlength="1000" aria-required="true" aria-describedby="rpMsg-hint rpMsg-err"></textarea>
+              <p class="hint" id="rpMsg-hint">For example: “I registered with a typo in my email” or “I lost my Team Code”. Do not include passwords.</p>
+              <p class="err" id="rpMsg-err" hidden></p>
+            </div>
+            <div class="hp" aria-hidden="true"><label>Leave empty <input type="text" id="rpHp" tabindex="-1" autocomplete="off" /></label></div>
+            <button type="submit" class="btn btn-primary" id="rpGo"><span class="spinner" aria-hidden="true"></span><span>Send to organisers</span></button>
+          </form>
+        </div>
+
+        <div class="reg-card ok result-anim" id="result" hidden aria-live="polite">
+          <p class="label">Team record found</p>
+          <h2 id="rHeading" tabindex="-1">Your associated team</h2>
+          <p class="reg-sub">Keep your Team Code handy for all ClientHunt submissions and round updates. For privacy, email addresses are not shown.</p>
+
+          <div class="code-box">
+            <div><small>YOUR TEAM CODE</small><output id="rCode" aria-label="Team code"></output></div>
+            <button type="button" class="btn btn-primary" id="copy">Copy Team Code</button>
+          </div>
+          <p class="vh" id="copyLive" role="status" aria-live="polite"></p>
+
+          <div class="rv">
+            <div class="rv-head"><h3>Team overview</h3></div>
+            <dl>
+              <div class="kv"><dt>Team name</dt><dd id="rName"></dd></div>
+              <div class="kv"><dt>Team size</dt><dd id="rSize"></dd></div>
+              <div class="kv"><dt>Registration status</dt><dd><span class="pill" id="rStatus"></span></dd></div>
+              <div class="kv"><dt>Eligibility</dt><dd><span class="pill" id="rElig"></span></dd></div>
+              <div class="kv"><dt>Registered on</dt><dd id="rWhen"></dd></div>
+              <div class="kv"><dt>Last updated</dt><dd id="rUpd"></dd></div>
+            </dl>
+          </div>
+
+          <div class="rv">
+            <div class="rv-head"><h3>Associated team members</h3></div>
+            <ol class="member-list" id="rMembers"></ol>
+          </div>
+
+          <p class="hint" id="rMasked" hidden>Mobile numbers are partially masked for participant privacy.</p>
+
+          <div class="nav-row">
+            <button type="button" class="btn btn-outline" id="print">Print / Save as PDF</button>
+            <div class="end">
+              <a class="btn btn-soft" href="/clienthunt">Return to ClientHunt</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <div class="title">
+            <div class="brand-logo"><img src="/assets/images/logo.png" width="36" height="36" alt="" loading="lazy" onerror="this.outerHTML='<div class=\'brand-fallback\'>F</div>'" /></div>
+            ClientHunt
+          </div>
+          <p>Organized by Freelanthropy — Wings of Arthniti, under STC, IIT Patna (Hybrid).</p>
+        </div>
+        <div class="foot-links">
+          <div>
+            <h4>Competition</h4>
+            <ul>
+              <li><a href="/clienthunt">ClientHunt Home</a></li>
+              <li><a href="/clienthunt#format">Competition Format</a></li>
+              <li><a href="/clienthunt#rules">Rules</a></li>
+              <li><a href="/clienthunt#faq">FAQ</a></li>
+              <li><a href="/clienthunt/rulebook">Official Rulebook</a></li>
+              <li><a href="/clienthunt/register" class="accent">Registration</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Freelanthropy</h4>
+            <ul>
+              <li><a href="/">Freelanthropy Homepage</a></li>
+              <li><a href="/join">Join the Club</a></li>
+              <li><a href="/collaborate">Collaborate</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Organization</h4>
+            <ul>
+              <li><a href="https://stciitphybrid.in/" target="_blank" rel="noopener">STC IIT Patna</a></li>
+              <li><a href="mailto:freelanthropy.iitpatna@gmail.com" class="accent">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <div>&copy; <span id="year">2026</span> Freelanthropy. All rights reserved.</div>
+        <div><a href="#main" id="footTop">Back to top</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#main" id="toTop" aria-label="Back to top">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"></path></svg>
+  </a>
+
+  <script>
+  (function () {
+    'use strict';
+    var API_URL = (window.CLIENTHUNT_CONFIG && window.CLIENTHUNT_CONFIG.API_URL) || '';
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var $ = function (id) { return document.getElementById(id); };
+
+    var y = $('year'); if (y) y.textContent = new Date().getFullYear();
+    var toggle = $('menuToggle'), menu = $('mobileMenu'), icon = $('menuIcon');
+    function setMenu(open) {
+      menu.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+      icon.setAttribute('d', open ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16');
+    }
+    toggle.addEventListener('click', function () { setMenu(!menu.classList.contains('open')); });
+    menu.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && menu.classList.contains('open')) { setMenu(false); toggle.focus(); }
+    });
+    window.addEventListener('resize', function () { if (window.innerWidth >= 1100) setMenu(false); });
+
+    var navbar = $('navbar'), toTop = $('toTop');
+    function onScroll() {
+      navbar.classList.toggle('scrolled', window.scrollY > 10);
+      toTop.classList.toggle('show', window.scrollY > 600);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+    function goTop(e) { e.preventDefault(); window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); }
+    toTop.addEventListener('click', goTop);
+    $('footTop').addEventListener('click', goTop);
+
+    function sp(s) { return String(s == null ? '' : s).replace(/\s+/g, ' ').trim(); }
+    function el(tag, attrs, text) {
+      var n = document.createElement(tag);
+      Object.keys(attrs || {}).forEach(function (k) { n.setAttribute(k, attrs[k]); });
+      if (text != null) n.textContent = text;
+      return n;
+    }
+
+    function api(payload, ms) {
+      if (!API_URL) return Promise.reject({ code: 'NOT_CONFIGURED' });
+      var ctl = new AbortController(), t = setTimeout(function () { ctl.abort(); }, ms || 30000);
+      return fetch(API_URL, {
+        method: 'POST', redirect: 'follow', signal: ctl.signal,
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload)
+      })
+        .then(function (r) { return r.text(); })
+        .then(function (txt) { clearTimeout(t); try { return JSON.parse(txt); } catch (e) { throw { code: 'BAD_RESPONSE' }; } })
+        .catch(function (e) { clearTimeout(t); throw (e && e.code ? e : { code: 'NETWORK' }); });
+    }
+
+    function banner(msg, kind) {
+      var b = $('banner');
+      b.className = 'banner ' + (kind || 'bad');
+      b.textContent = msg;
+      b.hidden = false;
+    }
+    function setErr(msg) {
+      var e = $('q-err');
+      e.textContent = msg || '';
+      e.hidden = !msg;
+      if (msg) $('q').setAttribute('aria-invalid', 'true');
+      else $('q').removeAttribute('aria-invalid');
+    }
+    function setLoading(on) {
+      var b = $('go');
+      b.disabled = on;
+      b.classList.toggle('is-loading', on);
+      b.setAttribute('aria-busy', String(on));
+      $('goLabel').textContent = on ? 'Searching…' : 'Find My Team';
+    }
+    function pillClass(v) {
+      v = String(v || '').toUpperCase();
+      return 'pill ' + (/^(REGISTERED|VERIFIED)$/.test(v) ? 'green' : /^(CANCELLED|INELIGIBLE)$/.test(v) ? 'red' : 'amber');
+    }
+    function fmt(s) {
+      s = String(s || '');
+      return s.length >= 16 ? s.slice(0, 16).replace('T', ' ') : (s || '—');
+    }
+
+    function show(r) {
+      $('rCode').textContent = r.team_code;
+      $('rName').textContent = r.team_name;
+      $('rSize').textContent = String(r.team_size) + (Number(r.team_size) === 1 ? ' member' : ' members');
+      $('rStatus').textContent = r.registration_status || 'REGISTERED';
+      $('rStatus').className = pillClass(r.registration_status);
+      $('rElig').textContent = r.eligibility_status || 'UNVERIFIED';
+      $('rElig').className = pillClass(r.eligibility_status || 'UNVERIFIED');
+      $('rWhen').textContent = fmt(r.registered_on);
+      $('rUpd').textContent = fmt(r.last_updated);
+
+      var list = $('rMembers');
+      list.textContent = '';
+      (r.members || []).forEach(function (m) {
+        var isMatch = !!r.matched_member_number && Number(m.member_number) === Number(r.matched_member_number);
+        var li = el('li', { 'class': 'member-item' });
+        li.appendChild(el('span', { 'class': 'member-badge' + (isMatch ? ' is-matched' : ''), 'aria-hidden': 'true' }, String(m.member_number)));
+
+        var info = el('div', { 'class': 'member-info' });
+        var top = el('div', { 'class': 'member-top' });
+        top.appendChild(el('span', { 'class': 'member-name' }, m.full_name));
+        if (m.role) top.appendChild(el('span', { 'class': 'member-role' }, m.role));
+        if (isMatch) top.appendChild(el('span', { 'class': 'member-role you' }, 'Matched email'));
+        info.appendChild(top);
+
+        var metaParts = [];
+        if (m.phone) metaParts.push(r.contacts_masked ? m.phone : '+91 ' + m.phone);
+        info.appendChild(el('div', { 'class': 'member-meta' }, metaParts.join(' · ')));
+
+        var coursesVal = sp(m.courses || m.course);
+        var deptVal = sp(m.department);
+        var semVal = sp(m.semester);
+        if (coursesVal || deptVal || semVal) {
+          var acad = el('div', { 'class': 'member-acad' });
+          if (coursesVal) acad.appendChild(el('span', { 'class': 'acad-tag' }, 'Courses: ' + coursesVal));
+          if (deptVal) acad.appendChild(el('span', { 'class': 'acad-tag' }, 'Department: ' + deptVal));
+          if (semVal) acad.appendChild(el('span', { 'class': 'acad-tag' }, 'Semester: ' + semVal));
+          info.appendChild(acad);
+        }
+
+        li.appendChild(info);
+        list.appendChild(li);
+      });
+
+      $('rMasked').hidden = !r.contacts_masked;
+      $('result').hidden = false;
+      $('result').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      setTimeout(function () { $('rHeading').focus({ preventScroll: true }); }, 40);
+    }
+
+    $('form').addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      $('banner').hidden = true;
+      $('result').hidden = true;
+      setErr('');
+
+      var q = sp($('q').value);
+      if (!q) {
+        setErr('Enter your registered email address (or Team Code).');
+        $('q').focus();
+        return;
+      }
+
+      var isCode = /^[A-Za-z]{2,4}-\d{2}-[A-Za-z0-9]{4}$/.test(q);
+      var isMail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(q);
+      if (!isCode && !isMail) {
+        setErr('Enter a valid email address (e.g. name@iitp.ac.in) or a Team Code like CH-26-AB23.');
+        $('q').focus();
+        return;
+      }
+
+      var normalized = isCode ? q.toUpperCase() : q.toLowerCase();
+      setLoading(true);
+
+      api({ action: 'search_team', query: normalized }).then(function (r) {
+        setLoading(false);
+        if (r && r.success && typeof r.team_code === 'string') {
+          show(r);
+        } else {
+          banner(((r && r.message) || 'No team was found for that email address. Double-check for typos or try another team member’s email.') + (r && r.error_code === 'STATUS_NOT_FOUND' ? ' Still stuck? Use “Report a problem” below.' : ''), r && r.error_code === 'RATE_LIMITED' ? 'warn' : 'bad');
+        }
+      }).catch(function (e) {
+        setLoading(false);
+        banner(e && e.code === 'NOT_CONFIGURED'
+          ? 'Team lookup is not available yet.'
+          : 'We could not reach the server. Please check your connection and try again.', 'bad');
+      });
+    });
+
+    $('copy').addEventListener('click', function () {
+      var btn = this, code = $('rCode').textContent, live = $('copyLive');
+      function done(ok) {
+        live.textContent = ok ? 'Team Code copied.' : 'Could not copy. Please select and copy the code manually.';
+        btn.textContent = ok ? 'Copied ✓' : 'Copy Team Code';
+        setTimeout(function () { btn.textContent = 'Copy Team Code'; }, 2200);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(code).then(function () { done(true); }, function () { done(false); });
+      } else {
+        try {
+          var r = document.createRange(); r.selectNodeContents($('rCode'));
+          var s = getSelection(); s.removeAllRanges(); s.addRange(r);
+          done(document.execCommand('copy'));
+        } catch (e) { done(false); }
+      }
+    });
+
+    $('print').addEventListener('click', function () { window.print(); });
+
+    /* ---------- report a problem (recovery path that needs no email) ---------- */
+    function rpBanner(msg, kind) { var b = $('reportBanner'); b.className = 'banner ' + kind; b.textContent = msg; b.hidden = false; }
+    function rpClear() {
+      ['rpName', 'rpContact', 'rpCode', 'rpMsg'].forEach(function (id) { $(id).removeAttribute('aria-invalid'); var e = $(id + '-err'); e.hidden = true; e.textContent = ''; });
+    }
+    var RP_KEYS = { full_name: 'rpName', contact: 'rpContact', team_code: 'rpCode', message: 'rpMsg' };
+    function rpErrors(map) {
+      var first = null;
+      Object.keys(RP_KEYS).forEach(function (k) {
+        if (!map[k]) return;
+        var id = RP_KEYS[k]; $(id).setAttribute('aria-invalid', 'true');
+        var e = $(id + '-err'); e.textContent = map[k]; e.hidden = false; if (!first) first = $(id);
+      });
+      if (first) first.focus();
+    }
+    function openReport(open) {
+      $('reportForm').hidden = !open;
+      $('reportToggle').setAttribute('aria-expanded', String(open));
+      if (open) $('rpName').focus();
+    }
+    $('reportToggle').addEventListener('click', function () { openReport($('reportForm').hidden); });
+    $('reportForm').addEventListener('submit', function (ev) {
+      ev.preventDefault(); rpClear(); $('reportBanner').hidden = true;
+      var payload = { action: 'report_problem', full_name: sp($('rpName').value), contact: sp($('rpContact').value),
+        team_code: sp($('rpCode').value).toUpperCase(), message: sp($('rpMsg').value), hp: $('rpHp').value };
+      var local = {};
+      if (!payload.full_name) local.full_name = 'Enter your name.';
+      if (!payload.contact) local.contact = 'Enter a mobile number or an email address.';
+      if (payload.message.length < 10) local.message = 'Please describe the problem (at least 10 characters).';
+      if (Object.keys(local).length) { rpErrors(local); return; }
+      var b = $('rpGo'); b.disabled = true; b.classList.add('is-loading');
+      api(payload).then(function (r) {
+        b.disabled = false; b.classList.remove('is-loading');
+        if (r && r.success) {
+          $('reportForm').reset(); openReport(false);
+          rpBanner((r.message || 'Your request has been recorded.') + ' Reference: ' + r.request_id + '. Please note it down.', 'good');
+        } else {
+          if (r && r.errors) rpErrors(r.errors);
+          rpBanner((r && r.message) || 'Something went wrong. Please try again.', r && r.error_code === 'RATE_LIMITED' ? 'warn' : 'bad');
+        }
+      }).catch(function (e) {
+        b.disabled = false; b.classList.remove('is-loading');
+        rpBanner(e && e.code === 'NOT_CONFIGURED' ? 'This is not available yet.' : 'We could not reach the server. Please check your connection and try again.', 'bad');
+      });
+    });
+  })();
+  </script>
+</body>
+</html>
