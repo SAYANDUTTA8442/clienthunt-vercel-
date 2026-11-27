@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <!-- Primary SEO Meta Tags (Tailored for 404) -->
+  <title>404 - Page Not Found | Freelanthropy</title>
+  <meta name="description" content="The page you are looking for does not exist. Return to the Freelanthropy homepage." />
+
+  <!-- Search Engine Crawling Directives (CRITICAL: Do not index 404 pages) -->
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="googlebot" content="noindex, nofollow" />
+
+  <!-- PWA & Mobile App Settings -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Freelanthropy" />
+  <link rel="apple-touch-icon" href="/assets/images/logo.png" />
+  <link rel="icon" type="image/png" href="/assets/images/logo.png" />
+
+  <!-- Fonts (Synced with Freelanthropy / ClientHunt theme) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --blue: #1a73e8;
+      --blue-dark: #1557b0;
+      --blue-surface: #e8f0fe;
+      --red: #ea4335;
+      --red-dark: #c5221f;
+      --red-surface: #fce8e6;
+      --yellow: #fbbc04;
+      --yellow-surface: #fef7e0;
+      --green: #34a853;
+      --green-dark: #137333;
+      --green-surface: #e6f4ea;
+      --text: #202124;
+      --text-2: #5f6368;
+      --border: #dadce0;
+      --surface: #f8f9fa;
+      --white: #ffffff;
+      --font: 'Google Sans', 'Product Sans', 'Inter', 'Roboto', system-ui, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    ::selection {
+      background: var(--blue-surface);
+      color: var(--blue-dark);
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--blue);
+      outline-offset: 3px;
+      border-radius: 8px;
+    }
+
+    body {
+      font-family: var(--font);
+      background: linear-gradient(180deg, #f8fbff 0%, #ffffff 60%, #f8f9fa 100%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 24px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 560px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 44px 32px 36px;
+      box-shadow: 0 1px 2px rgba(60, 64, 67, 0.15), 0 2px 6px 2px rgba(60, 64, 67, 0.08);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    /* Top brand accent bar */
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 5px;
+      background: linear-gradient(
+        90deg,
+        var(--blue) 0% 25%,
+        var(--red) 25% 50%,
+        var(--yellow) 50% 75%,
+        var(--green) 75% 100%
+      );
+    }
+
+    .logo-mark {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 20px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .logo-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .logo-fallback {
+      width: 100%;
+      height: 100%;
+      background: var(--blue);
+      color: var(--white);
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 5px 14px;
+      border-radius: 999px;
+      background: var(--red-surface);
+      color: var(--red-dark);
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .error-code {
+      font-size: clamp(4.75rem, 15vw, 7.5rem);
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      color: var(--blue);
+      margin-bottom: 12px;
+    }
+
+    .error-code span {
+      color: var(--red);
+    }
+
+    .error-title {
+      font-size: clamp(1.4rem, 4vw, 1.9rem);
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .error-desc {
+      color: var(--text-2);
+      font-size: 1rem;
+      max-width: 440px;
+      margin: 0 auto 28px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 46px;
+      padding: 12px 26px;
+      border-radius: 999px;
+      font-family: inherit;
+      font-weight: 500;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border: 1px solid transparent;
+      transition: background 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .btn-primary {
+      background-color: var(--blue);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--blue-dark);
+      box-shadow: 0 1px 3px rgba(60, 64, 67, 0.35);
+    }
+
+    .btn-outline {
+      background-color: var(--white);
+      color: var(--blue);
+      border-color: var(--border);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--blue-surface);
+    }
+
+    .gbar {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 32px;
+    }
+
+    .gbar span {
+      width: 32px;
+      height: 4px;
+      border-radius: 4px;
+    }
+
+    .gbar span:nth-child(1) { background: var(--blue); }
+    .gbar span:nth-child(2) { background: var(--red); }
+    .gbar span:nth-child(3) { background: var(--yellow); }
+    .gbar span:nth-child(4) { background: var(--green); }
+
+    .brand-text {
+      margin-top: 20px;
+      font-size: 0.8rem;
+      color: var(--text-2);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 36px 20px 28px;
+        border-radius: 20px;
+      }
+      .actions, .btn {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="card">
+    <div class="logo-mark">
+      <img src="/assets/images/logo.png" alt="Freelanthropy Logo" onerror="this.outerHTML='<div class=\'logo-fallback\'>F</div>'" />
+    </div>
+
+    <p class="eyebrow">Error 404</p>
+    <h1 class="error-code">4<span>0</span>4</h1>
+    <h2 class="error-title">Page not found</h2>
+    <p class="error-desc">
+      The page you are looking for might have been moved, had its link changed, or is temporarily unavailable. Let’s get you back on track.
+    </p>
+
+    <div class="actions">
+      <a href="/" class="btn btn-primary">Return to Homepage</a>
+      <a href="/clienthunt" class="btn btn-outline">Go to ClientHunt</a>
+    </div>
+
+    <div class="gbar" aria-hidden="true">
+      <span></span><span></span><span></span><span></span>
+    </div>
+
+    <p class="brand-text">Freelanthropy · Wings of Arthniti · IIT Patna</p>
+  </main>
+
+</body>
+</html>

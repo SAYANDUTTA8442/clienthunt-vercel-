@@ -7,13 +7,15 @@
     "node": ">=20"
   },
   "scripts": {
-    "test": "node --test test/core.test.js test/idempotency.test.js test/env.test.js",
+    "test": "node --test test/core.test.js test/idempotency.test.js test/env.test.js test/site.test.js",
     "seed": "node scripts/seed-config.js",
     "create-owner": "node scripts/create-owner.js",
     "import": "node scripts/import-from-sheets.js",
     "dev": "vercel dev",
     "test:emulator": "npx --yes firebase-tools@13 emulators:exec --only firestore --project demo-clienthunt \"node --test test/emulator/idempotency.emulator.test.js\"",
-    "check-env": "node scripts/check-env.js"
+    "check-env": "node scripts/check-env.js",
+    "set-site-url": "node scripts/set-site-url.js",
+    "test:e2e": "node test/e2e/pages.e2e.js"
   },
   "dependencies": {
     "csv-parse": "^5.5.6",

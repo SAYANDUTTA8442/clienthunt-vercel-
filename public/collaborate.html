@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#ffffff" />
+<script>document.documentElement.classList.add("js");</script>
+
+<!-- ==========================================================================
+  DOMAIN MIGRATION NOTE (do NOT perform until official launch).
+  Active development host: https://freelanthropy.netlify.app
+  Replace this origin in exactly these places when the custom domain is connected:
+1. <link rel="canonical">  2. og:url  3. og:image (+ secure_url)
+4. twitter:url  5. twitter:image  6. every URL inside the JSON-LD block
+   Also update sitemap/robots files if present.
+========================================================================== -->
+
+<title>Collaborate With Us | Freelanthropy, IIT Patna</title>
+<meta name="description" content="Partner with Freelanthropy at IIT Patna (Hybrid) to propose student-led client projects, host workshops, or mentor emerging talent across tech, design, and entrepreneurship." />
+<meta name="keywords" content="Collaborate with Freelanthropy, IIT Patna student projects, hire student freelancers, mentorship, Wings of Arthniti, STC IIT Patna" />
+<meta name="author" content="Freelanthropy, IIT Patna" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://freelanthropy.netlify.app/collaborate" />
+
+<meta property="og:locale" content="en_IN" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Freelanthropy" />
+<meta property="og:url" content="https://freelanthropy.netlify.app/collaborate" />
+<meta property="og:title" content="Collaborate With Us | Freelanthropy, IIT Patna" />
+<meta property="og:description" content="Propose client projects, mentor student teams, or collaborate on workshops and initiatives with Freelanthropy, IIT Patna." />
+<meta property="og:image" content="https://freelanthropy.netlify.app/assets/images/logo.png" />
+<meta property="og:image:secure_url" content="https://freelanthropy.netlify.app/assets/images/logo.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:alt" content="Freelanthropy logo" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://freelanthropy.netlify.app/collaborate" />
+<meta name="twitter:title" content="Collaborate With Us | Freelanthropy, IIT Patna" />
+<meta name="twitter:description" content="Propose client projects, mentor student teams, or collaborate on workshops and initiatives with Freelanthropy, IIT Patna." />
+<meta name="twitter:image" content="https://freelanthropy.netlify.app/assets/images/logo.png" />
+<meta name="twitter:image:alt" content="Freelanthropy logo" />
+
+<link rel="icon" type="image/png" href="/assets/images/logo.png" />
+<link rel="apple-touch-icon" href="/assets/images/logo.png" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "WebPage", "@id": "https://freelanthropy.netlify.app/collaborate#webpage", "name": "Collaborate With Us | Freelanthropy",
+      "url": "https://freelanthropy.netlify.app/collaborate", "inLanguage": "en-IN",
+      "isPartOf": { "@id": "https://freelanthropy.netlify.app/#website" },
+      "about": { "@id": "https://freelanthropy.netlify.app/#org" } },
+    { "@type": "Organization", "@id": "https://freelanthropy.netlify.app/#org", "name": "Freelanthropy",
+      "url": "https://freelanthropy.netlify.app/",
+      "logo": "https://freelanthropy.netlify.app/assets/images/logo.png",
+      "email": "freelanthropy.iitpatna@gmail.com" }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{--blue:#1a73e8;--blue-dark:#1557b0;--blue-surface:#e8f0fe;--red:#ea4335;--red-surface:#fce8e6;--red-dark:#a50e0e;--yellow:#fbbc04;--green:#34a853;--green-surface:#e6f4ea;--green-dark:#137333;--text:#202124;--text-2:#4d5156;--border:#dadce0;--surface:#f8f9fa;--radius:12px;--font:'Inter','Roboto',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+body{font-family:var(--font);color:var(--text);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+ul{list-style:none}
+[hidden]{display:none!important}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+.container{max-width:1120px;margin:0 auto;padding:0 24px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--blue);color:#fff;padding:8px 16px;border-radius:8px;z-index:100}
+.skip:focus{left:8px}
+
+/* Header & Navigation */
+header{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(255,255,255,.96);border-bottom:1px solid var(--border)}
+.nav{height:64px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-logo{width:36px;height:36px;border-radius:8px;overflow:hidden;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex:none;background:#fff}
+.brand-logo img{width:100%;height:100%;object-fit:contain}
+.brand-fallback{width:100%;height:100%;background:var(--blue);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+.brand-name{font-weight:600;font-size:1.05rem;line-height:1.2}
+.brand-sub{font-size:.7rem;color:var(--text-2)}
+.nav-links{display:none;align-items:center;gap:2px}
+.nav-links a{padding:8px 12px;border-radius:999px;font-size:.88rem;font-weight:500;color:var(--text-2)}
+.nav-links a:hover{background:var(--surface);color:var(--text)}
+.nav-links a.active{color:var(--blue-dark);background:var(--blue-surface)}
+.nav-links a.btn-nav{background:var(--blue);color:#fff;margin-left:8px;padding:9px 20px}
+.nav-links a.btn-nav:hover{background:var(--blue-dark)}
+.menu-btn{background:none;border:0;padding:8px;border-radius:50%;cursor:pointer;color:var(--text-2);display:inline-flex}
+.menu-btn:hover{background:var(--surface)}
+.menu-btn svg{width:24px;height:24px}
+.mobile-menu{display:none;position:absolute;top:64px;left:0;width:100%;background:#fff;border-bottom:1px solid var(--border);padding:8px 0 16px;max-height:calc(100vh - 64px);overflow-y:auto}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;padding:14px 24px;font-weight:500}
+.mobile-menu a:hover{background:var(--surface)}
+.mobile-menu .btn{margin:8px 24px 0;text-align:center}
+@media(min-width:1000px){.nav-links{display:flex}.menu-btn,.mobile-menu{display:none!important}}
+
+/* Buttons & Shared Primitives */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 26px;border-radius:999px;font-weight:500;font-size:.95rem;border:1px solid transparent;cursor:pointer;font-family:inherit;transition:background .2s,border-color .2s,opacity .2s}
+.btn:disabled{opacity:.65;cursor:not-allowed}
+.btn-primary{background:var(--blue);color:#fff}.btn-primary:hover:not(:disabled){background:var(--blue-dark)}
+.btn-outline{background:#fff;color:var(--blue-dark);border-color:var(--border)}.btn-outline:hover:not(:disabled){background:var(--blue-surface)}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+
+section{padding:88px 0}
+.section-head{max-width:680px;margin:0 0 44px}
+.label{color:var(--blue-dark);font-size:.85rem;font-weight:600;margin-bottom:8px}
+h2{font-size:clamp(1.8rem,3.6vw,2.5rem);font-weight:600;letter-spacing:-.02em;line-height:1.2;margin-bottom:12px}
+.section-head p{color:var(--text-2);font-size:1.05rem}
+.alt{background:var(--surface);border-block:1px solid var(--border)}
+.card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:28px}
+.card h3{font-size:1.1rem;font-weight:600;margin-bottom:6px}
+.card p{color:var(--text-2);font-size:.94rem}
+.grid{display:grid;gap:20px;grid-template-columns:1fr}
+@media(min-width:640px){.grid.g2,.grid.g3{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.grid.g3{grid-template-columns:repeat(3,1fr)}}
+.bar{height:3px;width:36px;border-radius:3px;margin-bottom:16px}
+.b-blue{background:var(--blue)}.b-red{background:var(--red)}.b-yellow{background:var(--yellow)}.b-green{background:var(--green)}
+.tag{display:inline-block;background:var(--blue-surface);color:var(--blue-dark);padding:4px 12px;border-radius:999px;font-size:.78rem;font-weight:600;margin-bottom:16px}
+.inline-link{color:var(--blue-dark);text-decoration:underline;font-weight:500}
+
+/* Page Hero */
+.hero{padding:136px 0 80px;border-bottom:1px solid var(--border)}
+.hero-grid{display:grid;gap:48px;align-items:center;grid-template-columns:1fr}
+@media(min-width:960px){.hero-grid{grid-template-columns:1.15fr .85fr}}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:.85rem;color:var(--text-2);margin-bottom:20px}
+.breadcrumb a:hover{color:var(--blue-dark);text-decoration:underline}
+.hero h1{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:600;letter-spacing:-.03em;line-height:1.12;margin-bottom:20px}
+.hero .lead{color:var(--text-2);font-size:1.1rem;max-width:600px;margin-bottom:28px}
+.panel{border:1px solid var(--border);border-radius:16px;padding:28px;background:#fff;max-width:440px;width:100%;margin:0 auto}
+.panel h3{font-size:1rem;font-weight:600;margin-bottom:4px}
+.panel>p{font-size:.88rem;color:var(--text-2);margin-bottom:16px}
+.panel li{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-top:1px solid var(--border);font-size:.9rem}
+.panel li i{width:10px;height:10px;border-radius:50%;flex:none;margin-top:6px}
+.panel li b{display:block;font-weight:600;color:var(--text)}
+.panel li span{color:var(--text-2);font-size:.84rem}
+
+/* Collaboration Tracks */
+.track{display:flex;flex-direction:column;align-items:flex-start}
+.track ul{margin:16px 0 24px;padding-left:18px;list-style:disc;color:var(--text-2);font-size:.9rem;display:grid;gap:6px}
+.track .btn{margin-top:auto}
+
+/* Process Steps */
+.steps{display:grid;gap:20px;grid-template-columns:1fr}
+@media(min-width:640px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.steps{grid-template-columns:repeat(4,1fr)}}
+.step-num{width:32px;height:32px;border-radius:50%;background:var(--blue-surface);color:var(--blue-dark);font-weight:600;font-size:.9rem;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+
+/* Proposal Form */
+.form-layout{display:grid;gap:40px;grid-template-columns:1fr;align-items:start}
+@media(min-width:960px){.form-layout{grid-template-columns:1.35fr .65fr}}
+.form-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:32px}
+@media(max-width:600px){.form-card{padding:24px}}
+.form-grid{display:grid;gap:20px;grid-template-columns:1fr}
+@media(min-width:640px){.form-grid.two{grid-template-columns:repeat(2,1fr)}}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:.88rem;font-weight:600;color:var(--text)}
+.field label span{color:var(--red);margin-left:2px}
+.field input,.field select,.field textarea{width:100%;padding:11px 14px;border:1px solid var(--border);border-radius:8px;font:inherit;font-size:.95rem;color:var(--text);background:#fff;transition:border-color .15s,box-shadow .15s}
+.field input:hover,.field select:hover,.field textarea:hover{border-color:#9aa0a6}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-surface)}
+.field textarea{min-height:128px;resize:vertical}
+.hint{font-size:.8rem;color:var(--text-2)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:2px}
+.chip input{position:absolute;opacity:0;pointer-events:none}
+.chip label{display:inline-flex;align-items:center;padding:7px 14px;border-radius:999px;border:1px solid var(--border);font-size:.85rem;font-weight:500;color:var(--text-2);cursor:pointer;user-select:none;transition:background .15s,border-color .15s,color .15s}
+.chip label:hover{background:var(--surface);color:var(--text)}
+.chip input:checked+label{background:var(--blue-surface);border-color:var(--blue);color:var(--blue-dark)}
+.chip input:focus-visible+label{outline:3px solid var(--blue);outline-offset:2px}
+.form-footer{margin-top:24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.status-banner{margin-top:20px;padding:16px 20px;border-radius:var(--radius);font-size:.92rem;border:1px solid transparent}
+.status-banner.success{background:var(--green-surface);border-color:#ceead6;color:var(--green-dark)}
+.status-banner.error{background:var(--red-surface);border-color:#f6aea9;color:var(--red-dark)}
+.status-banner strong{display:block;margin-bottom:4px}
+
+.side-stack{display:grid;gap:20px}
+.side-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px}
+.side-card h3{font-size:1rem;font-weight:600;margin-bottom:8px}
+.side-card p{font-size:.9rem;color:var(--text-2);margin-bottom:12px}
+.side-card p:last-child{margin-bottom:0}
+
+/* FAQ */
+.faq-list{max-width:760px;display:grid;gap:12px}
+details.faq{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:0 22px}
+details.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center;padding:18px 0;font-weight:600}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";font-size:1.3rem;color:var(--text-2);line-height:1}
+details.faq[open] summary::after{content:"\2212"}
+details.faq p{color:var(--text-2);font-size:.95rem;padding-bottom:18px}
+
+/* Footer */
+footer{border-top:1px solid var(--border);padding:56px 0 28px}
+.foot-grid{display:grid;gap:36px;grid-template-columns:1fr;margin-bottom:40px}
+@media(min-width:900px){.foot-grid{grid-template-columns:1.2fr 2fr}}
+.foot-brand .title{display:flex;align-items:center;gap:12px;font-size:1.3rem;font-weight:600;margin-bottom:12px}
+.foot-brand p{color:var(--text-2);font-size:.9rem;max-width:380px}
+.foot-links{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+@media(min-width:640px){.foot-links{grid-template-columns:repeat(4,1fr)}}
+.foot-links h3{font-size:.9rem;font-weight:600;margin-bottom:12px}
+.foot-links ul{display:grid;gap:10px;font-size:.9rem;color:var(--text-2)}
+.foot-links a:hover{color:var(--blue-dark);text-decoration:underline}
+.foot-bottom{border-top:1px solid var(--border);padding-top:20px;font-size:.82rem;color:var(--text-2);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+/* Reveal */
+.js .reveal{opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .5s ease}
+.js .reveal.visible{opacity:1;transform:none}
+@media(max-width:600px){section{padding:64px 0}.hero{padding:104px 0 56px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}html{scroll-behavior:auto}.js .reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header id="navbar">
+  <div class="container nav">
+    <a href="/" class="brand" aria-label="Freelanthropy home">
+      <div class="brand-logo"><img src="/assets/images/logo.png" alt="" width="36" height="36" data-fallback="F" /></div>
+      <div><div class="brand-name">Freelanthropy</div><div class="brand-sub">Wings of Arthniti, STC IIT Patna</div></div>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/#home">Home</a>
+      <a href="/#about">About</a>
+      <a href="/#focus">Focus Areas</a>
+      <a href="/#initiatives">Initiatives</a>
+      <a href="/collaborate" class="active" aria-current="page">Collaborate</a>
+      <a href="/#team">Team</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#get-involved" class="btn-nav">Join Us</a>
+    </nav>
+    <button id="menuToggle" class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+    </button>
+  </div>
+  <div id="mobileMenu" class="mobile-menu">
+    <a href="/#home">Home</a>
+    <a href="/#about">About</a>
+    <a href="/#focus">Focus Areas</a>
+    <a href="/#initiatives">Initiatives</a>
+    <a href="/collaborate">Collaborate</a>
+    <a href="/#team">Team</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/#get-involved" class="btn btn-primary">Join Us</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="collab-hero-title">
+    <div class="container hero-grid">
+      <div class="reveal">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <span>Collaborate</span>
+        </nav>
+        <span class="tag">Partnerships &amp; Mentorship</span>
+        <h1 id="collab-hero-title">Build with student teams at IIT Patna.</h1>
+        <p class="lead">We connect companies, startups, researchers, and industry mentors with structured student teams across software engineering, design, communication, and entrepreneurship.</p>
+        <div class="actions">
+          <a href="#proposal-form" class="btn btn-primary">Submit a Proposal</a>
+          <a href="#tracks" class="btn btn-outline">Explore Collaboration Tracks</a>
+        </div>
+      </div>
+
+      <div class="panel reveal">
+        <h3>Why partner with Freelanthropy</h3>
+        <p>Backed by Wings of Arthniti, STC, IIT Patna (Hybrid).</p>
+        <ul>
+          <li>
+            <i style="background:var(--blue)"></i>
+            <div><b>Cross-Functional Squads</b><span>Developers, UI/UX designers, and project coordinators working to a clear brief.</span></div>
+          </li>
+          <li>
+            <i style="background:var(--green)"></i>
+            <div><b>Structured Milestones</b><span>Scoped deliverables, regular check-ins, and review checkpoints before handoff.</span></div>
+          </li>
+          <li>
+            <i style="background:var(--yellow)"></i>
+            <div><b>Practical Problem-Solving</b><span>Bring real business challenges into student sprints, case studies, and workshops.</span></div>
+          </li>
+          <li>
+            <i style="background:var(--red)"></i>
+            <div><b>Direct Campus Engagement</b><span>Co-host sessions or mentor emerging builders from IIT Patna.</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="tracks" class="alt" aria-labelledby="tracks-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="label">Ways to engage</div>
+        <h2 id="tracks-title">Collaboration tracks</h2>
+        <p>Select the engagement model that fits your team's goals—whether you have a scoped project brief or want to guide students directly.</p>
+      </div>
+      <div class="grid g3">
+        <article class="card track reveal">
+          <div class="bar b-blue"></div>
+          <h3>Client &amp; Project Commissions</h3>
+          <p>Share a defined problem statement or product requirement for a student squad to scope, build, and deliver.</p>
+          <ul>
+            <li>Web &amp; full-stack application development</li>
+            <li>UI/UX design, brand identity &amp; media assets</li>
+            <li>Data workflows, automation &amp; internal tools</li>
+            <li>Market research &amp; go-to-market audits</li>
+          </ul>
+          <a href="#proposal-form" class="btn btn-outline" data-track-select="Client Project Commission">Propose a Project</a>
+        </article>
+
+        <article class="card track reveal">
+          <div class="bar b-green"></div>
+          <h3>Industry Mentorship</h3>
+          <p>Advise student teams on technical architecture, design reviews, client communication, and freelance best practices.</p>
+          <ul>
+            <li>1:1 or small-group portfolio &amp; code reviews</li>
+            <li>Advisory feedback on active student builds</li>
+            <li>Career &amp; consulting readiness guidance</li>
+            <li>Flexible, async or scheduled sessions</li>
+          </ul>
+          <a href="#proposal-form" class="btn btn-outline" data-track-select="Industry Mentorship">Become a Mentor</a>
+        </article>
+
+        <article class="card track reveal">
+          <div class="bar b-yellow"></div>
+          <h3>Workshops &amp; Challenge Statements</h3>
+          <p>Co-host hands-on sessions or contribute real-world problem statements for competitions like ClientHunt.</p>
+          <ul>
+            <li>Technical &amp; design skill-building workshops</li>
+            <li>Live case-study &amp; sprint problem statements</li>
+            <li>Guest judging &amp; evaluation panels</li>
+            <li>Co-branded campus learning initiatives</li>
+          </ul>
+          <a href="#proposal-form" class="btn btn-outline" data-track-select="Workshop or Challenge Statement">Host With Us</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" aria-labelledby="process-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="label">How it works</div>
+        <h2 id="process-title">From initial brief to delivery</h2>
+        <p>A straightforward workflow designed to keep expectations, timelines, and communication clear on both sides.</p>
+      </div>
+      <div class="steps">
+        <div class="card reveal">
+          <div class="step-num">1</div>
+          <h3>Share your brief</h3>
+          <p>Submit your collaboration details, goals, and preferred timeline using the form below.</p>
+        </div>
+        <div class="card reveal">
+          <div class="step-num">2</div>
+          <h3>Scoping call</h3>
+          <p>Our coordinators review your note and schedule a short call to align on deliverables and milestones.</p>
+        </div>
+        <div class="card reveal">
+          <div class="step-num">3</div>
+          <h3>Team matching</h3>
+          <p>We assemble a vetted student team—or schedule your mentorship/workshop slot—matched to your domain.</p>
+        </div>
+        <div class="card reveal">
+          <div class="step-num">4</div>
+          <h3>Execution &amp; handoff</h3>
+          <p>Teams deliver through agreed checkpoints with regular progress updates through final completion.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="proposal-form" class="alt" aria-labelledby="form-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="label">Start a conversation</div>
+        <h2 id="form-title">Submit a collaboration proposal</h2>
+        <p>Tell us a bit about your organisation and what you would like to build or host together. We respond within 2–3 working days.</p>
+      </div>
+
+      <div class="form-layout">
+        <form id="collabForm" class="form-card reveal">
+          <div class="form-grid two">
+            <div class="field">
+              <label for="fullName">Your Name<span>*</span></label>
+              <input type="text" id="fullName" name="fullName" required placeholder="e.g., Ananya Sharma" autocomplete="name" />
+            </div>
+            <div class="field">
+              <label for="workEmail">Work or Personal Email<span>*</span></label>
+              <input type="email" id="workEmail" name="workEmail" required placeholder="you@company.com" autocomplete="email" />
+            </div>
+          </div>
+
+          <div class="form-grid two" style="margin-top:20px">
+            <div class="field">
+              <label for="orgName">Company / Organisation / Institution<span>*</span></label>
+              <input type="text" id="orgName" name="orgName" required placeholder="e.g., Acme Labs" autocomplete="organization" />
+            </div>
+            <div class="field">
+              <label for="roleTitle">Your Role / Designation</label>
+              <input type="text" id="roleTitle" name="roleTitle" placeholder="e.g., Product Lead, Founder, Engineer" autocomplete="organization-title" />
+            </div>
+          </div>
+
+          <div class="form-grid two" style="margin-top:20px">
+            <div class="field">
+              <label for="collabTrack">Collaboration Track<span>*</span></label>
+              <select id="collabTrack" name="collabTrack" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="Client Project Commission">Client Project Commission</option>
+                <option value="Industry Mentorship">Industry Mentorship</option>
+                <option value="Workshop or Challenge Statement">Workshop or Challenge Statement</option>
+                <option value="Other Partnership">Other Partnership</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="timeline">Expected Timeline</label>
+              <select id="timeline" name="timeline">
+                <option value="Flexible / Exploratory">Flexible / Exploratory</option>
+                <option value="Immediate (within 2 weeks)">Immediate (within 2 weeks)</option>
+                <option value="1 to 2 months">1 to 2 months</option>
+                <option value="Semester-long (3+ months)">Semester-long (3+ months)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field" style="margin-top:20px">
+            <label>Relevant Focus Areas</label>
+            <div class="chips" role="group" aria-label="Relevant focus areas">
+              <div class="chip"><input type="checkbox" id="area-tech" name="areas" value="Tech & Development"><label for="area-tech">Tech &amp; Development</label></div>
+              <div class="chip"><input type="checkbox" id="area-design" name="areas" value="Design & Creativity"><label for="area-design">Design &amp; Creativity</label></div>
+              <div class="chip"><input type="checkbox" id="area-freelance" name="areas" value="Freelance & Professional Skills"><label for="area-freelance">Freelance &amp; Professional Skills</label></div>
+              <div class="chip"><input type="checkbox" id="area-ent" name="areas" value="Entrepreneurship"><label for="area-ent">Entrepreneurship</label></div>
+              <div class="chip"><input type="checkbox" id="area-mkt" name="areas" value="Marketing & Communication"><label for="area-mkt">Marketing &amp; Communication</label></div>
+              <div class="chip"><input type="checkbox" id="area-mgmt" name="areas" value="Collaboration & Management"><label for="area-mgmt">Collaboration &amp; Management</label></div>
+            </div>
+          </div>
+
+          <div class="field" style="margin-top:20px">
+            <label for="projectBrief">Project Brief, Mentorship Scope, or Proposal Details<span>*</span></label>
+            <textarea id="projectBrief" name="projectBrief" required placeholder="Describe the problem you want to solve, key deliverables, or how you would like to mentor/collaborate with our students."></textarea>
+            <span class="hint">You will receive an instant reference ID and email receipt upon submission.</span>
+          </div>
+
+          <div class="form-footer">
+            <button type="submit" id="submitBtn" class="btn btn-primary">Submit Proposal</button>
+            <a href="mailto:freelanthropy.iitpatna@gmail.com" class="inline-link" style="font-size:.9rem">Or email us directly</a>
+          </div>
+
+          <div id="formStatus" class="status-banner" hidden role="status" aria-live="polite"></div>
+        </form>
+
+        <aside class="side-stack reveal" aria-label="Additional collaboration resources">
+          <div class="side-card">
+            <h3>Direct Contact</h3>
+            <p>Prefer reaching out directly or sharing an existing RFP / deck?</p>
+            <p><a href="mailto:freelanthropy.iitpatna@gmail.com" class="inline-link">freelanthropy.iitpatna@gmail.com</a></p>
+          </div>
+          <div class="side-card">
+            <h3>Looking to Sponsor?</h3>
+            <p>If you represent a brand or institution looking to sponsor events, prize pools, or student initiatives, visit our sponsorship page.</p>
+            <p><a href="/sponsor" class="inline-link">Explore Sponsorship &rarr;</a></p>
+          </div>
+          <div class="side-card">
+            <h3>Governance</h3>
+            <p>Freelanthropy operates under <strong>Wings of Arthniti</strong>, Student Technical Council (STC), <strong>IIT Patna (Hybrid)</strong>.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" aria-labelledby="collab-faq-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="label">FAQ</div>
+        <h2 id="collab-faq-title">Questions from partners &amp; mentors</h2>
+      </div>
+      <div class="faq-list reveal">
+        <details class="faq">
+          <summary>Who executes client and collaborative projects?</summary>
+          <p>Projects are executed by vetted student teams from IIT Patna (Hybrid) across engineering, design, and operations, overseen by Freelanthropy coordinators to ensure clear communication and timely handoff.</p>
+        </details>
+        <details class="faq">
+          <summary>What kind of mentorship commitment is expected?</summary>
+          <p>Mentorship is flexible. You can host a single 60-minute workshop, review student project architectures asynchronously, or mentor a team during an active sprint like ClientHunt.</p>
+        </details>
+        <details class="faq">
+          <summary>How are project scopes and IP handled?</summary>
+          <p>Before work begins, both parties align on written deliverables, timelines, and ownership terms during the scoping call so expectations remain transparent throughout the engagement.</p>
+        </details>
+        <details class="faq">
+          <summary>Can early-stage startups collaborate with Freelanthropy?</summary>
+          <p>Yes. Startups, founders, research groups, and established organisations are all welcome to propose MVPs, design sprints, research tasks, or problem statements.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="title"><div class="brand-logo"><img src="/assets/images/logo.png" alt="" width="36" height="36" loading="lazy" data-fallback="F" /></div>Freelanthropy</div>
+        <p>A student-led initiative under Wings of Arthniti, STC, IIT Patna (Hybrid).</p>
+      </div>
+      <div class="foot-links">
+        <div><h3>Explore</h3><ul><li><a href="/#about">About</a></li><li><a href="/#initiatives">Initiatives</a></li><li><a href="/clienthunt">ClientHunt</a></li><li><a href="/#team">Team</a></li><li><a href="/#advisory">Advisory</a></li></ul></div>
+        <div><h3>Get involved</h3><ul><li><a href="https://chat.whatsapp.com/GZ0zmrx2FFBFvSWddpVs2l">Membership</a></li><li><a href="/collaborate">Collaborate</a></li><li><a href="/sponsor">Sponsor</a></li></ul></div>
+        <div><h3>Organisation</h3><ul><li><a href="https://stciitphybrid.in/" target="_blank" rel="noopener">STC IIT Patna</a></li><li><a href="https://www.stciitphybrid.in/wings/arthniti" target="_blank" rel="noopener">Wings of Arthniti</a></li><li><a href="https://www.iitp.ac.in/" target="_blank" rel="noopener">IIT Patna</a></li></ul></div>
+        <div><h3>Contact</h3><ul><li><a href="mailto:freelanthropy.iitpatna@gmail.com">freelanthropy.iitpatna@gmail.com</a></li></ul></div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>&copy; <span id="year">2026</span> Freelanthropy. All rights reserved.</div>
+      <div>Wings of Arthniti &middot; STC, IIT Patna (Hybrid)</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwjihol36ZbFXty9DWObRlscjTaJGzbmTpRkhg44xJVnI5Qc3faXc_EfhuXw_Mh63fe/exec";
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Image fallback (initial letter) without inline handlers
+  document.querySelectorAll("img[data-fallback]").forEach(function(img){
+    function swap(){ var s=document.createElement("span"); s.className="brand-fallback"; s.setAttribute("aria-hidden","true"); s.textContent=img.dataset.fallback; if(img.parentNode) img.replaceWith(s); }
+    img.addEventListener("error", swap);
+    if(img.complete && img.naturalWidth===0 && img.getAttribute("src")) swap();
+  });
+
+  // Mobile menu
+  var toggle=document.getElementById("menuToggle"), menu=document.getElementById("mobileMenu"), icon=document.getElementById("menuIcon");
+  function setMenu(open, returnFocus){
+    menu.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    icon.setAttribute("d", open ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16");
+    if(open){ var f=menu.querySelector("a"); if(f) f.focus(); } else if(returnFocus){ toggle.focus(); }
+  }
+  toggle.addEventListener("click", function(){ setMenu(!menu.classList.contains("open")); });
+  menu.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ setMenu(false); }); });
+  document.addEventListener("keydown", function(e){ if(e.key==="Escape" && menu.classList.contains("open")) setMenu(false, true); });
+
+  // Pre-select track when clicking track cards
+  var trackSelect = document.getElementById("collabTrack");
+  document.querySelectorAll("[data-track-select]").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      if(trackSelect) trackSelect.value = btn.getAttribute("data-track-select");
+    });
+  });
+
+  // Escape HTML helper for safe status rendering
+  function escHtml(str){
+    return String(str).replace(/[&<>"']/g, function(ch){
+      return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" })[ch];
+    });
+  }
+
+  // Asynchronous submission to Google Apps Script backend
+  var form = document.getElementById("collabForm");
+  var statusBanner = document.getElementById("formStatus");
+  var submitBtn = document.getElementById("submitBtn");
+
+  if(form){
+    form.addEventListener("submit", async function(e){
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Submitting...";
+      statusBanner.hidden = true;
+      statusBanner.className = "status-banner";
+
+      var payload = {
+        fullName: document.getElementById("fullName").value.trim(),
+        workEmail: document.getElementById("workEmail").value.trim(),
+        orgName: document.getElementById("orgName").value.trim(),
+        roleTitle: document.getElementById("roleTitle").value.trim(),
+        collabTrack: trackSelect.value,
+        timeline: document.getElementById("timeline").value,
+        areas: Array.from(form.querySelectorAll("input[name='areas']:checked")).map(function(c){ return c.value; }),
+        projectBrief: document.getElementById("projectBrief").value.trim()
+      };
+
+      try {
+        var response = await fetch(SCRIPT_URL, {
+          method: "POST",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(payload)
+        });
+
+        var result = await response.json();
+
+        if(result && result.status === "success"){
+          statusBanner.classList.add("success");
+          statusBanner.innerHTML =
+            "<strong>Proposal submitted (Reference ID: " + escHtml(result.id) + ").</strong>" +
+            "We have logged your brief and sent a confirmation copy to <b>" + escHtml(payload.workEmail) + "</b>. Our team will respond within 2–3 working days.";
+          statusBanner.hidden = false;
+          form.reset();
+        } else {
+          throw new Error((result && result.message) || "Submission could not be completed.");
+        }
+      } catch (err) {
+        statusBanner.classList.add("error");
+        statusBanner.innerHTML =
+          "<strong>Unable to submit online right now.</strong>" +
+          "Please try again in a moment or email your proposal directly to <a href=\"mailto:freelanthropy.iitpatna@gmail.com\" class=\"inline-link\">freelanthropy.iitpatna@gmail.com</a>.";
+        statusBanner.hidden = false;
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submit Proposal";
+      }
+    });
+  }
+
+  // Progressive reveal
+  var items=document.querySelectorAll(".reveal");
+  function showAll(){ items.forEach(function(el){ el.classList.add("visible"); }); }
+  try {
+    if("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+      var io=new IntersectionObserver(function(es,o){ es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("visible"); o.unobserve(en.target); } }); },{threshold:.08});
+      items.forEach(function(el){ io.observe(el); });
+      setTimeout(showAll, 2500);
+    } else { showAll(); }
+  } catch(e){ showAll(); }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#ffffff" />
+<script>document.documentElement.classList.add("js");</script>
+
+<!-- ==========================================================================
+  DOMAIN MIGRATION NOTE (do NOT perform until official launch).
+  Active development host: https://freelanthropy.netlify.app
+  Replace this origin in exactly these places when the custom domain is connected:
+1. <link rel="canonical">  2. og:url  3. og:image (+ secure_url)
+4. twitter:url  5. twitter:image  6. every URL inside the JSON-LD block
+   Also update sitemap/robots files if present.
+========================================================================== -->
+
+<title>Sponsor &amp; Partner | Freelanthropy, IIT Patna</title>
+<meta name="description" content="Partner with or sponsor Freelanthropy under Wings of Arthniti, STC, IIT Patna (Hybrid). Support student-led competitions like ClientHunt, skill sprints, and campus innovation." />
+<meta name="keywords" content="Sponsor Freelanthropy, IIT Patna sponsorship, ClientHunt sponsor, Wings of Arthniti, STC IIT Patna, student entrepreneurship partner" />
+<meta name="author" content="Freelanthropy, IIT Patna" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://freelanthropy.netlify.app/sponsor" />
+
+<meta property="og:locale" content="en_IN" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Freelanthropy" />
+<meta property="og:url" content="https://freelanthropy.netlify.app/sponsor" />
+<meta property="og:title" content="Sponsor &amp; Partner | Freelanthropy, IIT Patna" />
+<meta property="og:description" content="Support student-led initiatives, competitions like ClientHunt, and institutional partnerships with Freelanthropy, IIT Patna." />
+<meta property="og:image" content="https://freelanthropy.netlify.app/assets/images/logo.png" />
+<meta property="og:image:secure_url" content="https://freelanthropy.netlify.app/assets/images/logo.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:alt" content="Freelanthropy logo" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://freelanthropy.netlify.app/sponsor" />
+<meta name="twitter:title" content="Sponsor &amp; Partner | Freelanthropy, IIT Patna" />
+<meta name="twitter:description" content="Support student-led initiatives, competitions like ClientHunt, and institutional partnerships with Freelanthropy, IIT Patna." />
+<meta name="twitter:image" content="https://freelanthropy.netlify.app/assets/images/logo.png" />
+<meta name="twitter:image:alt" content="Freelanthropy logo" />
+
+<link rel="icon" type="image/png" href="/assets/images/logo.png" />
+<link rel="apple-touch-icon" href="/assets/images/logo.png" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "WebPage", "@id": "https://freelanthropy.netlify.app/sponsor#webpage", "name": "Sponsor & Partner | Freelanthropy",
+      "url": "https://freelanthropy.netlify.app/sponsor", "inLanguage": "en-IN",
+      "isPartOf": { "@id": "https://freelanthropy.netlify.app/#website" },
+      "about": { "@id": "https://freelanthropy.netlify.app/#org" } },
+    { "@type": "Organization", "@id": "https://freelanthropy.netlify.app/#org", "name": "Freelanthropy",
+      "url": "https://freelanthropy.netlify.app/",
+      "logo": "https://freelanthropy.netlify.app/assets/images/logo.png",
+      "email": "freelanthropy.iitpatna@gmail.com" }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{--blue:#1a73e8;--blue-dark:#1557b0;--blue-surface:#e8f0fe;--red:#ea4335;--red-surface:#fce8e6;--red-dark:#a50e0e;--yellow:#fbbc04;--green:#34a853;--green-surface:#e6f4ea;--green-dark:#137333;--text:#202124;--text-2:#4d5156;--border:#dadce0;--surface:#f8f9fa;--radius:12px;--font:'Inter','Roboto',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+body{font-family:var(--font);color:var(--text);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+ul{list-style:none}
+[hidden]{display:none!important}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+.container{max-width:1120px;margin:0 auto;padding:0 24px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--blue);color:#fff;padding:8px 16px;border-radius:8px;z-index:100}
+.skip:focus{left:8px}
+
+/* Header & Navigation */
+header{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(255,255,255,.96);border-bottom:1px solid var(--border)}
+.nav{height:64px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-logo{width:36px;height:36px;border-radius:8px;overflow:hidden;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex:none;background:#fff}
+.brand-logo img{width:100%;height:100%;object-fit:contain}
+.brand-fallback{width:100%;height:100%;background:var(--blue);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+.brand-name{font-weight:600;font-size:1.05rem;line-height:1.2}
+.brand-sub{font-size:.7rem;color:var(--text-2)}
+.nav-links{display:none;align-items:center;gap:2px}
+.nav-links a{padding:8px 12px;border-radius:999px;font-size:.88rem;font-weight:500;color:var(--text-2)}
+.nav-links a:hover{background:var(--surface);color:var(--text)}
+.nav-links a.active{color:var(--blue-dark);background:var(--blue-surface)}
+.nav-links a.btn-nav{background:var(--blue);color:#fff;margin-left:8px;padding:9px 20px}
+.nav-links a.btn-nav:hover{background:var(--blue-dark)}
+.menu-btn{background:none;border:0;padding:8px;border-radius:50%;cursor:pointer;color:var(--text-2);display:inline-flex}
+.menu-btn:hover{background:var(--surface)}
+.menu-btn svg{width:24px;height:24px}
+.mobile-menu{display:none;position:absolute;top:64px;left:0;width:100%;background:#fff;border-bottom:1px solid var(--border);padding:8px 0 16px;max-height:calc(100vh - 64px);overflow-y:auto}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;padding:14px 24px;font-weight:500}
+.mobile-menu a:hover{background:var(--surface)}
+.mobile-menu .btn{margin:8px 24px 0;text-align:center}
+@media(min-width:1000px){.nav-links{display:flex}.menu-btn,.mobile-menu{display:none!important}}
+
+/* Buttons & Shared Primitives */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 26px;border-radius:999px;font-weight:500;font-size:.95rem;border:1px solid transparent;cursor:pointer;font-family:inherit;transition:background .2s,border-color .2s,opacity .2s}
+.btn:disabled{opacity:.65;cursor:not-allowed}
+.btn-primary{background:var(--blue);color:#fff}.btn-primary:hover:not(:disabled){background:var(--blue-dark)}
+.btn-outline{background:#fff;color:var(--blue-dark);border-color:var(--border)}.btn-outline:hover:not(:disabled){background:var(--blue-surface)}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+
+section{padding:88px 0}
+.section-head{max-width:680px;margin:0 0 44px}
+.label{color:var(--blue-dark);font-size:.85rem;font-weight:600;margin-bottom:8px}
+h2{font-size:clamp(1.8rem,3.6vw,2.5rem);font-weight:600;letter-spacing:-.02em;line-height:1.2;margin-bottom:12px}
+.section-head p{color:var(--text-2);font-size:1.05rem}
+.alt{background:var(--surface);border-block:1px solid var(--border)}
+.card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:28px}
+.card h3{font-size:1.1rem;font-weight:600;margin-bottom:6px}
+.card p{color:var(--text-2);font-size:.94rem}
+.grid{display:grid;gap:20px;grid-template-columns:1fr}
+@media(min-width:640px){.grid.g2,.grid.g3{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.grid.g3{grid-template-columns:repeat(3,1fr)}}
+.bar{height:3px;width:36px;border-radius:3px;margin-bottom:16px}
+.b-blue{background:var(--blue)}.b-red{background:var(--red)}.b-yellow{background:var(--yellow)}.b-green{background:var(--green)}
+.tag{display:inline-block;background:var(--blue-surface);color:var(--blue-dark);padding:4px 12px;border-radius:999px;font-size:.78rem;font-weight:600;margin-bottom:16px}
+.inline-link{color:var(--blue-dark);text-decoration:underline;font-weight:500}
+
+/* Page Hero */
+.hero{padding:136px 0 80px;border-bottom:1px solid var(--border)}
+.hero-grid{display:grid;gap:48px;align-items:center;grid-template-columns:1fr}
+@media(min-width:960px){.hero-grid{grid-template-columns:1.15fr .85fr}}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:.85rem;color:var(--text-2);margin-bottom:20px}
+.breadcrumb a:hover{color:var(--blue-dark);text-decoration:underline}
+.hero h1{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:600;letter-spacing:-.03em;line-height:1.12;margin-bottom:20px}
+.hero .lead{color:var(--text-2);font-size:1.1rem;max-width:600px;margin-bottom:28px}
+.panel{border:1px solid var(--border);border-radius:16px;padding:28px;background:#fff;max-width:440px;width:100%;margin:0 auto}
+.panel h3{font-size:1rem;font-weight:600;margin-bottom:4px}
+.panel>p{font-size:.88rem;color:var(--text-2);margin-bottom:16px}
+.panel li{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-top:1px solid var(--border);font-size:.9rem}
+.panel li i{width:10px;height:10px;border-radius:50%;flex:none;margin-top:6px}
+.panel li b{display:block;font-weight:600;color:var(--text)}
+.panel li span{color:var(--text-2);font-size:.84rem}
+
+/* Sponsorship Tiers */
+.tier{display:flex;flex-direction:column;align-items:flex-start;position:relative}
+.tier.featured{border-color:var(--blue);box-shadow:0 0 0 1px var(--blue)}
+.tier-badge{display:inline-block;background:var(--blue-surface);color:var(--blue-dark);padding:3px 10px;border-radius:999px;font-size:.75rem;font-weight:600;margin-bottom:12px}
+.tier-sub{font-size:.84rem;color:var(--text-2);font-weight:500;margin-bottom:12px}
+.tier ul{margin:16px 0 24px;padding-left:18px;list-style:disc;color:var(--text-2);font-size:.9rem;display:grid;gap:8px}
+.tier .btn{margin-top:auto}
+
+/* Spotlight Banner */
+.spotlight{border:1px solid var(--border);border-radius:16px;background:#fff;padding:36px;display:grid;gap:32px;grid-template-columns:1fr;align-items:center}
+@media(min-width:960px){.spotlight{grid-template-columns:1.25fr .75fr}}
+@media(max-width:600px){.spotlight{padding:24px}}
+.spotlight h3{font-size:clamp(1.5rem,3vw,2rem);font-weight:600;letter-spacing:-.02em;margin-bottom:10px}
+.spotlight p{color:var(--text-2);margin-bottom:16px;font-size:.98rem}
+.meta-list{display:grid;gap:12px}
+.meta-item{border:1px solid var(--border);border-radius:var(--radius);padding:14px 18px;background:var(--surface)}
+.meta-item small{display:block;font-size:.78rem;color:var(--text-2);font-weight:500}
+.meta-item b{font-size:.95rem;font-weight:600;color:var(--text)}
+
+/* Inquiry Form */
+.form-layout{display:grid;gap:40px;grid-template-columns:1fr;align-items:start}
+@media(min-width:960px){.form-layout{grid-template-columns:1.35fr .65fr}}
+.form-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:32px}
+@media(max-width:600px){.form-card{padding:24px}}
+.form-grid{display:grid;gap:20px;grid-template-columns:1fr}
+@media(min-width:640px){.form-grid.two{grid-template-columns:repeat(2,1fr)}}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:.88rem;font-weight:600;color:var(--text)}
+.field label span{color:var(--red);margin-left:2px}
+.field input,.field select,.field textarea{width:100%;padding:11px 14px;border:1px solid var(--border);border-radius:8px;font:inherit;font-size:.95rem;color:var(--text);background:#fff;transition:border-color .15s,box-shadow .15s}
+.field input:hover,.field select:hover,.field textarea:hover{border-color:#9aa0a6}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-surface)}
+.field textarea{min-height:128px;resize:vertical}
+.hint{font-size:.8rem;color:var(--text-2)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:2px}
+.chip input{position:absolute;opacity:0;pointer-events:none}
+.chip label{display:inline-flex;align-items:center;padding:7px 14px;border-radius:999px;border:1px solid var(--border);font-size:.85rem;font-weight:500;color:var(--text-2);cursor:pointer;user-select:none;transition:background .15s,border-color .15s,color .15s}
+.chip label:hover{background:var(--surface);color:var(--text)}
+.chip input:checked+label{background:var(--blue-surface);border-color:var(--blue);color:var(--blue-dark)}
+.chip input:focus-visible+label{outline:3px solid var(--blue);outline-offset:2px}
+.form-footer{margin-top:24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.status-banner{margin-top:20px;padding:16px 20px;border-radius:var(--radius);font-size:.92rem;border:1px solid transparent}
+.status-banner.success{background:var(--green-surface);border-color:#ceead6;color:var(--green-dark)}
+.status-banner.error{background:var(--red-surface);border-color:#f6aea9;color:var(--red-dark)}
+.status-banner strong{display:block;margin-bottom:4px}
+
+.side-stack{display:grid;gap:20px}
+.side-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px}
+.side-card h3{font-size:1rem;font-weight:600;margin-bottom:8px}
+.side-card p{font-size:.9rem;color:var(--text-2);margin-bottom:12px}
+.side-card p:last-child{margin-bottom:0}
+
+/* FAQ */
+.faq-list{max-width:760px;display:grid;gap:12px}
+details.faq{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:0 22px}
+details.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center;padding:18px 0;font-weight:600}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";font-size:1.3rem;color:var(--text-2);line-height:1}
+details.faq[open] summary::after{content:"\2212"}
+details.faq p{color:var(--text-2);font-size:.95rem;padding-bottom:18px}
+
+/* Footer */
+footer{border-top:1px solid var(--border);padding:56px 0 28px}
+.foot-grid{display:grid;gap:36px;grid-template-columns:1fr;margin-bottom:40px}
+@media(min-width:900px){.foot-grid{grid-template-columns:1.2fr 2fr}}
+.foot-brand .title{display:flex;align-items:center;gap:12px;font-size:1.3rem;font-weight:600;margin-bottom:12px}
+.foot-brand p{color:var(--text-2);font-size:.9rem;max-width:380px}
+.foot-links{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+@media(min-width:640px){.foot-links{grid-template-columns:repeat(4,1fr)}}
+.foot-links h3{font-size:.9rem;font-weight:600;margin-bottom:12px}
+.foot-links ul{display:grid;gap:10px;font-size:.9rem;color:var(--text-2)}
+.foot-links a:hover{color:var(--blue-dark);text-decoration:underline}
+.foot-bottom{border-top:1px solid var(--border);padding-top:20px;font-size:.82rem;color:var(--text-2);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+/* Reveal */
+.js .reveal{opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .5s ease}
+.js .reveal.visible{opacity:1;transform:none}
+@media(max-width:600px){section{padding:64px 0}.hero{padding:104px 0 56px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}html{scroll-behavior:auto}.js .reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header id="navbar">
+  <div class="container nav">
+    <a href="/" class="brand" aria-label="Freelanthropy home">
+      <div class="brand-logo"><img src="/assets/images/logo.png" alt="" width="36" height="36" data-fallback="F" /></div>
+      <div><div class="brand-name">Freelanthropy</div><div class="brand-sub">Wings of Arthniti, STC IIT Patna</div></div>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/#home">Home</a>
+      <a href="/#about">About</a>
+      <a href="/#initiatives">Initiatives</a>
+      <a href="/collaborate">Collaborate</a>
+      <a href="/sponsor" class="active" aria-current="page">Sponsor</a>
+      <a href="/#team">Team</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#get-involved" class="btn-nav">Join Us</a>
+    </nav>
+    <button id="menuToggle" class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+    </button>
+  </div>
+  <div id="mobileMenu" class="mobile-menu">
+    <a href="/#home">Home</a>
+    <a href="/#about">About</a>
+    <a href="/#initiatives">Initiatives</a>
+    <a href="/collaborate">Collaborate</a>
+    <a href="/sponsor">Sponsor</a>
+    <a href="/#team">Team</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/#get-involved" class="btn btn-primary">Join Us</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="sponsor-hero-title">
+    <div class="container hero-grid">
+      <div class="reveal">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <span>Sponsor</span>
+        </nav>
+        <span class="tag">Sponsorship &amp; Institutional Partners</span>
+        <h1 id="sponsor-hero-title">Back student builders and practical innovation.</h1>
+        <p class="lead">Partner with Freelanthropy at IIT Patna (Hybrid) to power flagship competitions like ClientHunt, skill sprints, and student-led entrepreneurship initiatives.</p>
+        <div class="actions">
+          <a href="#sponsor-form" class="btn btn-primary">Request Sponsorship Deck</a>
+          <a href="#tiers" class="btn btn-outline">View Partnership Tiers</a>
+        </div>
+      </div>
+
+      <div class="panel reveal">
+        <h3>What your sponsorship enables</h3>
+        <p>Under Wings of Arthniti, STC, IIT Patna (Hybrid).</p>
+        <ul>
+          <li>
+            <i style="background:var(--blue)"></i>
+            <div><b>Flagship Competitions</b><span>Fuel prize pools, logistics, and evaluation panels for events like ClientHunt.</span></div>
+          </li>
+          <li>
+            <i style="background:var(--green)"></i>
+            <div><b>Brand Visibility on Campus</b><span>Prominent placement across event pages, digital outreach, certificates, and venue banners.</span></div>
+          </li>
+          <li>
+            <i style="background:var(--yellow)"></i>
+            <div><b>Developer &amp; Cloud Credits</b><span>Equip student teams with APIs, hosting, design tools, and software licenses.</span></div>
+          </li>
+          <li>
+            <i style="background:var(--red)"></i>
+            <div><b>Long-Term Institutional Ties</b><span>Build sustained engagement with IIT Patna's entrepreneurial and technical community.</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="tiers" class="alt" aria-labelledby="tiers-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="label">Partnership models</div>
+        <h2 id="tiers-title">Sponsorship tiers</h2>
+        <p>Flexible sponsorship structures tailored for technology companies, platforms, startups, and institutional partners.</p>
+      </div>
+      <div class="grid g3">
+        <article class="card tier featured reveal">
+          <div class="bar b-blue"></div>
+          <span class="tier-badge">Flagship Partner</span>
+          <h3>Title &amp; Co-Title Sponsor</h3>
+          <p class="tier-sub">Maximum visibility across a full initiative cycle</p>
+          <p>Lead branding across Freelanthropy's flagship events, including ClientHunt online qualifiers and offline sprints.</p>
+          <ul>
+            <li>Co-branded event title &amp; primary logo placement</li>
+            <li>Dedicated keynote or fireside session during the event</li>
+            <li>Option to co-design a competition problem statement</li>
+            <li>Seat on the final Round 2 evaluation panel</li>
+            <li>Recognition across official social &amp; campus channels</li>
+          </ul>
+          <a href="#sponsor-form" class="btn btn-primary" data-tier-select="Title / Co-Title Sponsor">Inquire for Title Tier</a>
+        </article>
+
+        <article class="card tier reveal">
+          <div class="bar b-green"></div>
+          <span class="tier-badge">Initiative Partner</span>
+          <h3>Event &amp; Track Sponsor</h3>
+          <p class="tier-sub">Focused engagement with builders &amp; designers</p>
+          <p>Support a specific competition track—such as Web Development or Graphics Design—or sponsor a campus workshop.</p>
+          <ul>
+            <li>Track naming rights &amp; website partner listing</li>
+            <li>Direct interaction with shortlisted student teams</li>
+            <li>Logo feature on participant certificates &amp; event kits</li>
+            <li>Opportunity to distribute hiring or internship info</li>
+          </ul>
+          <a href="#sponsor-form" class="btn btn-outline" data-tier-select="Event / Track Sponsor">Sponsor a Track</a>
+        </article>
+
+        <article class="card tier reveal">
+          <div class="bar b-yellow"></div>
+          <span class="tier-badge">Ecosystem Partner</span>
+          <h3>In-Kind, Tooling &amp; Community Partner</h3>
+          <p class="tier-sub">Product credits, APIs, swags &amp; institutional support</p>
+          <p>Empower student participants with developer tools, cloud credits, SaaS subscriptions, or prize merchandise.</p>
+          <ul>
+            <li>Product &amp; credit distribution to participating teams</li>
+            <li>Hands-on product onboarding or demo slot</li>
+            <li>Community partner recognition on the event portal</li>
+            <li>Custom institutional or ecosystem collaborations</li>
+          </ul>
+          <a href="#sponsor-form" class="btn btn-outline" data-tier-select="In-Kind / Tooling / Community Partner">Partner With Us</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="featured-opportunity" aria-labelledby="spotlight-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="label">Current sponsorship opportunity</div>
+        <h2 id="spotlight-title">Sponsor ClientHunt</h2>
+        <p>Our upcoming two-stage competition testing ideation, professional communication, web development, and design.</p>
+      </div>
+      <div class="spotlight reveal">
+        <div>
+          <span class="tag">Upcoming Flagship Event</span>
+          <h3>ClientHunt — Ideation to 3-Hour Product Sprint</h3>
+          <p>ClientHunt challenges teams of 1 to 4 students to move from an online qualifier (Ideathon, Case Study, and Professional Mail Writing) into a high-intensity three-hour offline Product Development Sprint evaluated by Web Development and Graphics Design panels.</p>
+          <div class="actions">
+            <a href="#sponsor-form" class="btn btn-primary" data-tier-select="ClientHunt Event Sponsorship">Sponsor ClientHunt</a>
+            <a href="/clienthunt" class="btn btn-outline">View Event Details</a>
+          </div>
+        </div>
+        <div class="meta-list">
+          <div class="meta-item">
+            <small>Format</small>
+            <b>Round 1 Online Qualifier + Round 2 Offline Sprint</b>
+          </div>
+          <div class="meta-item">
+            <small>Participating Disciplines</small>
+            <b>Web Development, UI/UX &amp; Graphics Design, Strategy</b>
+          </div>
+          <div class="meta-item">
+            <small>Host Organisation</small>
+            <b>Freelanthropy · Wings of Arthniti, STC IIT Patna</b>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sponsor-form" class="alt" aria-labelledby="form-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="label">Get in touch</div>
+        <h2 id="form-title">Sponsorship &amp; partnership inquiry</h2>
+        <p>Share your organisation's details and preferred partnership model. Our team will share our sponsorship brochure and schedule a discussion within 2–3 working days.</p>
+      </div>
+
+      <div class="form-layout">
+        <form id="sponsorForm" class="form-card reveal">
+          <div class="form-grid two">
+            <div class="field">
+              <label for="contactName">Your Name<span>*</span></label>
+              <input type="text" id="contactName" name="contactName" required placeholder="e.g., Rohan Verma" autocomplete="name" />
+            </div>
+            <div class="field">
+              <label for="contactEmail">Official Email<span>*</span></label>
+              <input type="email" id="contactEmail" name="contactEmail" required placeholder="rohan@organisation.com" autocomplete="email" />
+            </div>
+          </div>
+
+          <div class="form-grid two" style="margin-top:20px">
+            <div class="field">
+              <label for="companyName">Brand / Company / Institution<span>*</span></label>
+              <input type="text" id="companyName" name="companyName" required placeholder="e.g., NovaTech India" autocomplete="organization" />
+            </div>
+            <div class="field">
+              <label for="designation">Role / Designation</label>
+              <input type="text" id="designation" name="designation" placeholder="e.g., Developer Relations, Marketing Lead" autocomplete="organization-title" />
+            </div>
+          </div>
+
+          <div class="form-grid two" style="margin-top:20px">
+            <div class="field">
+              <label for="sponsorTier">Preferred Partnership Tier<span>*</span></label>
+              <select id="sponsorTier" name="sponsorTier" required>
+                <option value="" disabled selected>Select a tier</option>
+                <option value="Title / Co-Title Sponsor">Title / Co-Title Sponsor</option>
+                <option value="Event / Track Sponsor">Event / Track Sponsor</option>
+                <option value="ClientHunt Event Sponsorship">ClientHunt Event Sponsorship</option>
+                <option value="In-Kind / Tooling / Community Partner">In-Kind / Tooling / Community Partner</option>
+                <option value="Institutional / Custom Partnership">Institutional / Custom Partnership</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="budgetRange">Estimated Support / Budget Range</label>
+              <select id="budgetRange" name="budgetRange">
+                <option value="To be discussed">To be discussed</option>
+                <option value="In-kind / Product Credits / Swag">In-kind / Product Credits / Swag</option>
+                <option value="Under INR 25,000">Under INR 25,000</option>
+                <option value="INR 25,000 - 75,000">INR 25,000 – 75,000</option>
+                <option value="INR 75,000+">INR 75,000+</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field" style="margin-top:20px">
+            <label>Deliverables of Interest</label>
+            <div class="chips" role="group" aria-label="Deliverables of interest">
+              <div class="chip"><input type="checkbox" id="del-brand" name="deliverables" value="Brand Visibility & Logos"><label for="del-brand">Brand Visibility &amp; Logos</label></div>
+              <div class="chip"><input type="checkbox" id="del-problem" name="deliverables" value="Co-branded Problem Statement"><label for="del-problem">Co-branded Problem Statement</label></div>
+              <div class="chip"><input type="checkbox" id="del-talk" name="deliverables" value="Speaker / Workshop Slot"><label for="del-talk">Speaker / Workshop Slot</label></div>
+              <div class="chip"><input type="checkbox" id="del-judge" name="deliverables" value="Judging Panel Seat"><label for="del-judge">Judging Panel Seat</label></div>
+              <div class="chip"><input type="checkbox" id="del-credits" name="deliverables" value="Product / API Adoption"><label for="del-credits">Product / API Adoption</label></div>
+              <div class="chip"><input type="checkbox" id="del-talent" name="deliverables" value="Talent & Internship Outreach"><label for="del-talent">Talent &amp; Internship Outreach</label></div>
+            </div>
+          </div>
+
+          <div class="field" style="margin-top:20px">
+            <label for="sponsorNotes">Partnership Goals or Message<span>*</span></label>
+            <textarea id="sponsorNotes" name="sponsorNotes" required placeholder="Tell us about your brand, the initiatives you would like to support, or any specific deliverables you are looking for."></textarea>
+            <span class="hint">Submitting records your inquiry in our Sponsorships ledger and sends an instant reference ID to your inbox.</span>
+          </div>
+
+          <div class="form-footer">
+            <button type="submit" id="submitBtn" class="btn btn-primary">Send Sponsorship Inquiry</button>
+            <a href="mailto:freelanthropy.iitpatna@gmail.com?subject=%5BFreelanthropy%20Sponsorship%5D%20Partnership%20Inquiry" class="inline-link" style="font-size:.9rem">Or email us directly</a>
+          </div>
+
+          <div id="formStatus" class="status-banner" hidden role="status" aria-live="polite"></div>
+        </form>
+
+        <aside class="side-stack reveal" aria-label="Additional sponsorship details">
+          <div class="side-card">
+            <h3>Sponsorship Desk</h3>
+            <p>For direct brochure requests or institutional MoUs, reach our coordination desk:</p>
+            <p><a href="mailto:freelanthropy.iitpatna@gmail.com" class="inline-link">freelanthropy.iitpatna@gmail.com</a></p>
+          </div>
+          <div class="side-card">
+            <h3>Looking to Hire or Mentor?</h3>
+            <p>If you want to commission a student project or mentor builders directly rather than sponsor an event, visit our collaboration page.</p>
+            <p><a href="/collaborate" class="inline-link">Explore Collaboration &rarr;</a></p>
+          </div>
+          <div class="side-card">
+            <h3>Official Affiliation</h3>
+            <p>Freelanthropy operates under <strong>Wings of Arthniti</strong>, Student Technical Council (STC), <strong>IIT Patna (Hybrid)</strong>.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" aria-labelledby="sponsor-faq-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="label">FAQ</div>
+        <h2 id="sponsor-faq-title">Common questions from sponsors</h2>
+      </div>
+      <div class="faq-list reveal">
+        <details class="faq">
+          <summary>Can we sponsor a single event like ClientHunt rather than an annual tier?</summary>
+          <p>Yes. Sponsors can partner for a specific event such as ClientHunt, back a single competition track (Web Development or Graphics Design), or support multiple initiatives across the academic term.</p>
+        </details>
+        <details class="faq">
+          <summary>Do you accept non-monetary or in-kind sponsorships?</summary>
+          <p>Yes. Cloud credits, developer APIs, design software licenses, domain vouchers, and participant merchandise are valuable ways to support student builders during sprints.</p>
+        </details>
+        <details class="faq">
+          <summary>Can sponsors contribute a problem statement for participants?</summary>
+          <p>Title and Track sponsors can work with our organizing team to frame a practical problem statement or case study for participants, subject to academic and competition fairness guidelines.</p>
+        </details>
+        <details class="faq">
+          <summary>How are sponsorships administered?</summary>
+          <p>All partnerships are coordinated transparently under Wings of Arthniti, STC, IIT Patna (Hybrid) with agreed deliverables documented prior to event announcements.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="title"><div class="brand-logo"><img src="/assets/images/logo.png" alt="" width="36" height="36" loading="lazy" data-fallback="F" /></div>Freelanthropy</div>
+        <p>A student-led initiative under Wings of Arthniti, STC, IIT Patna (Hybrid).</p>
+      </div>
+      <div class="foot-links">
+        <div><h3>Explore</h3><ul><li><a href="/#about">About</a></li><li><a href="/#initiatives">Initiatives</a></li><li><a href="/clienthunt">ClientHunt</a></li><li><a href="/#team">Team</a></li><li><a href="/#advisory">Advisory</a></li></ul></div>
+        <div><h3>Get involved</h3><ul><li><a href="https://chat.whatsapp.com/GZ0zmrx2FFBFvSWddpVs2l">Membership</a></li><li><a href="/collaborate">Collaborate</a></li><li><a href="/sponsor">Sponsor</a></li></ul></div>
+        <div><h3>Organisation</h3><ul><li><a href="https://stciitphybrid.in/" target="_blank" rel="noopener">STC IIT Patna</a></li><li><a href="https://www.stciitphybrid.in/wings/arthniti" target="_blank" rel="noopener">Wings of Arthniti</a></li><li><a href="https://www.iitp.ac.in/" target="_blank" rel="noopener">IIT Patna</a></li></ul></div>
+        <div><h3>Contact</h3><ul><li><a href="mailto:freelanthropy.iitpatna@gmail.com">freelanthropy.iitpatna@gmail.com</a></li></ul></div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>&copy; <span id="year">2026</span> Freelanthropy. All rights reserved.</div>
+      <div>Wings of Arthniti &middot; STC, IIT Patna (Hybrid)</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwjihol36ZbFXty9DWObRlscjTaJGzbmTpRkhg44xJVnI5Qc3faXc_EfhuXw_Mh63fe/exec";
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Image fallback (initial letter) without inline handlers
+  document.querySelectorAll("img[data-fallback]").forEach(function(img){
+    function swap(){ var s=document.createElement("span"); s.className="brand-fallback"; s.setAttribute("aria-hidden","true"); s.textContent=img.dataset.fallback; if(img.parentNode) img.replaceWith(s); }
+    img.addEventListener("error", swap);
+    if(img.complete && img.naturalWidth===0 && img.getAttribute("src")) swap();
+  });
+
+  // Mobile menu
+  var toggle=document.getElementById("menuToggle"), menu=document.getElementById("mobileMenu"), icon=document.getElementById("menuIcon");
+  function setMenu(open, returnFocus){
+    menu.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    icon.setAttribute("d", open ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16");
+    if(open){ var f=menu.querySelector("a"); if(f) f.focus(); } else if(returnFocus){ toggle.focus(); }
+  }
+  toggle.addEventListener("click", function(){ setMenu(!menu.classList.contains("open")); });
+  menu.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ setMenu(false); }); });
+  document.addEventListener("keydown", function(e){ if(e.key==="Escape" && menu.classList.contains("open")) setMenu(false, true); });
+
+  // Pre-select sponsorship tier from tier cards or spotlight CTA
+  var tierSelect = document.getElementById("sponsorTier");
+  document.querySelectorAll("[data-tier-select]").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      if(tierSelect) tierSelect.value = btn.getAttribute("data-tier-select");
+    });
+  });
+
+  function escHtml(str){
+    return String(str).replace(/[&<>"']/g, function(ch){
+      return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" })[ch];
+    });
+  }
+
+  // Asynchronous submission to Google Apps Script ("Sponsorships" sheet)
+  var form = document.getElementById("sponsorForm");
+  var statusBanner = document.getElementById("formStatus");
+  var submitBtn = document.getElementById("submitBtn");
+
+  if(form){
+    form.addEventListener("submit", async function(e){
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Submitting...";
+      statusBanner.hidden = true;
+      statusBanner.className = "status-banner";
+
+      var deliverables = Array.from(form.querySelectorAll("input[name='deliverables']:checked")).map(function(c){ return c.value; });
+      var budget = document.getElementById("budgetRange").value;
+      var notes = document.getElementById("sponsorNotes").value.trim();
+
+      var payload = {
+        formType: "sponsorship",
+        fullName: document.getElementById("contactName").value.trim(),
+        workEmail: document.getElementById("contactEmail").value.trim(),
+        orgName: document.getElementById("companyName").value.trim(),
+        roleTitle: document.getElementById("designation").value.trim(),
+        collabTrack: "[Sponsorship] " + tierSelect.value,
+        timeline: budget,
+        areas: deliverables,
+        projectBrief: notes
+      };
+
+      try {
+        var response = await fetch(SCRIPT_URL, {
+          method: "POST",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(payload)
+        });
+
+        var result = await response.json();
+
+        if(result && result.status === "success"){
+          statusBanner.classList.add("success");
+          statusBanner.innerHTML =
+            "<strong>Sponsorship inquiry received (Reference ID: " + escHtml(result.id) + ").</strong>" +
+            "We have logged your details and sent a confirmation copy to <b>" + escHtml(payload.workEmail) + "</b>. Our team will follow up with our sponsorship deck within 2–3 working days.";
+          statusBanner.hidden = false;
+          form.reset();
+        } else {
+          throw new Error((result && result.message) || "Submission could not be completed.");
+        }
+      } catch (err) {
+        statusBanner.classList.add("error");
+        statusBanner.innerHTML =
+          "<strong>Unable to submit online right now.</strong>" +
+          "Please try again in a moment or write directly to <a href=\"mailto:freelanthropy.iitpatna@gmail.com\" class=\"inline-link\">freelanthropy.iitpatna@gmail.com</a>.";
+        statusBanner.hidden = false;
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Send Sponsorship Inquiry";
+      }
+    });
+  }
+
+  // Progressive reveal
+  var items=document.querySelectorAll(".reveal");
+  function showAll(){ items.forEach(function(el){ el.classList.add("visible"); }); }
+  try {
+    if("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+      var io=new IntersectionObserver(function(es,o){ es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("visible"); o.unobserve(en.target); } }); },{threshold:.08});
+      items.forEach(function(el){ io.observe(el); });
+      setTimeout(showAll, 2500);
+    } else { showAll(); }
+  } catch(e){ showAll(); }
+})();
+</script>
+</body>
+</html>

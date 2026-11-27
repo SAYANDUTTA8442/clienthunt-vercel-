@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
+  <script>document.documentElement.classList.add('js');</script>
+
+  <title>ClientHunt | Business Problem &amp; Product Development Competition</title>
+  <meta name="description" content="ClientHunt by Freelanthropy is a two-round competition where teams analyse a real business problem, submit a project quotation and develop a product within an organizer-provided budget." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <!-- DOMAIN: keep the Netlify dev domain below. When the custom domain launches, replace every https://freelanthropy.netlify.app in this file (canonical, og:url, og:image, twitter:image). -->
+  <link rel="canonical" href="https://freelanthropy.netlify.app/clienthunt/" />
+  <link rel="icon" href="/assets/images/logo.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Freelanthropy" />
+  <meta property="og:title" content="ClientHunt | Business Problem &amp; Product Development Competition" />
+  <meta property="og:description" content="Analyse a real business problem, submit your own quotation, then build a product within an organizer-provided budget in a three-hour offline round." />
+  <meta property="og:url" content="https://freelanthropy.netlify.app/clienthunt/" />
+  <meta property="og:image" content="https://freelanthropy.netlify.app/assets/images/logo.png" />
+  <meta property="og:image:alt" content="Freelanthropy logo" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="ClientHunt | Business Problem &amp; Product Development Competition" />
+  <meta name="twitter:description" content="A two-round competition organized by Freelanthropy: real business problem, team quotation, then offline product development." />
+  <meta name="twitter:image" content="https://freelanthropy.netlify.app/assets/images/logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --blue:#1a73e8; --blue-dark:#1557b0; --blue-surface:#e8f0fe;
+      --red:#ea4335; --yellow:#fbbc04; --green:#34a853; --green-dark:#137333; --green-surface:#e6f4ea;
+      --text:#202124; --text-2:#5f6368; --border:#dadce0; --surface:#f8f9fa; --white:#fff;
+      --radius:16px;
+      --font:'Google Sans','Product Sans','Inter','Roboto',system-ui,sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:5rem}
+    body{font-family:var(--font);color:var(--text);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    ul,ol{list-style:none}
+    ::selection{background:var(--blue-surface);color:var(--blue-dark)}
+    :focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:8px}
+    .container{max-width:1120px;margin:0 auto;padding:0 24px}
+    .skip{position:absolute;left:-999px;top:8px;background:var(--blue);color:#fff;padding:10px 18px;border-radius:8px;z-index:100}
+    .skip:focus{left:8px}
+
+    /* Header */
+    header{position:fixed;inset:0 0 auto 0;z-index:50;height:64px;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);transition:box-shadow .2s}
+    header.scrolled{box-shadow:0 1px 3px rgba(60,64,67,.15)}
+    .nav{height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .brand-logo{flex:none;width:36px;height:36px;border-radius:8px;overflow:hidden;border:1px solid var(--border);background:#fff;display:flex;align-items:center;justify-content:center}
+    .brand-logo img{width:100%;height:100%;object-fit:contain}
+    .brand-fallback{width:100%;height:100%;background:var(--blue);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+    .brand-name{font-weight:500;font-size:1.05rem;line-height:1.2}
+    .brand-sub{font-size:.68rem;color:var(--text-2)}
+    .nav-links{display:none;align-items:center;gap:2px}
+    .nav-links a{padding:8px 12px;border-radius:999px;font-size:.86rem;font-weight:500;color:var(--text-2);transition:background .2s,color .2s}
+    .nav-links a:hover{background:var(--surface);color:var(--text)}
+    .nav-links a.active{color:var(--blue);background:var(--blue-surface)}
+    .nav-links a.btn-nav{background:var(--blue);color:#fff;margin-left:8px;padding:9px 20px}
+    .nav-links a.btn-nav:hover{background:var(--blue-dark)}
+    .menu-btn{background:none;border:0;width:44px;height:44px;border-radius:50%;cursor:pointer;color:var(--text-2);display:inline-flex;align-items:center;justify-content:center}
+    .menu-btn:hover{background:var(--surface)}
+    .menu-btn svg{width:24px;height:24px}
+    .mobile-menu{display:none;position:absolute;top:64px;left:0;width:100%;max-height:calc(100vh - 64px);overflow-y:auto;background:#fff;border-bottom:1px solid var(--border);box-shadow:0 4px 12px rgba(60,64,67,.15);padding:8px 0 16px}
+    .mobile-menu.open{display:block}
+    .mobile-menu a{display:block;padding:14px 24px;font-weight:500}
+    .mobile-menu a:hover{background:var(--surface)}
+    .mobile-menu .btn{margin:8px 24px 0;display:flex}
+    @media(min-width:1100px){.nav-links{display:flex}.menu-btn,.mobile-menu{display:none!important}}
+
+    /* Buttons */
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:12px 28px;border-radius:999px;font-family:inherit;font-weight:500;font-size:.95rem;border:1px solid transparent;cursor:pointer;transition:background .2s,box-shadow .2s,border-color .2s}
+    .btn-primary{background:var(--blue);color:#fff}
+    .btn-primary:hover{background:var(--blue-dark);box-shadow:0 1px 3px rgba(60,64,67,.35)}
+    .btn-outline{background:#fff;color:var(--blue);border-color:var(--border)}
+    .btn-outline:hover{background:var(--blue-surface)}
+    .btn-soft{background:var(--blue-surface);color:var(--blue-dark)}
+    .btn-soft:hover{background:#d2e3fc}
+    .btn-white{background:#fff;color:var(--blue-dark)}
+    .btn-white:hover{background:#f8fbff;box-shadow:0 1px 3px rgba(60,64,67,.35)}
+    .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.7)}
+    .btn-ghost:hover{background:rgba(255,255,255,.14)}
+    .textlink{color:var(--blue);font-weight:500;text-decoration:underline;text-underline-offset:3px}
+
+    /* Hero */
+    .hero{padding:136px 0 80px;background:linear-gradient(180deg,#f8fbff 0%,#fff 100%);border-bottom:1px solid var(--border)}
+    .hero-grid{display:grid;gap:48px;align-items:center;grid-template-columns:1fr}
+    @media(min-width:960px){.hero-grid{grid-template-columns:1.15fr .85fr}}
+    .eyebrow{display:inline-block;padding:6px 14px;border-radius:999px;background:var(--blue-surface);color:var(--blue-dark);font-size:.78rem;font-weight:500;letter-spacing:.02em;margin-bottom:20px}
+    .hero h1{font-size:clamp(2.8rem,8vw,4.8rem);font-weight:500;letter-spacing:-.03em;line-height:1.05;margin-bottom:12px}
+    .hero h1 .c1{color:var(--blue)} .hero h1 .dot{color:var(--red)}
+    .tagline{font-size:clamp(1.05rem,2.4vw,1.3rem);font-weight:500;margin-bottom:16px}
+    .hero p.lead{max-width:600px;color:var(--text-2);font-size:1.05rem;margin-bottom:24px}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+    .chip{padding:6px 14px;border:1px solid var(--border);border-radius:8px;font-size:.84rem;font-weight:500;color:var(--text-2);background:#fff}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+    .gbar{display:flex;gap:6px;margin-top:40px}
+    .gbar span{width:40px;height:4px;border-radius:4px}
+    .gbar span:nth-child(1){background:var(--blue)}.gbar span:nth-child(2){background:var(--red)}.gbar span:nth-child(3){background:var(--yellow)}.gbar span:nth-child(4){background:var(--green)}
+
+    /* Hero flow visual */
+    .flow{background:#fff;border:1px solid var(--border);border-radius:20px;padding:24px;box-shadow:0 1px 2px rgba(60,64,67,.15),0 2px 6px 2px rgba(60,64,67,.08)}
+    .flow-title{font-size:.82rem;font-weight:500;color:var(--text-2);margin-bottom:16px}
+    .flow ol{display:grid;gap:0}
+    .flow li{position:relative;display:flex;gap:14px;align-items:center;padding:10px 0}
+    .flow li:not(:last-child)::after{content:"";position:absolute;left:15px;top:42px;bottom:-10px;width:2px;background:var(--border)}
+    .flow .dotn{flex:none;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:600;color:#fff;z-index:1}
+    .flow b{display:block;font-weight:500;font-size:.95rem}
+    .flow small{color:var(--text-2);font-size:.8rem}
+    .bg-blue{background:var(--blue)}.bg-green{background:var(--green)}.bg-red{background:var(--red)}.bg-yellow{background:#e37400}
+
+    /* Sections */
+    section{padding:88px 0}
+    .alt{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .section-head{max-width:680px;margin:0 auto 48px;text-align:center}
+    .label{color:var(--blue);font-size:.82rem;font-weight:500;margin-bottom:10px}
+    h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:500;letter-spacing:-.02em;line-height:1.2;margin-bottom:14px}
+    .section-head p{color:var(--text-2);font-size:1.05rem}
+    h3{font-weight:500}
+
+    .card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:28px}
+    .grid-4{display:grid;gap:20px;grid-template-columns:1fr}
+    @media(min-width:640px){.grid-4{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:1024px){.grid-4{grid-template-columns:repeat(4,1fr)}}
+    .card h3{font-size:1.1rem;margin-bottom:8px}
+    .card p{color:var(--text-2);font-size:.93rem}
+
+    /* Overview */
+    .overview{display:grid;gap:32px;grid-template-columns:1fr;max-width:960px;margin:0 auto}
+    @media(min-width:860px){.overview{grid-template-columns:1fr 1fr}}
+    .overview p{color:var(--text-2);margin-bottom:14px}
+    .tick li{display:flex;gap:12px;padding:8px 0;font-size:.98rem}
+    .tick li::before{content:"";flex:none;width:20px;height:20px;margin-top:3px;border-radius:50%;background:var(--blue-surface) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a73e8' stroke-width='3'%3E%3Cpath d='M5 13l4 4L19 7'/%3E%3C/svg%3E") center/12px no-repeat}
+
+    /* Rounds */
+    .rounds{display:grid;gap:24px;grid-template-columns:1fr;max-width:1000px;margin:0 auto}
+    @media(min-width:900px){.rounds{grid-template-columns:1fr 1fr}}
+    .round{border-radius:20px;padding:32px;background:#fff;border:1px solid var(--border);border-top:6px solid var(--blue)}
+    .round.r2{border-top-color:var(--green)}
+    .badge{display:inline-block;padding:4px 12px;border-radius:999px;font-size:.75rem;font-weight:600;letter-spacing:.06em;background:var(--blue-surface);color:var(--blue-dark);margin-bottom:12px}
+    .r2 .badge{background:var(--green-surface);color:var(--green-dark)}
+    .round h3{font-size:1.5rem;margin-bottom:4px}
+    .round .rl{color:var(--text-2);font-size:.9rem;margin-bottom:20px}
+    .comp li{display:flex;gap:14px;padding:14px 0;border-top:1px solid var(--border)}
+    .comp .n{flex:none;font-weight:600;color:var(--blue);font-size:.9rem;min-width:24px}
+    .comp b{display:block;font-weight:500;margin-bottom:2px}
+    .comp span.d{color:var(--text-2);font-size:.9rem}
+    .r2 .comp .n{color:var(--green-dark)}
+    .proc{margin-top:20px;padding-top:16px;border-top:1px solid var(--border)}
+    .proc h4{font-size:.85rem;font-weight:500;color:var(--text-2);margin-bottom:10px}
+    .proc ol{display:flex;flex-wrap:wrap;gap:6px 4px;font-size:.8rem}
+    .proc li{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:3px 10px}
+    .proc li:not(:last-child)::after{content:"\2192";margin-left:8px;color:var(--text-2)}
+    .proc li:not(:last-child){padding-right:6px}
+
+    /* Quotation to execution */
+    .q2e{display:grid;gap:16px;grid-template-columns:1fr;max-width:1000px;margin:0 auto}
+    @media(min-width:900px){.q2e{grid-template-columns:1fr 1fr 1fr}}
+    .q2e .card{border-width:2px;position:relative}
+    .q2e .s1{border-color:var(--blue)}.q2e .s2{border-color:var(--green);background:var(--green-surface)}.q2e .s3{border-color:var(--green)}
+    .q2e .tagr{font-size:.75rem;font-weight:600;letter-spacing:.06em;margin-bottom:6px}
+    .s1 .tagr{color:var(--blue-dark)}.s2 .tagr,.s3 .tagr{color:var(--green-dark)}
+    .who{display:inline-block;margin-top:14px;padding:4px 12px;border-radius:6px;font-size:.8rem;font-weight:500;background:#fff;border:1px solid var(--border)}
+    .notice{max-width:1000px;margin:24px auto 0;padding:16px 20px;border-radius:12px;background:#fef7e0;border:1px solid #f9e2a0;font-size:.93rem}
+
+    /* Journey */
+    .journey{display:grid;gap:16px;grid-template-columns:1fr;counter-reset:j;position:relative}
+    @media(min-width:640px){.journey{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:1024px){.journey{grid-template-columns:repeat(4,1fr)}}
+    .journey li{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:22px;position:relative}
+    .journey li::before{counter-increment:j;content:counter(j);display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--blue);color:#fff;font-weight:600;font-size:.85rem;margin-bottom:12px}
+    .journey li:nth-child(n+6)::before{background:var(--green)}
+    .journey h3{font-size:1.02rem;margin-bottom:6px}
+    .journey p{color:var(--text-2);font-size:.9rem}
+    @media(max-width:639px){
+      .journey{padding-left:20px}
+      .journey::before{content:"";position:absolute;left:35px;top:16px;bottom:16px;width:2px;background:var(--border)}
+      .journey li{margin-left:0}
+    }
+
+    /* Evaluation */
+    .eval{max-width:760px;margin:0 auto;display:grid;gap:12px;justify-items:center}
+    .eb{width:100%;text-align:center;padding:18px 20px;border-radius:12px;border:1px solid var(--border);background:#fff}
+    .eb b{display:block;font-weight:500}.eb span{color:var(--text-2);font-size:.88rem}
+    .arrow{color:var(--text-2);font-size:1.3rem;line-height:1}
+    .split2{display:grid;gap:12px;width:100%;grid-template-columns:1fr}
+    @media(min-width:640px){.split2{grid-template-columns:1fr 1fr}}
+    .eb.web{border-color:var(--blue);background:var(--blue-surface)}
+    .eb.gfx{border-color:var(--red);background:#fce8e6}
+    .eb.org{border-color:var(--green);background:var(--green-surface)}
+    .eb.fin{background:var(--text);color:#fff;border-color:var(--text)}
+
+    /* Rules */
+    .rules{display:grid;gap:12px;grid-template-columns:1fr}
+    @media(min-width:640px){.rules{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:1024px){.rules{grid-template-columns:repeat(4,1fr)}}
+    .rule{background:#fff;border:1px solid var(--border);border-radius:12px;padding:16px 18px}
+    .rule small{display:block;color:var(--text-2);font-size:.78rem;margin-bottom:2px}
+    .rule b{font-weight:500}
+    .lock{margin-top:24px;display:flex;gap:16px;padding:22px 24px;border-radius:14px;background:#fce8e6;border:1px solid #f4b8b2}
+    .lock svg{flex:none;width:26px;height:26px;color:#c5221f;margin-top:2px}
+    .lock b{display:block;margin-bottom:4px;font-weight:500}
+    .lock p{font-size:.95rem}
+    .center{text-align:center;margin-top:28px}
+
+    /* Dates (hidden until content is confirmed) */
+    .dates-grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+
+    /* FAQ */
+    .faq{max-width:800px;margin:0 auto;display:grid;gap:10px}
+    details{background:#fff;border:1px solid var(--border);border-radius:12px}
+    summary{cursor:pointer;list-style:none;padding:18px 52px 18px 20px;font-weight:500;position:relative;min-height:44px}
+    summary::-webkit-details-marker{display:none}
+    summary::after{content:"+";position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:1.4rem;color:var(--blue);line-height:1}
+    details[open] summary::after{content:"\2212"}
+    details[open]{border-color:var(--blue)}
+    details p{padding:0 20px 18px;color:var(--text-2);font-size:.95rem}
+    details p a{color:var(--blue);text-decoration:underline}
+
+    /* CTA */
+    .cta{background:var(--blue);color:#fff;border-radius:28px;padding:64px 32px;text-align:center}
+    .cta h2{color:#fff;max-width:640px;margin:0 auto 16px}
+    .cta p{max-width:560px;margin:0 auto 12px;font-size:1.05rem}
+    .cta .size{font-weight:500;margin-bottom:28px}
+    .cta .actions{justify-content:center}
+
+    /* Footer */
+    footer{border-top:1px solid var(--border);padding:64px 0 28px}
+    .foot-grid{display:grid;gap:40px;grid-template-columns:1fr;margin-bottom:40px}
+    @media(min-width:768px){.foot-grid{grid-template-columns:1.2fr 2fr}}
+    .foot-brand .title{display:flex;align-items:center;gap:12px;font-size:1.4rem;font-weight:500;margin-bottom:12px}
+    .foot-brand p{color:var(--text-2);font-size:.9rem;max-width:340px}
+    .foot-links{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
+    @media(min-width:640px){.foot-links{grid-template-columns:repeat(3,1fr)}}
+    .foot-links h4{font-size:.9rem;font-weight:500;margin-bottom:14px}
+    .foot-links ul{display:grid;gap:10px;font-size:.9rem;color:var(--text-2)}
+    .foot-links a{display:inline-block;padding:2px 0}
+    .foot-links a:hover{color:var(--blue)}
+    .foot-links a.accent{color:var(--blue);font-weight:500}
+    .foot-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:.8rem;color:var(--text-2)}
+
+    #toTop{position:fixed;right:20px;bottom:20px;z-index:55;width:48px;height:48px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(60,64,67,.35);opacity:0;pointer-events:none;transform:translateY(12px);transition:opacity .25s,transform .25s}
+    #toTop.show{opacity:1;pointer-events:auto;transform:none}
+    #toTop svg{width:20px;height:20px}
+
+    /* Reveal: only hidden when JS is running */
+    .js .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+    .js .reveal.visible{opacity:1;transform:none}
+
+    @media(max-width:600px){section{padding:64px 0}.hero{padding:112px 0 64px}.cta{padding:48px 22px}.round{padding:24px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}.js .reveal{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header id="navbar">
+    <div class="container nav">
+      <a href="/" class="brand" aria-label="Freelanthropy home">
+        <div class="brand-logo"><img src="/assets/images/logo.png" width="36" height="36" alt="" onerror="this.outerHTML='<div class=\'brand-fallback\'>F</div>'" /></div>
+        <div>
+          <div class="brand-name">Freelanthropy</div>
+          <div class="brand-sub">Wings of Arthniti · IIT Patna</div>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#overview">Overview</a>
+        <a href="#format">Format</a>
+        <a href="#quotation-to-execution">Quotation to Execution</a>
+        <a href="#journey">Journey</a>
+        <a href="#evaluation">Evaluation</a>
+        <a href="#rules">Rules</a>
+        <a href="#faq">FAQ</a>
+        <a href="/clienthunt/register" class="btn-nav">Register Team</a>
+      </nav>
+
+      <button id="menuToggle" class="menu-btn" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+    </div>
+
+    <nav id="mobileMenu" class="mobile-menu" aria-label="Mobile">
+      <a href="#overview">Overview</a>
+      <a href="#format">Format</a>
+      <a href="#quotation-to-execution">Quotation to Execution</a>
+      <a href="#journey">Journey</a>
+      <a href="#evaluation">Evaluation</a>
+      <a href="#rules">Rules</a>
+      <a href="#faq">FAQ</a>
+      <a href="/clienthunt/register" class="btn btn-primary">Register Team</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">FREELANTHROPY PRESENTS · HYBRID COMPETITION</p>
+          <h1 id="hero-title"><span class="c1">Client</span>Hunt<span class="dot">.</span></h1>
+          <p class="tagline">Think. Analyse. Strategise. Quote. Build.</p>
+          <p class="lead">A two-round competition where teams tackle a real-world business problem, develop practical solutions, communicate professionally, estimate project costs and execute their ideas within an organizer-provided budget.</p>
+          <ul class="chips" aria-label="Competition at a glance">
+            <li class="chip">2 rounds</li>
+            <li class="chip">Hybrid format</li>
+            <li class="chip">Teams of 1–4</li>
+            <li class="chip">Real business problem</li>
+            <li class="chip">Round 1: team quotation</li>
+            <li class="chip">Round 2: 3 hours, offline</li>
+            <li class="chip">Round 2: organizer-provided budget</li>
+          </ul>
+          <div class="actions">
+            <a href="/clienthunt/register" class="btn btn-primary">Register Your Team</a>
+            <a href="/clienthunt/rulebook" class="btn btn-outline">Official Rulebook</a>
+            <a href="#format" class="btn btn-soft">Explore Competition Format</a>
+          </div>
+          <div class="gbar" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        </div>
+
+        <div class="flow reveal" role="group" aria-label="Competition flow">
+          <p class="flow-title">The ClientHunt path</p>
+          <ol>
+            <li><span class="dotn bg-blue">1</span><div><b>Problem</b><small>Real business problem, provided by organizers</small></div></li>
+            <li><span class="dotn bg-blue">2</span><div><b>Analysis</b><small>Round 1 · Online</small></div></li>
+            <li><span class="dotn bg-blue">3</span><div><b>Quotation</b><small>Round 1 · Prepared by your team</small></div></li>
+            <li><span class="dotn bg-green">4</span><div><b>Budget</b><small>Round 2 · Provided by organizers</small></div></li>
+            <li><span class="dotn bg-green">5</span><div><b>Product</b><small>Round 2 · Three hours, offline</small></div></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- OVERVIEW -->
+    <section id="overview" class="alt" aria-labelledby="overview-h">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="label">Competition overview</p>
+          <h2 id="overview-h">A business problem, then a build</h2>
+          <p>ClientHunt is a competition organized by Freelanthropy. It is not an open-ended ideathon: every team receives the same real-world business problem and works from it.</p>
+        </div>
+        <div class="overview reveal">
+          <div>
+            <p>The rounds follow the path of a real client engagement: understand the brief, respond professionally, price the work, then deliver within the client's limits. In Round 1, teams work online. They study the problem, shape a solution, complete the Case Study and Professional Mail Writing components, and prepare their own project quotation.</p>
+            <p>Eligible teams are shortlisted for Round 2, an offline product-development challenge. There, the Organizing Team provides a budget, and teams build within that budget and a three-hour limit.</p>
+          </div>
+          <ul class="tick" aria-label="What participants do">
+            <li>Understand a real business problem</li>
+            <li>Analyse requirements</li>
+            <li>Develop an appropriate solution</li>
+            <li>Communicate professionally</li>
+            <li>Estimate project costs</li>
+            <li>Build under budget and time constraints</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMAT -->
+    <section id="format" aria-labelledby="format-h">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="label">Two-round format</p>
+          <h2 id="format-h">How ClientHunt works</h2>
+          <p>Round 1 is online and tests analysis and communication. Round 2 is offline and tests planning and execution.</p>
+        </div>
+        <div class="rounds">
+          <article class="round reveal" aria-labelledby="r1-h">
+            <span class="badge">ROUND 1 · ONLINE</span>
+            <h3 id="r1-h">Analyse. Strategise. Communicate. Quote.</h3>
+            <p class="rl">Online Business Challenge</p>
+            <ol class="comp">
+              <li><span class="n">01</span><div><b>Business Problem Analysis &amp; Solution Development</b><span class="d">Teams receive a real-world business problem from the Organizing Team, analyse the requirements and formulate an appropriate solution.</span></div></li>
+              <li><span class="n">02</span><div><b>Case Study</b><span class="d">Teams complete the designated Case Study component as part of Round 1.</span></div></li>
+              <li><span class="n">03</span><div><b>Professional Mail Writing</b><span class="d">Teams demonstrate structured professional written communication.</span></div></li>
+              <li><span class="n">04</span><div><b>Project Quotation</b><span class="d">Teams prepare and submit their own quotation estimating the cost of their proposed solution.</span></div></li>
+            </ol>
+            <div class="proc">
+              <h4>Round 1 process</h4>
+              <ol>
+                <li>Problem statement release</li><li>Team analysis</li><li>Solution development</li><li>Required submissions</li><li>Evaluation</li><li>Shortlisting</li><li>Email notification</li>
+              </ol>
+            </div>
+          </article>
+
+          <article class="round r2 reveal" aria-labelledby="r2-h">
+            <span class="badge">ROUND 2 · OFFLINE</span>
+            <h3 id="r2-h">Plan. Allocate. Develop.</h3>
+            <p class="rl">Offline Product Development Challenge</p>
+            <ul class="comp">
+              <li><span class="n">&bull;</span><div><b>Three-hour offline challenge</b></div></li>
+              <li><span class="n">&bull;</span><div><b>Shortlisted teams only</b></div></li>
+              <li><span class="n">&bull;</span><div><b>Budget provided by the Organizing Team</b></div></li>
+              <li><span class="n">&bull;</span><div><b>Resource planning and allocation</b></div></li>
+              <li><span class="n">&bull;</span><div><b>Product development within the allocated budget</b></div></li>
+              <li><span class="n">&bull;</span><div><b>Department-wise evaluation</b></div></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUOTATION TO EXECUTION -->
+    <section id="quotation-to-execution" class="alt" aria-labelledby="q2e-h">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="label">Signature stage</p>
+          <h2 id="q2e-h">From Quotation to Execution</h2>
+          <p>ClientHunt connects commercial thinking with practical product development.</p>
+        </div>
+        <ol class="q2e">
+          <li class="card s1 reveal"><p class="tagr">ROUND 1</p><h3>Step 1 · Teams Quote</h3><p>Teams estimate and submit the cost of their proposed solution to the real business problem.</p><span class="who">Set by: your team</span></li>
+          <li class="card s2 reveal"><p class="tagr">ROUND 2</p><h3>Step 2 · Organizers Set the Budget</h3><p>The Organizing Team provides a defined budget constraint for the offline challenge.</p><span class="who">Set by: Organizing Team</span></li>
+          <li class="card s3 reveal"><p class="tagr">ROUND 2</p><h3>Step 3 · Teams Execute</h3><p>Teams plan resources and develop their product within the provided budget and three-hour time limit.</p><span class="who">Done by: your team</span></li>
+        </ol>
+        <p class="notice reveal"><strong>Two different budget mechanisms.</strong> The Round 1 quotation is prepared by your team. The Round 2 budget is provided by the Organizing Team. Your Round 1 quotation does not set your Round 2 budget.</p>
+      </div>
+    </section>
+
+    <!-- JOURNEY -->
+    <section id="journey" aria-labelledby="journey-h">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="label">Step by step</p>
+          <h2 id="journey-h">Your Journey at ClientHunt</h2>
+        </div>
+        <ol class="journey">
+          <li class="reveal"><h3>Team Registration</h3><p>Teams register with 1–4 participants.</p></li>
+          <li class="reveal"><h3>Business Problem Release</h3><p>The Organizing Team shares the common real-world business problem.</p></li>
+          <li class="reveal"><h3>Round 1 Submission</h3><p>Teams complete all four Round 1 components and submit their work.</p></li>
+          <li class="reveal"><h3>Evaluation</h3><p>Online submissions are evaluated.</p></li>
+          <li class="reveal"><h3>Shortlisting</h3><p>Eligible teams are shortlisted and notified through email.</p></li>
+          <li class="reveal"><h3>Offline Round 2</h3><p>Shortlisted teams attend the three-hour product-development challenge.</p></li>
+          <li class="reveal"><h3>Departmental Evaluation</h3><p>Web Development and Graphics Design independently evaluate their respective submissions.</p></li>
+          <li class="reveal"><h3>Final Results</h3><p>The Organizing Team consolidates the scores and publishes the results.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- EVALUATION -->
+    <section id="evaluation" class="alt" aria-labelledby="eval-h">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="label">Round 2 evaluation</p>
+          <h2 id="eval-h">Independent Evaluation Framework</h2>
+          <p>Two departments evaluate their own respective submissions independently. The Organizing Team then consolidates the scores.</p>
+        </div>
+        <div class="eval reveal">
+          <div class="eb"><b>Round 2 Submissions</b></div>
+          <div class="arrow" aria-hidden="true">&darr;</div>
+          <div class="split2">
+            <div class="eb web"><b>Web Development Department</b><span>Independent evaluation</span></div>
+            <div class="eb gfx"><b>Graphics Design Department</b><span>Independent evaluation</span></div>
+          </div>
+          <div class="arrow" aria-hidden="true">&darr;</div>
+          <div class="eb org"><b>Organizing Team</b><span>Score consolidation after both evaluations are complete</span></div>
+          <div class="arrow" aria-hidden="true">&darr;</div>
+          <div class="eb fin"><b>Final Results</b></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY PARTICIPATE -->
+    <section id="why" aria-labelledby="why-h">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="label">Why participate</p>
+          <h2 id="why-h">Skills the competition tests</h2>
+          <p>Each skill matches a stage of real client work, from reading the brief to delivering the result.</p>
+        </div>
+        <div class="grid-4">
+          <article class="card reveal"><h3>Business Problem Solving</h3><p>Work on a real business problem and develop an appropriate practical solution.</p></article>
+          <article class="card reveal"><h3>Commercial Thinking</h3><p>Estimate solution costs and communicate your proposed quotation.</p></article>
+          <article class="card reveal"><h3>Professional Communication</h3><p>Demonstrate structured thinking through professional written communication.</p></article>
+          <article class="card reveal"><h3>Budget-Constrained Execution</h3><p>Plan resources and develop a product within the organizer-provided budget.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- RULES -->
+    <section id="rules" class="alt" aria-labelledby="rules-h">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="label">Before you register</p>
+          <h2 id="rules-h">Participation &amp; Important Rules</h2>
+        </div>
+        <ul class="rules reveal">
+          <li class="rule"><small>Team size</small><b>1–4 participants</b></li>
+          <li class="rule"><small>Round 1</small><b>Online</b></li>
+          <li class="rule"><small>Round 2</small><b>Offline</b></li>
+          <li class="rule"><small>Round 2 duration</small><b>Three hours</b></li>
+          <li class="rule"><small>Round 1 quotation</small><b>Team-proposed</b></li>
+          <li class="rule"><small>Round 2 budget</small><b>Organizer-provided</b></li>
+          <li class="rule"><small>Shortlisting</small><b>Email notification</b></li>
+        </ul>
+        <div class="lock reveal" role="note">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg>
+          <div>
+            <b>Team Information Policy</b>
+            <p>Team details are locked after registration submission. Any correction or modification must be requested through the Organizing Team and is subject to review and approval. Participants cannot edit submitted team details themselves.</p>
+          </div>
+        </div>
+        <p class="center"><a href="/clienthunt/rulebook" class="btn btn-outline">Read the Official Rulebook</a></p>
+      </div>
+    </section>
+
+    <!-- IMPORTANT DATES: hidden until confirmed.
+         To publish: delete the `hidden` attribute on this section and add one <li class="rule"> per CONFIRMED item inside .dates-grid, e.g.
+         <li class="rule"><small>Registration closes</small><b>DD Month YYYY</b></li>
+         Possible entries: registration opens/closes, problem release, Round 1 deadline, shortlist announcement, Round 2 date, venue, results. Do not add unconfirmed items. -->
+    <section id="dates" hidden aria-labelledby="dates-h">
+      <div class="container">
+        <div class="section-head"><p class="label">Schedule</p><h2 id="dates-h">Important Dates &amp; Venue</h2></div>
+        <ul class="dates-grid"></ul>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" aria-labelledby="faq-h">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="label">Questions</p>
+          <h2 id="faq-h">Frequently asked questions</h2>
+        </div>
+        <div class="faq">
+          <details><summary>What is ClientHunt?</summary><p>ClientHunt is a two-round competition in which teams analyse a real-world business problem, develop a solution, submit a project quotation and, if shortlisted, build a product in a three-hour offline round.</p></details>
+          <details><summary>Who organizes ClientHunt?</summary><p>ClientHunt is organized by Freelanthropy — Wings of Arthniti, under STC, IIT Patna (Hybrid). It is a competition run by Freelanthropy, not a separate organization.</p></details>
+          <details><summary>What is the team-size limit?</summary><p>Teams may have 1–4 participants.</p></details>
+          <details><summary>What kind of problem will be provided?</summary><p>The Organizing Team provides a real-world business problem. All teams work from the same problem; it is not an open-ended choose-your-own-idea format. The problem is shared after registration.</p></details>
+          <details><summary>What are the Round 1 components?</summary><p>Round 1 has four components: Business Problem Analysis &amp; Solution Development, Case Study, Professional Mail Writing and Project Quotation.</p></details>
+          <details><summary>What is the Case Study component?</summary><p>The Case Study is a separate Round 1 component. Its exact deliverable and submission format will be defined in the official rulebook.</p></details>
+          <details><summary>What is the purpose of the Round 1 quotation?</summary><p>Teams prepare their own quotation estimating the cost of their proposed solution. It is part of Round 1 evaluation and shows your commercial thinking.</p></details>
+          <details><summary>Is the Round 1 quotation the Round 2 budget?</summary><p>No. The Round 1 quotation is prepared by your team. The Round 2 budget is provided by the Organizing Team, and your quotation does not determine it.</p></details>
+          <details><summary>Who provides the Round 2 budget?</summary><p>The Organizing Team provides a defined budget for Round 2. Teams plan resources and develop their product within it.</p></details>
+          <details><summary>How long is the offline challenge?</summary><p>Round 2 is a three-hour offline challenge for shortlisted teams.</p></details>
+          <details><summary>How are Round 2 submissions evaluated?</summary><p>Two departments, Web Development and Graphics Design, each evaluate their respective submissions independently.</p></details>
+          <details><summary>How are final results published?</summary><p>After both departments complete their evaluations, the Organizing Team consolidates the scores and publishes the final results.</p></details>
+          <details><summary>How will shortlisted teams be notified?</summary><p>Shortlisted teams are notified by email.</p></details>
+          <details><summary>Can submitted team details be modified?</summary><p>Not directly. Team details are locked after registration. Request any correction through the Organizing Team; requests are reviewed and may be approved or rejected.</p></details>
+          <details><summary>Where can participants read the official rules?</summary><p>In the <a href="/clienthunt/rulebook">Official Rulebook</a>.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section id="register" class="alt" aria-labelledby="cta-h">
+      <div class="container">
+        <div class="cta reveal">
+          <h2 id="cta-h">Ready to Take the Challenge?</h2>
+          <p>Bring your team, analyse a real business problem, prepare your quotation and demonstrate your ability to execute within constraints.</p>
+          <p class="size">Team size: 1–4 participants</p>
+          <div class="actions">
+            <a href="/clienthunt/register" class="btn btn-white">Register Your Team</a>
+            <a href="/clienthunt/rulebook" class="btn btn-ghost">Read the Official Rulebook</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <div class="title">
+            <div class="brand-logo"><img src="/assets/images/logo.png" width="36" height="36" alt="" loading="lazy" onerror="this.outerHTML='<div class=\'brand-fallback\'>F</div>'" /></div>
+            ClientHunt
+          </div>
+          <p>Organized by Freelanthropy — Wings of Arthniti, under STC, IIT Patna (Hybrid).</p>
+        </div>
+        <div class="foot-links">
+          <div>
+            <h4>Competition</h4>
+            <ul>
+              <li><a href="#format">Competition Format</a></li>
+              <li><a href="#journey">Participant Journey</a></li>
+              <li><a href="#evaluation">Evaluation Framework</a></li>
+              <li><a href="#rules">Rules</a></li>
+              <li><a href="#faq">FAQ</a></li>
+              <li><a href="/clienthunt/rulebook">Official Rulebook</a></li>
+              <li><a href="/clienthunt/register" class="accent">Registration</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Freelanthropy</h4>
+            <ul>
+              <li><a href="/">Freelanthropy Homepage</a></li>
+              <li><a href="/join">Join the Club</a></li>
+              <li><a href="/collaborate">Collaborate</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Organization</h4>
+            <ul>
+              <li><a href="https://stciitphybrid.in/" target="_blank" rel="noopener">STC IIT Patna</a></li>
+              <li><a href="mailto:freelanthropy.iitpatna@gmail.com" class="accent">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <div>&copy; <span id="year">2026</span> Freelanthropy. All rights reserved.</div>
+        <div><a href="#" id="footTop">Back to top</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#main" id="toTop" aria-label="Back to top">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"></path></svg>
+  </a>
+
+  <script>
+  (function () {
+    var $ = function (id) { return document.getElementById(id); };
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var y = $("year"); if (y) y.textContent = new Date().getFullYear();
+
+    // Mobile menu
+    var toggle = $("menuToggle"), menu = $("mobileMenu"), icon = $("menuIcon");
+    function setMenu(open) {
+      menu.classList.toggle("open", open);
+      toggle.setAttribute("aria-expanded", String(open));
+      icon.setAttribute("d", open ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16");
+    }
+    toggle.addEventListener("click", function () { setMenu(!menu.classList.contains("open")); });
+    menu.addEventListener("click", function (e) { if (e.target.closest("a")) setMenu(false); });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && menu.classList.contains("open")) { setMenu(false); toggle.focus(); }
+    });
+    window.addEventListener("resize", function () { if (window.innerWidth >= 1100) setMenu(false); });
+
+    // Scroll state + back to top
+    var navbar = $("navbar"), toTop = $("toTop");
+    function onScroll() {
+      navbar.classList.toggle("scrolled", window.scrollY > 10);
+      toTop.classList.toggle("show", window.scrollY > 600);
+    }
+    window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+    function goTop(e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+    }
+    toTop.addEventListener("click", goTop);
+    $("footTop").addEventListener("click", goTop);
+
+    // Reveal
+    var items = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window && !reduce) {
+      var io = new IntersectionObserver(function (es, obs) {
+        es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("visible"); obs.unobserve(en.target); } });
+      }, { threshold: 0.05, rootMargin: "0px 0px -20px 0px" });
+      items.forEach(function (el) { io.observe(el); });
+      setTimeout(function () { items.forEach(function (el) { el.classList.add("visible"); }); }, 4000);
+    } else {
+      items.forEach(function (el) { el.classList.add("visible"); });
+    }
+
+    // Active nav link
+    var links = document.querySelectorAll(".nav-links a[href^='#']");
+    if ("IntersectionObserver" in window && links.length) {
+      var spy = new IntersectionObserver(function (es) {
+        es.forEach(function (en) {
+          if (en.isIntersecting) links.forEach(function (a) {
+            var on = a.getAttribute("href") === "#" + en.target.id;
+            a.classList.toggle("active", on);
+            if (on) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current");
+          });
+        });
+      }, { rootMargin: "-45% 0px -50% 0px" });
+      ["overview","format","quotation-to-execution","journey","evaluation","rules","faq"].forEach(function (id) {
+        var el = $(id); if (el) spy.observe(el);
+      });
+    }
+  })();
+  </script>
+</body>
+</html>

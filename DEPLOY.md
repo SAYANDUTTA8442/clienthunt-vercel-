@@ -32,12 +32,33 @@ npm run create-owner -- "Your Name" you@iitp.ac.in "a long password"   # first O
 ```
 **Check `approved_email_domains` and `registration_status` in Firestore doc `config/main` before launch.**
 
-## 3. Vercel
+## 3. Vercel: one project serves the whole site and the API
 1. Import the repo (or `npx vercel`). Framework preset: *Other*. No build command, output directory `public`.
 2. Project > Settings > Environment Variables: `FIREBASE_SERVICE_ACCOUNT`, `FIREBASE_WEB_API_KEY`, `RATE_SALT` (all environments).
-3. Deploy. Pages: `/register`, `/search-team`, `/admin/dashboard`. API: `/api`.
-4. If you keep the pages on another host (Netlify), set `API_URL` in each page to `https://<project>.vercel.app/api`
-   and set `ALLOWED_ORIGINS=https://your-site.netlify.app` on Vercel. Hosting everything on Vercel needs neither.
+3. Deploy. Everything is on one origin, and the pages call `/api` directly, so **no CORS setting is needed** (`ALLOWED_ORIGINS` is only for a
+   page hosted somewhere else). Routes (`vercel.json`, translated from the old Netlify `_redirects`):
+
+   | URL | Serves |
+   |---|---|
+   | `/` | `public/index.html` |
+   | `/clienthunt`, `/clienthunt/register`, `/clienthunt/search-team`, `/clienthunt/rulebook` | `clienthunt.html`, `clienthunt-register.html`, `search-team.html`, `assets/rulebook.pdf` |
+   | `/collaborate`, `/sponsor` | their pages (these two still post to a separate Google Apps Script) |
+   | `/admin/dashboard` | admin dashboard (noindex) |
+   | `/super/ultra/admin/evaluation/pre/submission` | Round 1 evaluation page (noindex). The file itself lives at that path, so there is no guessable `/pre-submission-evaluation.html` |
+   | `/register`, `/search-team` | temporary redirects to the `/clienthunt/...` pages (old backend-only URLs) |
+   | anything else | `public/404.html` with a 404 status |
+   | `/api` | the serverless function |
+4. Security headers (CSP, nosniff, frame denial, HSTS) are set in `vercel.json`. The CSP allows only this origin, Google Fonts, and the Apps Script hosts the sponsor/collaborate forms use.
+5. **Moving off Netlify:** point your domain at Vercel (Project > Settings > Domains), then update the canonical / Open Graph / sitemap / robots URLs, which still say
+   `https://freelanthropy.netlify.app`:
+   ```
+   npm run set-site-url -- https://your-domain.example --dry     # preview
+   npm run set-site-url -- https://your-domain.example           # apply, then redeploy
+   ```
+   Keep the Netlify site up until the new domain works; Netlify and Vercel can run side by side (the old Netlify pages would still call Apps Script).
+6. Known gap carried over from Netlify: `/join` is routed but `public/join.html` does not exist, so it returns the 404 page. Add the file and it works.
+
+Tests: `npm test` (logic, env, routing, headers, links), and `npm i --no-save jsdom@24 && npm run test:e2e` (the real pages in a simulated browser against the API code).
 
 ## 4. Moving the existing data
 1. Close registration in the old system. In the old sheet export `Registrations`, `TeamMembers` (and `Requests`) as CSV into `./exports/`.

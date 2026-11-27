@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#ffffff" />
+<script>document.documentElement.classList.add("js");</script>
+
+<!-- ==========================================================================
+  DOMAIN MIGRATION NOTE (do NOT perform until official launch).
+  Active development host: https://freelanthropy.netlify.app
+  Replace this origin in exactly these places when the custom domain is connected:
+   1. <link rel="canonical">  2. og:url  3. og:image (+ secure_url)
+   4. twitter:url  5. twitter:image  6. every URL inside the JSON-LD block
+   Also update sitemap/robots files if present.
+========================================================================== -->
+
+<title>Freelanthropy | Student Freelancing &amp; Entrepreneurship Initiative, IIT Patna</title>
+<meta name="description" content="Freelanthropy is a student-led initiative under Wings of Arthniti, STC, IIT Patna (Hybrid), focused on freelancing, professional skills, collaboration and entrepreneurship." />
+<meta name="keywords" content="Freelanthropy, Wings of Arthniti, STC IIT Patna, IIT Patna, student freelancing, entrepreneurship, ClientHunt" />
+<meta name="author" content="Freelanthropy, IIT Patna" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://freelanthropy.netlify.app/" />
+
+<meta property="og:locale" content="en_IN" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Freelanthropy" />
+<meta property="og:url" content="https://freelanthropy.netlify.app/" />
+<meta property="og:title" content="Freelanthropy | Wings of Arthniti, STC IIT Patna" />
+<meta property="og:description" content="A student-led initiative for freelancing, professional skill development, collaboration and entrepreneurship." />
+<meta property="og:image" content="https://freelanthropy.netlify.app/assets/images/logo.png" />
+<meta property="og:image:secure_url" content="https://freelanthropy.netlify.app/assets/images/logo.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:alt" content="Freelanthropy logo" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:url" content="https://freelanthropy.netlify.app/" />
+<meta name="twitter:title" content="Freelanthropy | Wings of Arthniti, STC IIT Patna" />
+<meta name="twitter:description" content="A student-led initiative for freelancing, professional skill development, collaboration and entrepreneurship." />
+<meta name="twitter:image" content="https://freelanthropy.netlify.app/assets/images/logo.png" />
+<meta name="twitter:image:alt" content="Freelanthropy logo" />
+
+<link rel="icon" type="image/png" href="/assets/images/logo.png" />
+<link rel="apple-touch-icon" href="/assets/images/logo.png" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "WebSite", "@id": "https://freelanthropy.netlify.app/#website", "name": "Freelanthropy",
+      "url": "https://freelanthropy.netlify.app/", "inLanguage": "en-IN",
+      "publisher": { "@id": "https://freelanthropy.netlify.app/#org" } },
+    { "@type": "Organization", "@id": "https://freelanthropy.netlify.app/#org", "name": "Freelanthropy",
+      "description": "A student-led initiative under Wings of Arthniti, STC, IIT Patna (Hybrid), focused on freelancing, professional skill development, collaboration and entrepreneurship.",
+      "url": "https://freelanthropy.netlify.app/",
+      "logo": "https://freelanthropy.netlify.app/assets/images/logo.png",
+      "email": "freelanthropy.iitpatna@gmail.com",
+      "parentOrganization": { "@id": "https://freelanthropy.netlify.app/#wings" } },
+    { "@type": "Organization", "@id": "https://freelanthropy.netlify.app/#wings", "name": "Wings of Arthniti",
+      "url": "https://www.stciitphybrid.in/wings/arthniti",
+      "parentOrganization": { "@id": "https://freelanthropy.netlify.app/#stc" } },
+    { "@type": "Organization", "@id": "https://freelanthropy.netlify.app/#stc", "name": "STC, IIT Patna (Hybrid)",
+      "url": "https://stciitphybrid.in/",
+      "parentOrganization": { "@type": "EducationalOrganization", "name": "Indian Institute of Technology Patna", "url": "https://www.iitp.ac.in/" } }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{--blue:#1a73e8;--blue-dark:#1557b0;--blue-surface:#e8f0fe;--red:#ea4335;--yellow:#fbbc04;--green:#34a853;--text:#202124;--text-2:#4d5156;--border:#dadce0;--surface:#f8f9fa;--radius:12px;--font:'Inter','Roboto',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+body{font-family:var(--font);color:var(--text);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+ul{list-style:none}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+.container{max-width:1120px;margin:0 auto;padding:0 24px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--blue);color:#fff;padding:8px 16px;border-radius:8px;z-index:100}
+.skip:focus{left:8px}
+
+header{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(255,255,255,.96);border-bottom:1px solid var(--border)}
+.nav{height:64px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-logo{width:36px;height:36px;border-radius:8px;overflow:hidden;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex:none;background:#fff}
+.brand-logo img{width:100%;height:100%;object-fit:contain}
+.brand-fallback{width:100%;height:100%;background:var(--blue);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+.brand-name{font-weight:600;font-size:1.05rem;line-height:1.2}
+.brand-sub{font-size:.7rem;color:var(--text-2)}
+.nav-links{display:none;align-items:center;gap:2px}
+.nav-links a{padding:8px 12px;border-radius:999px;font-size:.88rem;font-weight:500;color:var(--text-2)}
+.nav-links a:hover{background:var(--surface);color:var(--text)}
+.nav-links a.active{color:var(--blue-dark);background:var(--blue-surface)}
+.nav-links a.btn-nav{background:var(--blue);color:#fff;margin-left:8px;padding:9px 20px}
+.nav-links a.btn-nav:hover{background:var(--blue-dark)}
+.menu-btn{background:none;border:0;padding:8px;border-radius:50%;cursor:pointer;color:var(--text-2);display:inline-flex}
+.menu-btn:hover{background:var(--surface)}
+.menu-btn svg{width:24px;height:24px}
+.mobile-menu{display:none;position:absolute;top:64px;left:0;width:100%;background:#fff;border-bottom:1px solid var(--border);padding:8px 0 16px;max-height:calc(100vh - 64px);overflow-y:auto}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;padding:14px 24px;font-weight:500}
+.mobile-menu a:hover{background:var(--surface)}
+.mobile-menu .btn{margin:8px 24px 0;text-align:center}
+@media(min-width:1000px){.nav-links{display:flex}.menu-btn,.mobile-menu{display:none!important}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 26px;border-radius:999px;font-weight:500;font-size:.95rem;border:1px solid transparent;cursor:pointer;font-family:inherit;transition:background .2s,border-color .2s}
+.btn-primary{background:var(--blue);color:#fff}.btn-primary:hover{background:var(--blue-dark)}
+.btn-outline{background:#fff;color:var(--blue-dark);border-color:var(--border)}.btn-outline:hover{background:var(--blue-surface)}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+
+section{padding:88px 0}
+.section-head{max-width:680px;margin:0 0 44px}
+.label{color:var(--blue-dark);font-size:.85rem;font-weight:600;margin-bottom:8px}
+h2{font-size:clamp(1.8rem,3.6vw,2.5rem);font-weight:600;letter-spacing:-.02em;line-height:1.2;margin-bottom:12px}
+.section-head p{color:var(--text-2);font-size:1.05rem}
+.alt{background:var(--surface);border-block:1px solid var(--border)}
+.card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:28px}
+.card h3{font-size:1.1rem;font-weight:600;margin-bottom:6px}
+.card p{color:var(--text-2);font-size:.94rem}
+.grid{display:grid;gap:20px;grid-template-columns:1fr}
+@media(min-width:640px){.grid.g2,.grid.g3{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.grid.g3{grid-template-columns:repeat(3,1fr)}}
+.bar{height:3px;width:36px;border-radius:3px;margin-bottom:16px}
+.b-blue{background:var(--blue)}.b-red{background:var(--red)}.b-yellow{background:var(--yellow)}.b-green{background:var(--green)}
+
+/* Hero */
+.hero{padding:136px 0 80px;border-bottom:1px solid var(--border)}
+.hero-grid{display:grid;gap:48px;align-items:center;grid-template-columns:1fr}
+@media(min-width:960px){.hero-grid{grid-template-columns:1.15fr .85fr}}
+.hero h1{font-size:clamp(2.3rem,5.5vw,3.8rem);font-weight:600;letter-spacing:-.03em;line-height:1.1;margin-bottom:20px}
+.hero .lead{color:var(--text-2);font-size:1.1rem;max-width:600px;margin-bottom:20px}
+.affil{font-size:.92rem;color:var(--text-2);margin-bottom:28px}
+.affil strong{color:var(--text);font-weight:600}
+.panel{border:1px solid var(--border);border-radius:16px;padding:28px;background:#fff;max-width:440px;width:100%;margin:0 auto}
+.panel h3{font-size:1rem;font-weight:600;margin-bottom:4px}
+.panel>p{font-size:.88rem;color:var(--text-2);margin-bottom:16px}
+.panel li{display:flex;align-items:center;gap:12px;padding:10px 0;border-top:1px solid var(--border);font-size:.92rem;font-weight:500}
+.panel li i{width:10px;height:10px;border-radius:50%;flex:none}
+
+/* Hierarchy */
+.hier{display:grid;gap:0;max-width:520px}
+.hier-item{border:1px solid var(--border);border-radius:var(--radius);padding:16px 20px;background:#fff}
+.hier-item small{display:block;color:var(--text-2);font-size:.82rem}
+.hier-item b{font-weight:600}
+.hier-item.cur{border-color:var(--blue);background:var(--blue-surface)}
+.hier-arrow{height:24px;display:flex;justify-content:center;color:var(--text-2)}
+.hier-arrow svg{width:20px;height:24px}
+
+/* About */
+.split{display:grid;gap:40px;grid-template-columns:1fr}
+@media(min-width:960px){.split{grid-template-columns:1fr 1fr;gap:56px}}
+.split>div>p{color:var(--text-2);font-size:1.05rem;margin-bottom:16px}
+.mv{display:grid;gap:20px}
+.mv .card{border-left:4px solid var(--blue)}
+.mv .card:nth-child(2){border-left-color:var(--green)}
+
+/* Events */
+.tabs{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
+.tab{padding:8px 18px;border-radius:999px;border:1px solid var(--border);background:#fff;font:inherit;font-size:.9rem;font-weight:500;color:var(--text-2);cursor:pointer}
+.tab[aria-pressed="true"]{background:var(--blue-surface);border-color:var(--blue-surface);color:var(--blue-dark)}
+.status-group{margin-bottom:24px}
+.status-group h3{font-size:1rem;font-weight:600;margin-bottom:12px}
+.empty{color:var(--text-2);font-size:.94rem;border:1px dashed var(--border);border-radius:var(--radius);padding:20px}
+.feature{border:1px solid var(--border);border-radius:16px;background:#fff;padding:36px;display:grid;gap:32px;grid-template-columns:1fr}
+@media(min-width:960px){.feature{grid-template-columns:1.2fr .8fr}}
+.tag{display:inline-block;background:var(--blue-surface);color:var(--blue-dark);padding:3px 12px;border-radius:999px;font-size:.78rem;font-weight:600;margin-bottom:14px}
+.feature h4{font-size:clamp(1.9rem,4vw,2.6rem);font-weight:600;letter-spacing:-.02em;margin-bottom:10px}
+.feature p{color:var(--text-2);margin-bottom:16px}
+.rounds{display:grid;gap:14px}
+.round{border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;background:var(--surface)}
+.round b{display:block;font-weight:600;margin-bottom:4px;font-size:.95rem}
+.round ul{color:var(--text-2);font-size:.9rem;padding-left:18px;list-style:disc}
+.fact{font-size:.9rem;color:var(--text-2);margin:4px 0 20px}
+
+/* Team */
+.team-grid{display:grid;gap:32px 20px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:640px){.team-grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:960px){.team-grid{grid-template-columns:repeat(5,1fr)}}
+.person{text-align:center}
+.avatar{width:112px;height:112px;margin:0 auto 14px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:600;overflow:hidden;background:var(--blue-surface);color:var(--blue-dark);border:1px solid var(--border)}
+.avatar img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.person h3{font-size:1.02rem;font-weight:600}
+.role{font-size:.85rem;color:var(--text-2);font-weight:500}
+.role.hl{color:var(--blue-dark)}
+.support{display:grid;gap:16px;grid-template-columns:1fr;margin-top:8px}
+@media(min-width:640px){.support{grid-template-columns:repeat(3,1fr)}}
+.support .card{padding:20px}
+.sub{font-size:1.2rem;font-weight:600;margin:56px 0 16px;padding-top:32px;border-top:1px solid var(--border)}
+.adv{max-width:320px}
+
+/* Involved */
+.path .link{display:inline-block;margin-top:14px;color:var(--blue-dark);font-weight:600;font-size:.92rem}
+.path .link:hover{text-decoration:underline}
+.path{display:flex;flex-direction:column;align-items:flex-start}
+.path .btn{margin-top:auto}
+.path p{margin-bottom:20px}
+.path h3 span{display:block;font-size:.8rem;color:var(--text-2);font-weight:500}
+
+/* FAQ */
+.faq-list{max-width:760px;display:grid;gap:12px}
+details.faq{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:0 22px}
+details.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center;padding:18px 0;font-weight:600}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";font-size:1.3rem;color:var(--text-2);line-height:1}
+details.faq[open] summary::after{content:"\2212"}
+details.faq p{color:var(--text-2);font-size:.95rem;padding-bottom:18px}
+details.faq p+p{margin-top:-6px}
+
+/* Footer */
+footer{border-top:1px solid var(--border);padding:56px 0 28px}
+.foot-grid{display:grid;gap:36px;grid-template-columns:1fr;margin-bottom:40px}
+@media(min-width:900px){.foot-grid{grid-template-columns:1.2fr 2fr}}
+.foot-brand .title{display:flex;align-items:center;gap:12px;font-size:1.3rem;font-weight:600;margin-bottom:12px}
+.foot-brand p{color:var(--text-2);font-size:.9rem;max-width:380px}
+.foot-links{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+@media(min-width:640px){.foot-links{grid-template-columns:repeat(4,1fr)}}
+.foot-links h3{font-size:.9rem;font-weight:600;margin-bottom:12px}
+.foot-links ul{display:grid;gap:10px;font-size:.9rem;color:var(--text-2)}
+.foot-links a:hover{color:var(--blue-dark);text-decoration:underline}
+.foot-bottom{border-top:1px solid var(--border);padding-top:20px;font-size:.82rem;color:var(--text-2);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+/* Reveal: content visible unless JS is confirmed running */
+.js .reveal{opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .5s ease}
+.js .reveal.visible{opacity:1;transform:none}
+@media(max-width:600px){section{padding:64px 0}.hero{padding:104px 0 56px}.feature{padding:24px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}html{scroll-behavior:auto}.js .reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header id="navbar">
+  <div class="container nav">
+    <a href="#home" class="brand" aria-label="Freelanthropy home">
+      <div class="brand-logo"><img src="assets/images/logo.png" alt="" width="36" height="36" data-fallback="F" /></div>
+      <div><div class="brand-name">Freelanthropy</div><div class="brand-sub">Wings of Arthniti, STC IIT Patna</div></div>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#home">Home</a><a href="#about">About</a><a href="#focus">Focus Areas</a><a href="#initiatives">Initiatives</a><a href="#team">Team</a><a href="#advisory">Advisory</a><a href="#faq">FAQ</a>
+      <a href="#get-involved" class="btn-nav">Join Us</a>
+    </nav>
+    <button id="menuToggle" class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+    </button>
+  </div>
+  <div id="mobileMenu" class="mobile-menu">
+    <a href="#home">Home</a><a href="#about">About</a><a href="#focus">Focus Areas</a><a href="#initiatives">Initiatives</a><a href="#team">Team</a><a href="#advisory">Advisory</a><a href="#faq">FAQ</a>
+    <a href="#get-involved" class="btn btn-primary">Join Us</a>
+  </div>
+</header>
+
+<main id="main">
+  <section id="home" class="hero" aria-labelledby="hero-title">
+    <div class="container hero-grid">
+      <div class="reveal">
+        <h1 id="hero-title">Turning student capability into practical outcomes.</h1>
+        <p class="lead">Freelanthropy is a student-led initiative focused on freelancing, professional skill development, interdisciplinary collaboration and entrepreneurship. We create opportunities for students to learn, work together and engage with practical challenges.</p>
+        <p class="affil">An initiative of <strong>Wings of Arthniti</strong>, under <strong>STC, IIT Patna (Hybrid)</strong>. Open to students, companies, mentors and sponsors.</p>
+        <div class="actions">
+          <a href="#initiatives" class="btn btn-primary">Explore Our Initiatives</a>
+          <a href="#get-involved" class="btn btn-outline">Join Freelanthropy</a>
+        </div>
+      </div>
+      <div class="panel reveal">
+        <h3>Six focus areas</h3>
+        <p>The skills and disciplines Freelanthropy works across.</p>
+        <ul>
+          <li><i style="background:var(--blue)"></i>Tech &amp; Development</li>
+          <li><i style="background:var(--red)"></i>Design &amp; Creativity</li>
+          <li><i style="background:var(--yellow)"></i>Freelance &amp; Professional Skills</li>
+          <li><i style="background:var(--green)"></i>Entrepreneurship</li>
+          <li><i style="background:var(--blue)"></i>Marketing &amp; Communication</li>
+          <li><i style="background:var(--red)"></i>Collaboration &amp; Management</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="structure" aria-labelledby="structure-title" style="padding:56px 0">
+    <div class="container reveal">
+      <h2 id="structure-title" style="font-size:1.4rem">Where Freelanthropy sits</h2>
+      <p style="color:var(--text-2);margin-bottom:20px">Freelanthropy is an initiative under Wings of Arthniti, which operates under STC, IIT Patna (Hybrid).</p>
+      <div class="hier" role="list">
+        <div class="hier-item" role="listitem"><b>STC, IIT Patna (Hybrid)</b><small>Parent body</small></div>
+        <div class="hier-arrow" aria-hidden="true"><svg viewBox="0 0 20 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 2v18M4 14l6 6 6-6"/></svg></div>
+        <div class="hier-item" role="listitem"><b>Wings of Arthniti</b><small>Wing under STC</small></div>
+        <div class="hier-arrow" aria-hidden="true"><svg viewBox="0 0 20 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 2v18M4 14l6 6 6-6"/></svg></div>
+        <div class="hier-item cur" role="listitem"><b>Freelanthropy</b><small>Club under Arthniti Cell</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="alt" aria-labelledby="about-title">
+    <div class="container split">
+      <div class="reveal">
+        <div class="label">About</div>
+        <h2 id="about-title">Learning that continues into practice.</h2>
+        <p>Freelanthropy brings students together to explore professional opportunities, build practical capabilities and work on meaningful challenges, individually and in teams.</p>
+        <p>We connect students with peers, mentors and potential collaborators, so that skills developed in the classroom can be applied in practical settings.</p>
+      </div>
+      <div class="mv reveal">
+        <div class="card"><h3>Mission</h3><p>To create opportunities for students to develop professional capabilities through practical learning, collaborative projects and industry-oriented engagement.</p></div>
+        <div class="card"><h3>Vision</h3><p>To foster a collaborative ecosystem where students can transform their skills and ideas into meaningful professional outcomes.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="what-we-do" aria-labelledby="wwd-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="label">What we do</div>
+        <h2 id="wwd-title">Areas of activity</h2>
+        <p>The kinds of work Freelanthropy organises and supports for students.</p>
+      </div>
+      <div class="grid g3">
+        <div class="card reveal"><div class="bar b-blue"></div><h3>Professional skill development</h3><p>Building communication, writing and workplace skills students can use beyond campus.</p></div>
+        <div class="card reveal"><div class="bar b-red"></div><h3>Practical learning and projects</h3><p>Learning through collaborative, hands-on work rather than theory alone.</p></div>
+        <div class="card reveal"><div class="bar b-yellow"></div><h3>Freelancing and client engagement</h3><p>Understanding client requirements, scoping work and delivering to a brief.</p></div>
+        <div class="card reveal"><div class="bar b-green"></div><h3>Competitions and initiatives</h3><p>Structured events that put students in front of practical challenges.</p></div>
+        <div class="card reveal"><div class="bar b-blue"></div><h3>Collaboration and networking</h3><p>Connecting students with peers, mentors, companies and partners.</p></div>
+        <div class="card reveal"><div class="bar b-red"></div><h3>Entrepreneurship and innovation</h3><p>Identifying opportunities and working out how to act on them.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="focus" class="alt" aria-labelledby="focus-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="label">Focus areas</div>
+        <h2 id="focus-title">Six areas, one practical approach.</h2>
+      </div>
+      <div class="grid g3">
+        <div class="card reveal"><div class="bar b-blue"></div><h3>Tech &amp; Development</h3><p>Software development, web technologies, digital products and technical problem-solving.</p></div>
+        <div class="card reveal"><div class="bar b-red"></div><h3>Design &amp; Creativity</h3><p>Graphic design, UI/UX, visual communication and creative problem-solving.</p></div>
+        <div class="card reveal"><div class="bar b-yellow"></div><h3>Freelance &amp; Professional Skills</h3><p>Client communication, requirement understanding, project scoping and delivery.</p></div>
+        <div class="card reveal"><div class="bar b-green"></div><h3>Entrepreneurship</h3><p>Innovation, business development, opportunity identification and practical execution.</p></div>
+        <div class="card reveal"><div class="bar b-blue"></div><h3>Marketing &amp; Communication</h3><p>Digital marketing, branding, outreach and communication.</p></div>
+        <div class="card reveal"><div class="bar b-red"></div><h3>Collaboration &amp; Management</h3><p>Team coordination, operations, planning and project management.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!--
+    EVENTS & INITIATIVES
+    To add an entry: copy an <article class="feature"> or <div class="card"> into the matching
+    .status-group (data-status="upcoming | ongoing | completed") and remove its .empty paragraph.
+    Replace the "Our Activities" note below with verified project/event photos when available.
+  -->
+  <section id="initiatives" aria-labelledby="init-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="label">Events &amp; Initiatives</div>
+        <h2 id="init-title">What Freelanthropy is organising.</h2>
+      </div>
+      <div class="tabs" role="group" aria-label="Filter initiatives by status">
+        <button class="tab" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="tab" type="button" data-filter="upcoming" aria-pressed="false">Upcoming</button>
+        <button class="tab" type="button" data-filter="ongoing" aria-pressed="false">Ongoing</button>
+        <button class="tab" type="button" data-filter="completed" aria-pressed="false">Completed</button>
+      </div>
+
+      <div class="status-group" data-status="upcoming">
+        <h3>Upcoming</h3>
+        <article class="feature">
+          <div>
+            <span class="tag">Featured initiative</span>
+            <h4>ClientHunt</h4>
+            <p>ClientHunt is an event organised by Freelanthropy. Participants work through a common problem statement, first online and then in a timed offline sprint.</p>
+            <p class="fact"><strong>Team size:</strong> 1 to 4 participants. Dates and venue will be announced on the ClientHunt page.</p>
+            <div class="actions">
+              <a href="/clienthunt" class="btn btn-primary">Explore ClientHunt</a>
+              <a href="/clienthunt/register" class="btn btn-outline">Register your team</a>
+            </div>
+          </div>
+          <div class="rounds">
+            <div class="round"><b>Round 1: Online Qualifier</b>
+              <ul><li>Common problem statement</li><li>Ideathon</li><li>Case Study</li><li>Professional Mail Writing</li><li>Evaluation and shortlisting</li></ul></div>
+            <div class="round"><b>Round 2: Offline Product Development Sprint</b>
+              <ul><li>Three-hour offline challenge</li><li>Web Development and Graphics Design departments evaluate their respective submissions independently</li><li>Organizing Team consolidates scores and publishes the final results</li></ul></div>
+          </div>
+        </article>
+      </div>
+      <div class="status-group" data-status="ongoing">
+        <h3>Ongoing</h3>
+        <p class="empty">No ongoing initiatives are listed at the moment.</p>
+      </div>
+      <div class="status-group" data-status="completed">
+        <h3>Completed</h3>
+        <p class="empty">Completed initiatives will be listed here, with verified details, once available.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="team" class="alt" aria-labelledby="team-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="label">People</div>
+        <h2 id="team-title">Our Team</h2>
+        <p>The students who contribute their time, ideas and effort to Freelanthropy.</p>
+      </div>
+      <div class="team-grid reveal">
+        <div class="person"><div class="avatar"><img src="./assets/images/DIPANKAR.jpg" alt="Dipankar Biswas" width="112" height="112" loading="lazy" data-fallback="D" /></div><h3>Dipankar Biswas</h3><p class="role hl">Coordinator</p></div>
+        <div class="person"><div class="avatar"><img src="./assets/images/sidharth.png" alt="Kumar Sidharth" width="112" height="112" loading="lazy" data-fallback="K" /></div><h3>Kumar Sidharth</h3><p class="role hl">Sub-Coordinator</p></div>
+        <div class="person"><div class="avatar"><img src="./assets/images/sayan.png" alt="Sayan Dutta" width="112" height="112" loading="lazy" data-fallback="S" /></div><h3>Sayan Dutta</h3><p class="role">General Member</p></div>
+        <div class="person"><div class="avatar"><img src="./assets/images/ansh.jpeg" alt="Ansh Varshney" width="112" height="112" loading="lazy" data-fallback="A"></div><h3>Ansh Varshney</h3><p class="role">General Member</p></div>
+        <div class="person"><div class="avatar"><img src="./assets/images/ayush.jpeg" alt="Ayush Kalwar" width="112" height="112" loading="lazy" data-fallback="A" /></div><h3>Ayush Kalwar</h3><p class="role">General Member</p></div>
+      </div>
+
+      <h3 class="sub">Additional Support</h3>
+      <div class="support reveal">
+        <div class="card"><h3>Tatva</h3><p>Technology Support</p></div>
+        <div class="card"><h3>Creative Team</h3><p>Design &amp; Media</p></div>
+        <div class="card"><h3>PR Team</h3><p>Public Relations</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="advisory" aria-labelledby="adv-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="label">Guidance</div>
+        <h2 id="adv-title">Advisory</h2>
+        <p>Advisors guide the direction of the initiative. They are separate from the operational team above.</p>
+      </div>
+      <div class="person card adv reveal">
+        <div class="avatar"><img src="./assets/images/pushk.jpeg" alt="Pushp Raj" width="112" height="112" loading="lazy" data-fallback="P" /></div>
+        <h3>Pushp Raj</h3><p class="role hl">Head of Arthniti E-cell</p><p class="role">Advisor</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="get-involved" class="alt" aria-labelledby="gi-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="label">Get involved</div>
+        <h2 id="gi-title">Choose how you want to engage.</h2>
+      </div>
+      <div class="grid g2">
+        <div class="card path reveal"><h3>Students</h3><p>Apply for membership and take part in Freelanthropy's initiatives and activities.</p><a class="btn btn-primary" href="https://chat.whatsapp.com/GZ0zmrx2FFBFvSWddpVs2l">Explore membership</a></div>
+        <div class="card path reveal"><h3>Companies and potential clients</h3><p>Propose projects, explore client collaborations and bring practical problems to student teams.</p><a class="btn btn-outline" href="/collaborate">Start a collaboration</a></div>
+        <div class="card path reveal"><h3>Industry professionals and mentors</h3><p>Share knowledge and mentor students. Get in touch through the collaboration page and mention mentorship.</p><a class="btn btn-outline" href="/collaborate">Contact us about mentoring</a></div>
+        <div class="card path reveal"><h3>Sponsors and institutional partners</h3><p>Support student-led initiatives and explore institutional partnerships.</p><a class="btn btn-outline" href="/sponsor">Sponsor or partner</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="section-head reveal"><div class="label">FAQ</div><h2 id="faq-title">Common questions</h2></div>
+      <div class="faq-list reveal">
+        <details class="faq"><summary>What is Freelanthropy?</summary><p>Freelanthropy is a student-led initiative under Wings of Arthniti, which operates under STC, IIT Patna (Hybrid). It focuses on freelancing, professional skill development, collaboration and entrepreneurship.</p></details>
+        <details class="faq"><summary>What is ClientHunt?</summary><p>ClientHunt is an event organised by Freelanthropy, with a separate page of its own. Round 1 is an online qualifier built around a common problem statement, with an Ideathon, a Case Study and Professional Mail Writing, followed by evaluation and shortlisting. Round 2 is a three-hour offline Product Development Sprint.</p></details>
+        <details class="faq"><summary>Who can participate in ClientHunt?</summary><p>Teams of 1 to 4 participants. See the ClientHunt page for current details.</p></details>
+        <details class="faq"><summary>How is Round 2 evaluated?</summary><p>The relevant Web Development and Graphics Design departments evaluate their respective submissions independently. The Organizing Team then consolidates the scores and publishes the final results.</p></details>
+        <details class="faq"><summary>How can I get involved?</summary><p>Students can explore membership on the Join page. Companies, professionals and mentors can use the Collaborate page, and organisations can reach us through the Sponsor page.</p></details>
+        <details class="faq"><summary>How do I contact the team?</summary><p>Email <a href="mailto:freelanthropy.iitpatna@gmail.com" style="color:var(--blue-dark);text-decoration:underline">freelanthropy.iitpatna@gmail.com</a>.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="title"><div class="brand-logo"><img src="assets/images/logo.png" alt="" width="36" height="36" loading="lazy" data-fallback="F" /></div>Freelanthropy</div>
+        <p>A student-led initiative under Wings of Arthniti, STC, IIT Patna (Hybrid).</p>
+      </div>
+      <div class="foot-links">
+        <div><h3>Explore</h3><ul><li><a href="#about">About</a></li><li><a href="#initiatives">Initiatives</a></li><li><a href="/clienthunt">ClientHunt</a></li><li><a href="#team">Team</a></li><li><a href="#advisory">Advisory</a></li></ul></div>
+        <div><h3>Get involved</h3><ul><li><a href="https://chat.whatsapp.com/GZ0zmrx2FFBFvSWddpVs2l">Membership</a></li><li><a href="/collaborate">Collaborate</a></li><li><a href="/sponsor">Sponsor</a></li></ul></div>
+        <div><h3>Organisation</h3><ul><li><a href="https://stciitphybrid.in/" target="_blank" rel="noopener">STC IIT Patna</a></li><li><a href="https://www.stciitphybrid.in/wings/arthniti" target="_blank" rel="noopener">Wings of Arthniti</a></li><li><a href="https://www.iitp.ac.in/" target="_blank" rel="noopener">IIT Patna</a></li></ul></div>
+        <div><h3>Contact</h3><ul><li><a href="mailto:freelanthropy.iitpatna@gmail.com">freelanthropy.iitpatna@gmail.com</a></li></ul></div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>&copy; <span id="year">2026</span> Freelanthropy. All rights reserved.</div>
+      <div>Wings of Arthniti &middot; STC, IIT Patna (Hybrid)</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Image fallback (initial letter) without inline handlers
+  document.querySelectorAll("img[data-fallback]").forEach(function(img){
+    function swap(){ var s=document.createElement("span"); s.className="brand-fallback"; s.setAttribute("aria-hidden","true"); s.textContent=img.dataset.fallback; if(img.parentNode) img.replaceWith(s); }
+    img.addEventListener("error", swap);
+    if(img.complete && img.naturalWidth===0 && img.getAttribute("src")) swap();
+  });
+
+  // Mobile menu
+  var toggle=document.getElementById("menuToggle"), menu=document.getElementById("mobileMenu"), icon=document.getElementById("menuIcon");
+  function setMenu(open, returnFocus){
+    menu.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    icon.setAttribute("d", open ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16");
+    if(open){ var f=menu.querySelector("a"); if(f) f.focus(); } else if(returnFocus){ toggle.focus(); }
+  }
+  toggle.addEventListener("click", function(){ setMenu(!menu.classList.contains("open")); });
+  menu.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ setMenu(false); }); });
+  document.addEventListener("keydown", function(e){ if(e.key==="Escape" && menu.classList.contains("open")) setMenu(false, true); });
+
+  // Initiative filters (all groups visible if JS is unavailable)
+  var tabs=document.querySelectorAll(".tab"), groups=document.querySelectorAll(".status-group");
+  tabs.forEach(function(t){ t.addEventListener("click", function(){
+    var f=t.dataset.filter;
+    tabs.forEach(function(x){ x.setAttribute("aria-pressed", String(x===t)); });
+    groups.forEach(function(g){ g.hidden = !(f==="all" || g.dataset.status===f); });
+  }); });
+
+  // Progressive reveal: content is visible by default; hidden state only applies under .js
+  var items=document.querySelectorAll(".reveal");
+  function showAll(){ items.forEach(function(el){ el.classList.add("visible"); }); }
+  try {
+    if("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+      var io=new IntersectionObserver(function(es,o){ es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("visible"); o.unobserve(en.target); } }); },{threshold:.08});
+      items.forEach(function(el){ io.observe(el); });
+      setTimeout(showAll, 2500); // safety net if the observer never fires
+    } else { showAll(); }
+  } catch(e){ showAll(); }
+
+  // Active nav link
+  var links=document.querySelectorAll(".nav-links a[href^='#']:not(.btn-nav)");
+  if("IntersectionObserver" in window){
+    var spy=new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting) links.forEach(function(a){ var on=a.getAttribute("href")==="#"+en.target.id; a.classList.toggle("active", on); if(on) a.setAttribute("aria-current","true"); else a.removeAttribute("aria-current"); }); }); },{rootMargin:"-45% 0px -50% 0px"});
+    ["home","about","focus","initiatives","team","advisory","faq"].forEach(function(id){ var el=document.getElementById(id); if(el) spy.observe(el); });
+  }
+})();
+</script>
+</body>
+</html>
