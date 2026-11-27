@@ -97,3 +97,27 @@ test('admin: create admin, temp password forces change, disable ends sessions, l
   assert.strictEqual((await A.handleAdminData({ token: ch.token })).error_code, 'SESSION_EXPIRED');
   assert.strictEqual((await A.handleAdminAdminUpdate({ token: owner.token, admin_id: owner.me.admin_id, status: 'DISABLED' })).error_code, 'FORBIDDEN');
 });
+
+test('search_team: by Team Code, by any member email (any case), and via explicit team_code / email fields', async () => {
+  const reg = await handleRegister(H.payload(5, 3), H.ctx('21.0.0.1'));
+  assert.ok(reg.success);
+  const leader = 'stu50_2301cs050@iitp.ac.in', member2 = 'stu51_2301cs051@iitp.ac.in';
+  const ip = (n) => H.ctx('21.0.1.' + n);
+
+  const byCode = await P.handleSearchTeam({ query: reg.team_code.toLowerCase() }, ip(1));
+  assert.ok(byCode.success && byCode.team_code === reg.team_code && byCode.matched_member_number === null && byCode.members.length === 3);
+
+  const byEmail = await P.handleSearchTeam({ query: member2.toUpperCase() }, ip(2));
+  assert.ok(byEmail.success && byEmail.team_code === reg.team_code && byEmail.matched_member_number === 2);
+  assert.strictEqual((await P.handleSearchTeam({ query: leader }, ip(3))).matched_member_number, 1);
+
+  const explicitCode = await P.handleSearchTeam({ team_code: reg.team_code }, ip(4));
+  const explicitEmail = await P.handleSearchTeam({ email: member2 }, ip(5));
+  assert.ok(explicitCode.success && explicitEmail.success && explicitEmail.matched_member_number === 2 && explicitEmail.team_code === reg.team_code);
+  assert.ok(!JSON.stringify([byCode, byEmail, explicitEmail]).includes('@iitp'), 'emails are never returned');
+
+  assert.strictEqual((await P.handleSearchTeam({ email: 'nobody_2301cs999@iitp.ac.in' }, ip(6))).error_code, 'STATUS_NOT_FOUND');
+  assert.strictEqual((await P.handleSearchTeam({ email: 'someone@gmail.com' }, ip(7))).error_code, 'STATUS_NOT_FOUND', 'unapproved domain');
+  assert.strictEqual((await P.handleSearchTeam({}, ip(8))).error_code, 'VALIDATION_ERROR');
+  assert.strictEqual((await P.handleSearchTeam({ query: 'not a code or email' }, ip(9))).error_code, 'VALIDATION_ERROR');
+});

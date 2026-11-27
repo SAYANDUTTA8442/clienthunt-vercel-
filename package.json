@@ -11,7 +11,7 @@
     "seed": "node scripts/seed-config.js",
     "create-owner": "node scripts/create-owner.js",
     "import": "node scripts/import-from-sheets.js",
-    "vercel:dev": "vercel dev",
+    "dev": "vercel dev",
     "test:emulator": "npx --yes firebase-tools@13 emulators:exec --only firestore --project demo-clienthunt \"node --test test/emulator/idempotency.emulator.test.js\"",
     "check-env": "node scripts/check-env.js"
   },
@@ -19,8 +19,5 @@
     "csv-parse": "^5.5.6",
     "dotenv": "^16.6.1",
     "firebase-admin": "^12.7.0"
-  },
-  "devDependencies": {
-    "vercel": "^67.0.0"
   }
 }
